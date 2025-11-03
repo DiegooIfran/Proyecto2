@@ -27,14 +27,14 @@ public class Fachada
             }
             case (2): //Modifica apellido
             {
-                Console.WriteLine($"Apellido del cliente es {cliente.ObtenerNombre()}, ingrese un nuevo apellido:");
+                Console.WriteLine($"Apellido del cliente es {cliente.ObtenerApellido()}, ingrese un nuevo apellido:");
                 string ap = Console.ReadLine();
                 ModificadorCliente.ModificarNombre(ap, cliente);
                 break;
             }
             case (3): //Modifica telefono
             {
-                Console.WriteLine($"Telefono del cliente es {cliente.ObtenerNombre()}, ingrese un nuevo telefono:");
+                Console.WriteLine($"Telefono del cliente es {cliente.ObtenerTelefono()}, ingrese un nuevo telefono:");
                 string tel = Console.ReadLine();
                 ModificadorCliente.ModificarTelefono(tel, cliente);
                 break;
