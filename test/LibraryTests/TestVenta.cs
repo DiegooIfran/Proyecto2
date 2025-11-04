@@ -6,31 +6,19 @@ namespace Library.Tests
         public void Venta_Creacion_PropiedadesCorrectas()
         {
             // Arrange
-            string producto = "Laptop";
+            DateTime fecha = DateTime.Today;
+            string tema = "Venta";
+            string notas = "Venta de laptop";
             int precio = 1500;
 
             // Act
-            Venta venta = new Venta(producto, precio);
+            Venta venta = new Venta(fecha, tema, notas, precio);
 
             // Assert
-            Assert.That(venta.Producto, Is.EqualTo(producto));
             Assert.That(venta.Precio, Is.EqualTo(precio));
-            Assert.That(venta.Fecha, Is.EqualTo(DateTime.Today));
-        }
-
-        [Test]
-        public void Venta_ProductoYPrecio_PuedenCambiar()
-        {
-            // Arrange
-            Venta venta = new Venta("Tablet", 500);
-
-            // Act
-            venta.Producto = "Celular";
-            venta.Precio = 600;
-
-            // Assert
-            Assert.That(venta.Producto, Is.EqualTo("Celular"));
-            Assert.That(venta.Precio, Is.EqualTo(600));
+            Assert.That(venta.Fecha, Is.EqualTo(fecha));
+            Assert.That(venta.ObtenerTema(), Is.EqualTo(tema));
+            Assert.That(venta.ObtenerNota(), Is.EqualTo(notas));
         }
     }
 }

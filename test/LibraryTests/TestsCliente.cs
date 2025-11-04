@@ -1,41 +1,43 @@
-namespace Library.Tests;
-
-public class TestsCliente
+namespace Library.Tests
 {
-    [SetUp]
-    public void Setup()
+    public class ClienteTests
     {
-    }
+        [Test]
+        public void Constructor_AsignaPropiedadesYListasVacias()
+        {
+            // Arrange y Act
+            Cliente cliente = new Cliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990, 10, 20));
 
-    [Test]
-    public void TestConstructor()
-    {
-        // Justificación: comprueba que el constructor asigne correctamente el valor de los atributos del cliente y que las listas estén vacías
-        Cliente cliente = new Cliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990,10,20));
-        Assert.That(cliente.ObtenerNombre(), Is.EqualTo("Juan"));
-        Assert.That(cliente.ObtenerApellido(), Is.EqualTo("Martinez"));
-        Assert.That(cliente.ObtenerTelefono(), Is.EqualTo("091827989"));
-        Assert.That(cliente.ObtenerEmail(), Is.EqualTo("jmartin@gmail.com"));
-        Assert.That(cliente.ObtenerGenero(), Is.EqualTo("hombre"));
-        Assert.That(cliente.ObtenerFechaNacimiento(), Is.EqualTo(new DateTime(1990,10,20)));
-        Assert.That(cliente.ObtenerEtiquetas(), Is.Empty);
-        Assert.That(cliente.ObtenerInteracciones(), Is.Empty);
-        Assert.That(cliente.ObtenerCompras(), Is.Empty);
-        Assert.That(cliente.ObtenerCotizaciones(), Is.Empty);
-    }
+            // Assert
+            Assert.That(cliente.ObtenerNombre(), Is.EqualTo("Juan"));
+            Assert.That(cliente.ObtenerApellido(), Is.EqualTo("Martinez"));
+            Assert.That(cliente.ObtenerTelefono(), Is.EqualTo("091827989"));
+            Assert.That(cliente.ObtenerEmail(), Is.EqualTo("jmartin@gmail.com"));
+            Assert.That(cliente.ObtenerGenero(), Is.EqualTo("hombre"));
+            Assert.That(cliente.ObtenerFechaNacimiento(), Is.EqualTo(new DateTime(1990, 10, 20)));
+            Assert.That(cliente.ObtenerEtiquetas(), Is.Empty);
+            Assert.That(cliente.ObtenerInteracciones(), Is.Empty);
+        }
 
-    [Test]
-    public void TestUltimaInterracion()
-    {
-        // Justificación: comprueba que el método ÚltimaInterración devuelva la última interración que realizó el cliente
-        Cliente cliente = new Cliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre",
-            new DateTime(1990, 10, 20));
-        GestorInteracciones.NuevoMensaje(cliente, new DateTime(2025, 10, 17), "Consulta Disponibilidad",
-            "Esta interesado en la compro de un mueble", false);
-        GestorInteracciones.NuevoMensaje(cliente,new DateTime(2024, 9, 29), "Actualización estado de la compra",
-           "El producto fue enviado", true);
-        GestorInteracciones.NuevaReunion(cliente,new DateTime(2025, 11, 22), "Mostrar productos",
-            "Quiere ver la calidad de los muebles");
-        Assert.That(cliente.UltimaInteraccion(), Is.EqualTo(cliente.ObtenerInteracciones()[0]));
+        [Test]
+        public void UltimaInteraccion_DevuelveLaMasReciente()
+        {
+            // Arrange
+            Cliente cliente = new Cliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990, 10, 20));
+
+            Interaccion i1 = new Venta(new DateTime(2024, 5, 10), "Compra", "Compra de producto", 500);
+            Interaccion i2 = new Cotizacion(new DateTime(2025, 1, 15), "Cotización", "Cotización futura", cliente, 800);
+            Interaccion i3 = new Venta(new DateTime(2025, 3, 20), "Pago", "Pago completado", 600);
+
+            cliente.AgregarInteraccion(i1);
+            cliente.AgregarInteraccion(i2);
+            cliente.AgregarInteraccion(i3);
+
+            // Act
+            var ultima = cliente.UltimaInteraccion();
+
+            // Assert
+            Assert.That(ultima, Is.EqualTo(i3));
+        }
     }
 }
