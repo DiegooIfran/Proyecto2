@@ -1,15 +1,13 @@
 namespace Library;
-
-public class Venta
+// Representa una venta registrada como una interacción con el cliente
+public class Venta : Interaccion
 {
-    public string Producto { get; set; }
-    public int Precio { get; set; }
-    public DateTime Fecha { get; set; }
+    public int Precio { get; private set; }
 
-    public Venta(string producto, int precio)
+    // Constructor que inicializa una venta con su fecha, tema, notas y precio
+    public Venta(DateTime fecha, string tema, string notas, int precio)
+        : base(fecha, tema, notas)
     {
-        Producto = producto;
         Precio = precio;
-        Fecha = DateTime.Today;
     }
 }

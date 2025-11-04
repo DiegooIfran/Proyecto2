@@ -1,26 +1,29 @@
 namespace Library;
-
-public class Cotizacion
+// Representa una cotización ofrecida a un cliente.
+// Hereda de Interaccion porque también forma parte del historial de contacto
+public class Cotizacion : Interaccion
 {
-    public string Producto { get; set; }
-    public int Precio { get; set; }
-    public DateTime Fecha { get; set; }
-    public string Estado { get; set; }
-    public Cliente Cliente { get; set; }
+    public int Precio { get; private set; }
+    public string Estado { get; private set; }
+    public Cliente Cliente { get; private set; }
 
-    public Cotizacion(Cliente cliente, int precio, string producto)
+    // Constructor que inicializa una cotización con sus datos principales
+    public Cotizacion(DateTime fecha, string tema, string notas, Cliente cliente, int precio)
+        : base(fecha, tema, notas)
     {
         Cliente = cliente;
         Precio = precio;
-        Producto = producto;
-        Fecha = DateTime.Today;
         Estado = "Abierta";
     }
-
+    
+    // Cierra la cotización y genera automáticamente una nueva venta 
+    // asociada al cliente
     public void CerrarVenta()
     {
         Estado = "Cerrada";
-        Venta nuevaVenta = new Venta(this.Producto, this.Precio);
-        this.Cliente.AgregarVenta(nuevaVenta); 
+        
+        Venta nuevaVenta = new Venta(DateTime.Now, "Venta cerrada", "Conversión desde cotización", Precio);
+        Cliente.AgregarInteraccion(nuevaVenta);
+        
     }
 }
