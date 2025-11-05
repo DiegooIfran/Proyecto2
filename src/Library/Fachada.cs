@@ -22,17 +22,17 @@ public class Fachada
     
     public void ModificarApellido(string email, string apellidoNuevo)
     {
-        gc.BuscarPorEmail(email, gc.TotalClientes).CambiarNombre(apellidoNuevo);
+        gc.BuscarPorEmail(email, gc.TotalClientes).CambiarApellido(apellidoNuevo);
     }
     
     public void ModificarTelefono(string email, string telefonoNuevo)
     {
-        gc.BuscarPorEmail(email, gc.TotalClientes).CambiarNombre(telefonoNuevo);
+        gc.BuscarPorEmail(email, gc.TotalClientes).CambiarTelefono(telefonoNuevo);
     }
     
     public void ModificarEmail(string email, string emailNuevo)
     {
-        gc.BuscarPorEmail(email, gc.TotalClientes).CambiarNombre(emailNuevo);
+        gc.BuscarPorEmail(email, gc.TotalClientes).CambiarEmail(emailNuevo);
     }
 
     public void EliminarCliente(string email)
@@ -50,9 +50,9 @@ public class Fachada
         _vendedor.VerClientes();
     }
     
-    public void RegistrarLlamada(Cliente cliente, DateTime fecha, string tema, string nota, bool enviada)
+    public void RegistrarLlamada(string email, DateTime fecha, string tema, string nota, bool enviada)
     {
-        //_vendedor.NuevaLlamada(cliente, fecha, tema, nota, enviada);
+        //_vendedor.NuevaLlamada(gc.BuscarPorEmail(email, gc.TotalClientes), fecha, tema, nota, enviada);
     }
     
     public void RegistrarCorreo(Cliente cliente, DateTime fecha, string tema, string nota, bool enviada)
