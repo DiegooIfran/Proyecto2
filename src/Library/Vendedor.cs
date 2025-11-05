@@ -8,23 +8,24 @@ public class Vendedor : Usuario
     private List<Cliente> Clientes { get; set; }
     public bool Activo { get; set; }
     
-    public Vendedor(string nombre, string apellido, string telefono, string email) 
+    public Vendedor(string nombre, string apellido, string telefono, string email) //Constructor de vendedor
         : base(nombre, apellido, telefono, email)
     {
         this.Activo = true;
         this.Clientes = new List<Cliente>();
     }
 
-    public List<Cliente> ObtenerClientes()
+    public List<Cliente> ObtenerClientes() //Obtener clientes
     {
         return this.Clientes;
     }
 
-    public void AgregarCliente(Cliente cliente)
+    public void AgregarCliente(Cliente cliente) //Agregar cliente a la lista
     {
         this.Clientes.Add(cliente);
     }
-    public void VerClientes()
+    
+    public void VerClientes() //Imprimir clientes
     {
         foreach (Cliente cliente in Clientes)
         {
@@ -32,7 +33,7 @@ public class Vendedor : Usuario
         }
     }
 
-    public void FestejarCumpleanos()
+    public void FestejarCumpleanos() //Buscar clientes para decirles feliz cumple
     {
         foreach (Cliente cliente in Clientes)
         {
@@ -44,7 +45,7 @@ public class Vendedor : Usuario
         }
     }
 
-    public void Campana(Etiqueta etiqueta, string anuncio)
+    public void Campana(Etiqueta etiqueta, string anuncio) //Crear un anuncio para clientes especificos
     {
         foreach (Cliente cliente in Clientes)
         {
@@ -56,13 +57,13 @@ public class Vendedor : Usuario
         }
     }
 
-    public void NuevaCotizacion(DateTime fecha, string tema, string notas, Cliente cliente, int precio)
+    public void NuevaCotizacion(DateTime fecha, string tema, string notas, Cliente cliente, int precio) //Crear una cotizacion
     {
         Cotizacion nuevaCotizacion = new Cotizacion(DateTime.Now, tema, notas, cliente, precio);
         cliente.AgregarInteraccion(nuevaCotizacion);
     }
 
-    public void TotalVentas(DateTime fechaInicio, DateTime fechaFinal)
+    public void TotalVentas(DateTime fechaInicio, DateTime fechaFinal) //Ver ventas de clientes
     {
         foreach (Cliente cliente in Clientes)
         {
@@ -76,7 +77,7 @@ public class Vendedor : Usuario
         }
     }
 
-    public void VerPanel()
+    public void VerPanel() //Imprimir panel de clientes
     {
         Panel.ImprimirPanel(this);
     }
