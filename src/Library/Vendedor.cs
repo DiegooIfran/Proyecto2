@@ -56,21 +56,21 @@ public class Vendedor : Usuario
         }
     }
 
-    public void NuevaCotizacion(Cliente cliente, int precio, string producto)
+    public void NuevaCotizacion(DateTime fecha, string tema, string notas, Cliente cliente, int precio)
     {
-        Cotizacion nuevaCotizacion = new(cliente, precio, producto);
-        cliente.AgregarCotizacion(nuevaCotizacion);
+        Cotizacion nuevaCotizacion = new Cotizacion(DateTime.Now, tema, notas, cliente, precio);
+        cliente.AgregarInteraccion(nuevaCotizacion);
     }
 
     public void TotalVentas(DateTime fechaInicio, DateTime fechaFinal)
     {
         foreach (Cliente cliente in Clientes)
         {
-            foreach (Venta compra in cliente.ObtenerCompras())
+            foreach (Venta compra in cliente.ObtenerInteracciones())
             {
                 if (fechaInicio <= compra.Fecha && compra.Fecha <= fechaFinal)
                 {
-                    Console.WriteLine($"{cliente} compro {compra.Producto} por {compra.Precio} el {compra.Fecha}");
+                    Console.WriteLine($"{cliente} compro {compra.ObtenerNota()} por {compra.Precio} el {compra.Fecha}");
                 }
             }
         }
