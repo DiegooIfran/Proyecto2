@@ -66,7 +66,7 @@ public class Fachada
 
     public void EliminarCliente(string email)
     {
-        
+        //_vendedor.EliminarCliente();
     }
     
     public void BuscarCliente(string email)
@@ -74,9 +74,9 @@ public class Fachada
         
     }
     
-    public void VerTotalCliente(string email)
+    public void VerTotalClientes()
     {
-        
+        _vendedor.VerClientes();
     }
     
     public void RegistrarLlamada(Cliente cliente, DateTime fecha, string tema, string nota, bool enviada)
@@ -132,7 +132,7 @@ public class Fachada
 
     public void CrearUsuario(string nombre, string apellido, string telefono, string email)
     {
-        //Crear un usuario?
+        Vendedor vendedor = new Vendedor(nombre, apellido, telefono, email);
     }
     
     public void SuspenderUsuario(string email)
