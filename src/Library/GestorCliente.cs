@@ -37,31 +37,32 @@ public class GestorCliente
         vendedor.AgregarCliente(cliente);
     }
 
-    public static void ModificarNombre(string nombre, Cliente cliente) //Modifico el nombre de un cliente
+    public void ModificarNombre(string nombre, Cliente cliente) //Modifico el nombre de un cliente
     {
         cliente.CambiarNombre(nombre);
     }
 
-    public static void ModificarApellido(string apellido, Cliente cliente) //Modifico el apellido de un cliente
+    public void ModificarApellido(string apellido, Cliente cliente) //Modifico el apellido de un cliente
     {
         cliente.CambiarApellido(apellido);
     }
 
-    public static void ModificarTelefono(string telefono, Cliente cliente) //Modifico el telefono de un cliente
+    public void ModificarTelefono(string telefono, Cliente cliente) //Modifico el telefono de un cliente
     {
         cliente.CambiarTelefono(telefono);
     }
 
-    public static void ModificarEmail(string email, Cliente cliente) //Modifico el email de un cliente
+    public void ModificarEmail(string email, Cliente cliente) //Modifico el email de un cliente
     {
         cliente.CambiarEmail(email);
     }
 
-    public static Cliente BuscarPorNombre(string nombre, List<Cliente> clientes) //Busco un cliente por nombre
+    public Cliente BuscarPorNombre(string nombre, List<Cliente> clientes) //Busco un cliente por nombre
     {
         foreach (Cliente cliente in clientes)
         {
             if (nombre == cliente.ObtenerNombre())
+                
             {
                 return cliente;
             }
@@ -70,7 +71,7 @@ public class GestorCliente
         throw new InvalidOperationException("No se encontró ningún cliente con ese nombre.");
     }
 
-    public static Cliente BuscarPorApellido(string apellido, List<Cliente> clientes) //Busco un cliente por apellido
+    public Cliente BuscarPorApellido(string apellido, List<Cliente> clientes) //Busco un cliente por apellido
     {
         foreach (Cliente cliente in clientes)
         {
@@ -83,7 +84,7 @@ public class GestorCliente
         throw new InvalidOperationException("No se encontró ningún cliente con ese apellido.");
     }
 
-    public static Cliente BuscarPorTelefono(string telefono, List<Cliente> clientes) //Busco un cliente por telefono
+    public Cliente BuscarPorTelefono(string telefono, List<Cliente> clientes) //Busco un cliente por telefono
     {
         foreach (Cliente cliente in clientes)
         {
@@ -96,7 +97,7 @@ public class GestorCliente
         throw new InvalidOperationException("No se encontró ningún cliente con ese telefono.");
     }
 
-    public static Cliente BuscarPorEmail(string email, List<Cliente> clientes) //Busco un cliente por email
+    public Cliente BuscarPorEmail(string email, List<Cliente> clientes) //Busco un cliente por email
     {
         foreach (Cliente cliente in clientes)
         {
