@@ -2,8 +2,15 @@ namespace Library;
 
 public class Fachada
 {
+    private Vendedor _vendedor { get; set; }
+
+    public Fachada(Vendedor vendedor)
+    {
+        this._vendedor = vendedor;
+    }
     public void AgregarCliente(string name, string apellido, string telefono, string email, string genero, string fechaNacimiento)
     {
+        //_vendedor.AgregarCliente(cliente);
     }
 
     public void ModificarCliente(Cliente cliente)
@@ -55,5 +62,96 @@ public class Fachada
                 break;
             }
         }
+    }
+
+    public void EliminarCliente(string email)
+    {
+        
+    }
+    
+    public void BuscarCliente(string email)
+    {
+        
+    }
+    
+    public void VerTotalCliente(string email)
+    {
+        
+    }
+    
+    public void RegistrarLlamada(Cliente cliente, DateTime fecha, string tema, string nota, bool enviada)
+    {
+        //_vendedor.NuevaLlamada(cliente, fecha, tema, nota, enviada);
+    }
+    
+    public void RegistrarCorreo(Cliente cliente, DateTime fecha, string tema, string nota, bool enviada)
+    {
+        //_vendedor.NuevoCorreo(cliente, fecha, tema, nota, enviada);
+    }
+    
+    public void RegistrarMensaje(Cliente cliente, DateTime fecha, string tema, string nota, bool enviada)
+    {
+        //_vendedor.NuevoMensaje(cliente, fecha, tema, nota, enviada);
+    }
+    
+    public void RegistrarReunion(Cliente cliente, DateTime fecha, string tema, string nota)
+    {
+        //_vendedor.NuevaReunion(cliente, fecha, tema, nota, enviada);
+    }
+    
+    public void CrearEtiqueta(string nombre, string descripcion)
+    {
+        Etiqueta etiqueta = new Etiqueta(nombre, descripcion);
+    }
+    
+    public void AgregarEtiqueta(Cliente cliente, Etiqueta etiqueta)
+    {
+        etiqueta.AgregarEtiqueta(cliente);
+    }
+    
+    public void RealizarCampana(Etiqueta etiqueta, string anuncio)
+    {
+        _vendedor.Campana(etiqueta, anuncio);
+    }
+    
+    public void RealizarCotizacion(Cliente cliente, int precio, string producto)
+    {
+        //Cotizacion cotizacion = new Cotizacion(cliente, precio, producto);
+    }
+    
+    public void RealizarVenta(int precio, string producto)
+    {
+        //Cotizacion cotizacion = new Cotizacion(cliente, precio, producto);
+        //cotizacion.CerrarVenta();
+    }
+    
+    public void VerInteraccionesCliente(Cliente cliente)
+    {
+        //_vendedor.VerInteracciones(cliente);
+    }
+
+    public void CrearUsuario(string nombre, string apellido, string telefono, string email)
+    {
+        //Crear un usuario?
+    }
+    
+    public void SuspenderUsuario(string email)
+    {
+        //admin.GestorVendedor().SuspenderVendedor(email);
+    }
+    
+    public void EliminarUsuario(string email)
+    {
+        //admin.GestorVendedor().EliminarVendedor(email);
+    }
+    
+    public void AsignarCliente(Vendedor vendedor, Cliente cliente)
+    {
+        //_vendedor.GestorCliente().AsignarCliente(vendedor, cliente);
+    }
+    
+    public void VerPanel()
+    {
+        _vendedor.VerPanel();
     }
 }
