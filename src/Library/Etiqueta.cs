@@ -14,13 +14,13 @@ public class Etiqueta
     }
     
     //Asocia una etiqueta a un cliente
-    public static void AgregarEtiqueta(Cliente cliente, Etiqueta etiqueta)
+    public void AgregarEtiqueta(Cliente cliente)
     {
-        cliente.ObtenerEtiquetas().Add(etiqueta);
+        cliente.ObtenerEtiquetas().Add(this);
     }
     
     // Elimina una etiqueta de un cliente si ya la tiene
-    public static void BorrarEtiqueta(Cliente cliente, Etiqueta etiqueta)
+    public void BorrarEtiqueta(Cliente cliente, Etiqueta etiqueta)
     {
         if (cliente.ObtenerEtiquetas().Contains(etiqueta))
         {
