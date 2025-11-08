@@ -2,9 +2,11 @@ namespace Library;
 
 public class Administrador : Usuario
 {
-   public Administrador(string nombre, string apellido, string telefono, string email) 
+    public Administrador(string nombre, string apellido, string telefono, string email)
         : base(nombre, apellido, telefono, email)
-    { }
+    {
+        GestorAdministrador.AgregarAdministrador(this); //Agrega el administrador al Gestor de Administradores
+    }
     
     public void CrearVendedor(string nombre, string apellido, string telefono, string email) 
     {
