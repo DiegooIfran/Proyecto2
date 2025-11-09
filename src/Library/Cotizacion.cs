@@ -11,6 +11,19 @@ public class Cotizacion : Interaccion
     public Cotizacion(DateTime fecha, string tema, string notas, Cliente cliente, int precio)
         : base(fecha, tema, notas)
     {
+        if (cliente == null) //Valida que el cliente no sea nulo
+        {
+            throw new ArgumentNullException(nameof(cliente));
+        }
+        if (precio == null) //Valida que el cliente no sea nulo
+        {
+            throw new ArgumentNullException(nameof(precio));
+        }
+
+        if (precio < 0) //Valida que el precio no sea negativo
+        {
+            throw new ArgumentException("El precio no puede ser negativo.");
+        }
         Cliente = cliente;
         Precio = precio;
         Estado = "Abierta";

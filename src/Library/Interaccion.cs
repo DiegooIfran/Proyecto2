@@ -11,9 +11,16 @@ public abstract class Interaccion
     // Constructor protegido para inicializar los datos comunes de toda interacción
     protected Interaccion(DateTime fecha, string tema, string notas)
     {
+        if (fecha == null)
+            throw new ArgumentNullException(nameof(fecha));
+        if (tema == null)
+            throw new ArgumentNullException(nameof(tema));
+        if (notas == null)
+            throw new ArgumentNullException(nameof(notas));
         Fecha = fecha;
         Tema = tema;
         Notas = notas;
+        
     }
     
     // Devuelve las notas registradas en la interacción

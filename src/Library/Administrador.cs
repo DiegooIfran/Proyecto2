@@ -15,24 +15,37 @@ public class Administrador : Usuario
     }
 
     public void EliminarVendedor(string email) // Se usa el email porque es único para cada vendedor
-    { 
+    {
+        bool existe = false;
         foreach (var vendedor in GestorVendedor.VerTotalVendedores())//Recorre los la lista de vendedores
         {
             if (vendedor.ObtenerEmail()== email)//Cuando el email del vendedor coincide con la string que se pasó se elimina el vendedor
             {
                 GestorVendedor.EliminarVendedor(vendedor);
+                existe = true;
             }
+        }
+
+        if (!existe)
+        {
+            throw new ArgumentException("Vendedor no encontrado");
         }
     }
 
     public void SuspenderVendedor(string email) 
     {
+        bool existe = false;
         foreach (var vendedor in GestorVendedor.VerTotalVendedores()) //Recorre los la lista de vendedores
         {
             if (vendedor.ObtenerEmail()== email) //Cuando el email del vendedor coincide con la string que se pasó se cambia el estado del vendedor
             { 
                 vendedor.Activo = false;
+                existe = true;
             }
+        }
+        if (!existe)
+        {
+            throw new ArgumentException("Vendedor no encontrado");
         }
     }
 }

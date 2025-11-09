@@ -8,6 +8,14 @@ public class Venta : Interaccion
     public Venta(DateTime fecha, string tema, string notas, int precio)
         : base(fecha, tema, notas)
     {
+        if (precio == null) //Valida que el cliente no sea nulo
+        {
+            throw new ArgumentNullException(nameof(precio));
+        }
+        if (precio < 0) //Valida que el precio no sea negativo
+        {
+            throw new ArgumentException("El precio no puede ser negativo.");
+        }
         Precio = precio;
     }
 }

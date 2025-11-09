@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+
 namespace Library;
 // Representa un cliente dentro del sistema.
 // Contiene sus datos personales, etiquetas asociadas y el historial de interacciones
@@ -66,26 +68,66 @@ public class Cliente
 
     public void CambiarNombre(string nombre)
     {
+        if (nombre == null)
+        {
+            throw new ArgumentNullException(nombre);
+        }
+        if (Regex.IsMatch(nombre, @"^[a-zA-Z ]+$")) //Valida que el nombre solo contenga letras
+        {
+            throw new ArgumentException(nombre);
+        }
         this.Nombre = nombre;
     }
 
     public void CambiarApellido(string apellido)
     {
+        if (apellido == null)
+        {
+            throw new ArgumentNullException(apellido);
+        }
+        if (Regex.IsMatch(apellido, @"^[a-zA-Z ]+$")) //Valida que el nombre solo contenga letras
+        {
+            throw new ArgumentException(apellido);
+        }
         this.Apellido = apellido;
     }
 
     public void CambiarTelefono(string telefono)
     {
+        if (telefono == null)
+        {
+            throw new ArgumentNullException(telefono);
+        }
+        if (Regex.IsMatch(telefono, @"^[0-9 +]+$")) //Valida que el teléfono solo contenga números o +
+        {
+            throw new ArgumentException(telefono);
+        }
         this.Telefono = telefono;
     }
 
     public void CambiarEmail(string email)
     {
+        if (email == null)
+        {
+            throw new ArgumentNullException(email);
+        }
+        if (Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$")) //Valida que el email solo contenga una arroba y alguas cosas más
+        {
+            throw new ArgumentException(email);
+        }
         this.Email = email;
     }
 
     public void CambiarGenero(string genero)
     {
+        if (genero == null)
+        {
+            throw new ArgumentNullException(genero);
+        }
+        if (Regex.IsMatch(genero, @"^[a-zA-Z ]+$")) //Valida que el nombre solo contenga letras
+        {
+            throw new ArgumentException(genero);
+        }
         this.Genero = genero;
     }
 
