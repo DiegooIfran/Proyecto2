@@ -1,6 +1,6 @@
 namespace Library;
 
-public class Gestor<T> where T : Usuario 
+public class Gestor<T> where T : IGestionable
 {
     private List<T> _total = new List<T>(); //Hago la lista que contendra administradores o vendedores 
     

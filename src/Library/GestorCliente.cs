@@ -1,6 +1,6 @@
 namespace Library;
 
-public class GestorCliente
+public class GestorCliente : Gestor<Cliente>
 {
     public List<Cliente> TotalClientes { get; set; } //Lista de todos los clientes
 
@@ -126,3 +126,5 @@ public class GestorCliente
         throw new InvalidOperationException("No se encontró ningún cliente con ese email.");
     }
 }
+
+//Esta clase implementa lo mismo que gestor pero unicamente cuando T es cliente, a su vez se encarga de hacer las busquedas y modificaciones pertinentes ya que es la experta.

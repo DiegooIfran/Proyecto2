@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 
 namespace Library;
 
-public abstract class Usuario
+public abstract class Usuario : IGestionable
 {
 private string Nombre { get; }
     private string Apellido { get;}
