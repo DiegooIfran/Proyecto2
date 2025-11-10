@@ -1,6 +1,5 @@
 namespace Library.Tests;
 
-<<<<<<< HEAD
 public class TestFachada
 {
     private Fachada fachada;
@@ -28,7 +27,7 @@ public class TestFachada
     }
     
     [Test]
-    public void ModificarNombre_DeberiaActualizarElNombreDelCliente()
+    public void ModificarNombreYBuscarPorNombre_DeberiaActualizarElNombreDelCliente()
     {
         // Arrange
         string email = "test2@mail.com";
@@ -44,7 +43,7 @@ public class TestFachada
     }
 
     [Test]
-    public void ModificarApellido_DeberiaActualizarElApellidoDelCliente()
+    public void ModificarApellidoYBuscarPorApellido_DeberiaActualizarElApellidoDelCliente()
     {
         // Arrange
         string email = "test3@mail.com";
@@ -60,7 +59,7 @@ public class TestFachada
     }
     
     [Test]
-    public void ModificarTelefono_DeberiaActualizarElTelefonoDelCliente()
+    public void ModificarTelefonoYBuscarPorTelefono_DeberiaActualizarElTelefonoDelCliente()
     {
         // Arrange
         string email = "test2@mail.com";
@@ -76,7 +75,7 @@ public class TestFachada
     }
     
     [Test]
-    public void ModificarEmail_DeberiaActualizarElEmailDelCliente()
+    public void ModificarEmailYBuscarPorEmail_DeberiaActualizarElEmailDelCliente()
     {
         // Arrange
         string email = "test2@mail.com";
