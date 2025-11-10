@@ -72,7 +72,7 @@ public class Cliente : IGestionable
         {
             throw new ArgumentNullException(nombre);
         }
-        if (Regex.IsMatch(nombre, @"^[a-zA-Z ]+$")) //Valida que el nombre solo contenga letras
+        if (!Regex.IsMatch(nombre, @"^[a-zA-Z ]+$")) //Valida que el nombre solo contenga letras
         {
             throw new ArgumentException(nombre);
         }
@@ -85,7 +85,7 @@ public class Cliente : IGestionable
         {
             throw new ArgumentNullException(apellido);
         }
-        if (Regex.IsMatch(apellido, @"^[a-zA-Z ]+$")) //Valida que el nombre solo contenga letras
+        if (!Regex.IsMatch(apellido, @"^[a-zA-Z ]+$")) //Valida que el nombre solo contenga letras
         {
             throw new ArgumentException(apellido);
         }
@@ -98,7 +98,7 @@ public class Cliente : IGestionable
         {
             throw new ArgumentNullException(telefono);
         }
-        if (Regex.IsMatch(telefono, @"^[0-9 +]+$")) //Valida que el teléfono solo contenga números o +
+        if (!Regex.IsMatch(telefono, @"^[0-9 +]+$")) //Valida que el teléfono solo contenga números o +
         {
             throw new ArgumentException(telefono);
         }
