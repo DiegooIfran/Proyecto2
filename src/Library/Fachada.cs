@@ -130,17 +130,22 @@ public class Fachada
         _vendedor.Campana(etiqueta, anuncio);
     }
     
-    //Realizar cotizacion de un producto
+    //Realizar cotizacion de un producto (tema especifica un producto)
     public void RealizarCotizacion(DateTime fecha, string tema, string notas, string correo, int precio)
     {
         _vendedor.NuevaCotizacion(fecha, tema, notas, gc.BuscarPorEmail(correo, gc.TotalClientes), precio);
     }
     
-    //Realizar venta de una cotizacion previa
-    public void RealizarVenta(string correo, int precio, string producto)
+    //Realizar venta de una cotizacion previa (tema especifica un producto)
+    public void RealizarVenta(string correo, string tema)
     {
-        //Cotizacion cotizacion = new Cotizacion(gc.BuscarPorEmail(correo, gc.TotalClientes), precio, producto);
-        //cotizacion.CerrarVenta();
+        foreach (Cotizacion interaccion in gc.BuscarPorEmail(correo, gc.TotalClientes).ObtenerInteracciones())
+        {
+            if (interaccion.ObtenerTema() == tema)
+            {
+                interaccion.CerrarVenta();
+            }
+        }
     }
     
     //Ver interacciones con los clientes
