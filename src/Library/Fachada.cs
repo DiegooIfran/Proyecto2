@@ -131,9 +131,9 @@ public class Fachada
     }
     
     //Realizar cotizacion de un producto
-    public void RealizarCotizacion(string correo, int precio, string producto)
+    public void RealizarCotizacion(DateTime fecha, string tema, string notas, string correo, int precio)
     {
-        //Cotizacion cotizacion = new Cotizacion(gc.BuscarPorEmail(correo, gc.TotalClientes), precio, producto);
+        _vendedor.NuevaCotizacion(fecha, tema, notas, gc.BuscarPorEmail(correo, gc.TotalClientes), precio);
     }
     
     //Realizar venta de una cotizacion previa
