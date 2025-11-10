@@ -157,11 +157,11 @@ public class Fachada
     //Realizar venta de una cotizacion previa (tema especifica un producto)
     public void RealizarVenta(string correo, string tema)
     {
-        foreach (Cotizacion interaccion in gc.BuscarPorEmail(correo).ObtenerInteracciones())
+        foreach (Cotizacion cotizacion in gc.BuscarPorEmail(correo).ObtenerInteracciones())
         {
-            if (interaccion.ObtenerTema() == tema)
+            if (cotizacion.ObtenerTema() == tema)
             {
-                interaccion.CerrarVenta();
+                cotizacion.CerrarVenta();
             }
         }
     }
