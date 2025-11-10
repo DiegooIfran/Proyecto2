@@ -1,14 +1,22 @@
 ﻿namespace Library;
-// Clase abstracta base que representa una interacción con el cliente.
-// Sirve como clase padre para distintos tipos de interacciones, 
-// como ventas o cotizaciones
+/// <summary>
+/// Clase abstracta base que representa una interacción con el cliente.
+/// Sirve como clase padre para distintos tipos de interacciones, 
+/// como ventas o cotizaciones
+/// </summary>
 public abstract class Interaccion
 {
     public DateTime Fecha { get; private set; }
     protected string Tema { get; set; }
     protected string Notas { get; set; }
     
-    // Constructor protegido para inicializar los datos comunes de toda interacción
+    /// <summary>
+    /// Constructor protegido para inicializar los datos comunes de toda interacción
+    /// </summary>
+    /// <param name="fecha"></param>
+    /// <param name="tema"></param>
+    /// <param name="notas"></param>
+    /// <exception cref="ArgumentNullException"></exception>
     protected Interaccion(DateTime fecha, string tema, string notas)
     {
         if (fecha == null)
@@ -23,26 +31,37 @@ public abstract class Interaccion
         
     }
     
-    // Devuelve las notas registradas en la interacción
+    /// <summary>
+    /// Devuelve las notas registradas en la interacción
+    /// </summary>
+    /// <returns></returns>
     public string ObtenerNota()
     {
         return this.Notas;
     }
     
-    // Devuelve la fecha de la interacción
+    /// <summary>
+    /// Devuelve la fecha de la interacción
+    /// </summary>
+    /// <returns></returns>
     public DateTime ObtenerFecha()
     {
         return this.Fecha;
     }
     
-    // Permite modificar la fecha de la interacción
+    /// <summary>
+    /// Permite modificar la fecha de la interacción
+    /// </summary>
+    /// <param name="fecha"></param>
     public void PonerFecha(DateTime fecha)
     {
         this.Fecha = fecha;
     }
 
-    
-    // Devuelve el tema de la interacción
+    /// <summary>
+    /// Devuelve el tema de la interacción
+    /// </summary>
+    /// <returns></returns>
     public string ObtenerTema()
     {
         return this.Tema; 

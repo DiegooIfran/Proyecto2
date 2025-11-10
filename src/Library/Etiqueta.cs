@@ -1,21 +1,27 @@
 using System.Text.RegularExpressions;
 
 namespace Library;
-
-// Representa una etiqueta que puede asociarse a un cliente
+/// <summary>
+/// Representa una etiqueta que puede asociarse a un cliente
+/// </summary>
 public class Etiqueta
 {
     public string Nombre { get; private set; }
     public string Descripcion { get; private set; }
     
-    //Crea una nueva etiqueta con su nombre y descripción
+    /// <summary>
+    /// Crea una nueva etiqueta con su nombre y descripción
+    /// </summary>
+    /// <param name="nombre"></param>
+    /// <param name="descripcion"></param>
+    /// <exception cref="ArgumentNullException"></exception>
     public Etiqueta(string nombre, string descripcion)
     {
-        if (nombre == null)
+        if (nombre == null) //Valida que el nombre no sea nulo
         {
             throw new ArgumentNullException(nombre);
         }
-        if (descripcion == null)
+        if (descripcion == null) //Valida que la descripción no sea nula
         {
             throw new ArgumentNullException(descripcion);
         }
@@ -23,7 +29,11 @@ public class Etiqueta
         Descripcion = descripcion;
     }
     
-    //Asocia una etiqueta a un cliente
+    /// <summary>
+    /// Asocia una etiqueta a un cliente
+    /// </summary>
+    /// <param name="cliente"></param>
+    /// <exception cref="ArgumentNullException"></exception>
     public void AgregarEtiqueta(Cliente cliente)
     {
         if (cliente == null) //Valida que el cliente no sea nulo
@@ -33,7 +43,12 @@ public class Etiqueta
         cliente.ObtenerEtiquetas().Add(this);
     }
     
-    // Elimina una etiqueta de un cliente si ya la tiene
+    /// <summary>
+    /// Elimina una etiqueta de un cliente si ya la tiene
+    /// </summary>
+    /// <param name="cliente"></param>
+    /// <param name="etiqueta"></param>
+    /// <exception cref="ArgumentNullException"></exception>
     public void BorrarEtiqueta(Cliente cliente, Etiqueta etiqueta)
     {
         if (cliente == null) //Valida que el cliente no sea nulo

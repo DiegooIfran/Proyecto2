@@ -1,8 +1,10 @@
 using System.Text.RegularExpressions;
 
 namespace Library;
-// Representa un cliente dentro del sistema.
-// Contiene sus datos personales, etiquetas asociadas y el historial de interacciones
+/// <summary>
+/// Representa un cliente dentro del sistema.
+/// Contiene sus datos personales, etiquetas asociadas y el historial de interacciones
+/// </summary>
 public class Cliente : IGestionable
 {
     private string Nombre { get; set; }
@@ -15,7 +17,9 @@ public class Cliente : IGestionable
     private List<Etiqueta> _etiquetas = new List<Etiqueta>();
     private List<Interaccion> _interacciones = new List<Interaccion>();
 
-    // Constructor que inicializa un nuevo cliente con sus datos personales
+    /// <summary>
+    /// Constructor que inicializa un nuevo cliente con sus datos personales
+    /// </summary>
     public Cliente(string nombre, string apellido, string telefono, string email, string genero, DateTime fechaNacimiento)
     {
         Nombre = nombre;
@@ -130,15 +134,18 @@ public class Cliente : IGestionable
         }
         this.Genero = genero;
     }
-
-    // Agrega una nueva interacción (como una venta o cotización) al historial del cliente
+    /// <summary>
+    /// Agrega una nueva interacción (como una venta o cotización) al historial del cliente
+    /// </summary>
     public void AgregarInteraccion(Interaccion interaccion)
     {
         this._interacciones.Add(interaccion);
     }
     
-    // Devuelve la última interacción realizada con el cliente,
-    // comparando las fechas de todas sus interacciones registradas
+    /// <summary>
+    /// Devuelve la última interacción realizada con el cliente,
+    /// comparando las fechas de todas sus interacciones registradas
+    /// </summary>
     public Interaccion UltimaInteraccion()
     {
             Interaccion ultimaInteraccion = this.ObtenerInteracciones()[0];
