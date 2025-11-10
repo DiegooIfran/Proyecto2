@@ -25,5 +25,6 @@ public class Cotizacion : Interaccion
         Venta nuevaVenta = new Venta(DateTime.Now, "Venta cerrada", "Conversión desde cotización", Precio);
         Cliente.AgregarInteraccion(nuevaVenta);
         
+        
     }
 }
