@@ -91,25 +91,25 @@ public class Fachada
     //Registrar llamada con un cliente
     public void RegistrarLlamada(string correo, DateTime fecha, string tema, string nota, bool enviada)
     {
-        _vendedor.NuevaLlamada(gc.BuscarPorEmail(correo, gc.TotalClientes), fecha, tema, nota, enviada);
+        _vendedor.NuevaLlamada(gc.BuscarPorEmail(correo), fecha, tema, nota, enviada);
     }
     
     //Registrar correo con un cliente
     public void RegistrarCorreo(string correo, DateTime fecha, string tema, string nota, bool enviada)
     {
-        _vendedor.NuevoCorreo(gc.BuscarPorEmail(correo, gc.TotalClientes), fecha, tema, nota, enviada);
+        _vendedor.NuevoCorreo(gc.BuscarPorEmail(correo), fecha, tema, nota, enviada);
     }
     
     //Registrar mensaje con un cliente
     public void RegistrarMensaje(string correo, DateTime fecha, string tema, string nota, bool enviada)
     {
-        _vendedor.NuevoMensaje(gc.BuscarPorEmail(correo, gc.TotalClientes), fecha, tema, nota, enviada);
+        _vendedor.NuevoMensaje(gc.BuscarPorEmail(correo), fecha, tema, nota, enviada);
     }
     
     //Registrar reunion con un cliente
     public void RegistrarReunion(string correo, DateTime fecha, string tema, string nota)
     {
-        _vendedor.NuevaReunion(gc.BuscarPorEmail(correo, gc.TotalClientes), fecha, tema, nota);
+        _vendedor.NuevaReunion(gc.BuscarPorEmail(correo), fecha, tema, nota);
     }
     
     //Crear una etiqueta
