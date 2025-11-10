@@ -133,18 +133,26 @@ public class Vendedor : Usuario
         GestorInteracciones.NuevaReunion(cliente , fecha, tema, notas);
     }
     
-    public void TotalVentas(DateTime fechaInicio, DateTime fechaFinal) 
+    /// <summary>
+    /// Muestra una lista de todas las ventas de cada cliente
+    /// </summary>
+    public string TotalVentas(DateTime fechaInicio, DateTime fechaFinal)
     {
+        string totalVentas="Lista de todas las ventas:\n";
         foreach (Cliente cliente in Clientes)
         {
-            foreach (Venta compra in cliente.ObtenerInteracciones())
+            foreach (Interaccion interaccion in cliente.ObtenerInteracciones())
             {
-                if (fechaInicio <= compra.Fecha && compra.Fecha <= fechaFinal)
+                if (interaccion is Venta venta)
                 {
-                    Console.WriteLine($"{cliente} compro {compra.ObtenerNota()} por {compra.Precio} el {compra.Fecha}");
+                    if (fechaInicio <= venta.Fecha && venta.Fecha <= fechaFinal)
+                    {
+                        totalVentas+=($"- {cliente.ObtenerNombre()} {cliente.ObtenerApellido()} compró {venta.ObtenerNota()} por ${venta.Precio} el {venta.Fecha}\n");
+                    }    
                 }
             }
-        }
+        } 
+        return totalVentas;
     }
 
     /// <summary>
