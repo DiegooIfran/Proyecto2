@@ -50,7 +50,7 @@ namespace Library.Tests
 
             List<Cliente> lista = gestor.VerTotal();
 
-            Assert.That(lista, Has.Count.EqualTo(2));
+            Assert.That(lista.Count.Equals(2));
             Assert.That(lista.Contains(c1));
             Assert.That(lista.Contains(c2));
         }
