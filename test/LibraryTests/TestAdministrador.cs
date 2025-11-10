@@ -12,9 +12,9 @@ public class TestAdministrador
     {
         Administrador admin = new Administrador("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com");
         admin.CrearVendedor("Federico", "Garcia", "231231", "fedegarcia@gmail.com");
-
-        Assert.AreEqual(1, admin.ObtenerVendedores().Count);
-        Assert.AreEqual("Federico", admin.ObtenerVendedores()[0].ObtenerNombre());
+        Gestor<Administrador> gestor = Singleton<Gestor<Administrador>>.Instance;
+        Assert.AreEqual(1, gestor.VerTotal().Count);
+        Assert.AreEqual("Federico", gestor.VerTotal()[0].ObtenerNombre());
     }
     
     [Test]
@@ -23,8 +23,8 @@ public class TestAdministrador
         Administrador admin = new Administrador("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com");
         admin.CrearVendedor("Federico", "Garcia", "231231", "fedegarcia@gmail.com");
         admin.SuspenderVendedor("fedegarcia@gmail.com");
-        
-        Assert.That(admin.ObtenerVendedores()[0].Activo, Is.EqualTo(false));
+        Gestor<Vendedor> gestor = Singleton<Gestor<Vendedor>>.Instance;
+        Assert.That(gestor.VerTotal()[0].Activo, Is.EqualTo(false));
     }
     
     [Test]
@@ -33,7 +33,7 @@ public class TestAdministrador
         Administrador admin = new Administrador("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com");
         admin.CrearVendedor("Federico", "Garcia", "231231", "fedegarcia@gmail.com");
         admin.EliminarVendedor("fedegarcia@gmail.com");
-        
-        Assert.AreEqual(0, admin.ObtenerVendedores().Count);
+        Gestor<Vendedor> gestor = Singleton<Gestor<Vendedor>>.Instance;
+        Assert.AreEqual(0, gestor.VerTotal().Count);
     }
 }
