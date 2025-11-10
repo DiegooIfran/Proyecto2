@@ -1,5 +1,6 @@
 namespace Library.Tests;
 
+<<<<<<< HEAD
 public class TestFachada
 {
     private Fachada fachada;

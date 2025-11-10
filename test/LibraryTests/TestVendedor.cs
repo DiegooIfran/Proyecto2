@@ -50,7 +50,7 @@ public class TestVendedor
         
         Assert.That(cliente.ObtenerInteracciones().Count, Is.EqualTo(1));
     }
-    /*
+    
     [Test]
     public void TotalVentas()
     {
@@ -58,15 +58,15 @@ public class TestVendedor
         Cliente cliente = new Cliente("Juan", "Perez", "0923", "juan@gmail.com","hombre", DateTime.Today);
         vendedor.AgregarCliente(cliente);
         
-        vendedor.NuevaCotizacion(DateTime.Today,"Pelotas","Comprar 10 pelotas", cliente, 5000);
-        vendedor.NuevaCotizacion(DateTime.Today,"Guantes","Comprar 2 pares de guantes", cliente, 1000);
-        vendedor.NuevaCotizacion(DateTime.Today,"Arcos","Comprar 2 arcos", cliente, 3000);
-
-        Cotizacion interaccion0 = cliente.ObtenerInteracciones()[0];
-        var interaccion1 = cliente.ObtenerInteracciones()[1];
-        var interaccion2 = cliente.ObtenerInteracciones()[2];
+        Venta venta0 = new Venta(new DateTime(2022,12,4), "Comida", "200g de muzzarela", 200);
+        Venta venta1 = new Venta(new DateTime(2025,12,4), "Bebida", "CocaCola 3L", 150);
+        Venta venta2 = new Venta(new DateTime(2025,8,30), "Galletitas", "Porteñitas", 55);
+        cliente.AgregarInteraccion(venta2);
+        cliente.AgregarInteraccion(venta1);
+        cliente.AgregarInteraccion(venta0);
         
-        Assert.That(cliente.ObtenerInteracciones().Count, Is.EqualTo(3));
-    }*/
+        Assert.That(vendedor.TotalVentas(new DateTime(2024, 5, 11),new DateTime(2026, 5, 12)), Is.EqualTo($"Lista de todas las ventas:\n- Juan Perez compró Porteñitas por $55 el 30/8/2025 0:00:00\n- Juan Perez compró CocaCola 3L por $150 el 4/12/2025 0:00:00\n"));
+        Console.WriteLine(vendedor.TotalVentas(new DateTime(2024, 5, 11),new DateTime(2026, 5, 12)));
+    }
 
 }
