@@ -76,28 +76,28 @@ public class Fachada
         gc.Eliminar(gc.BuscarPorEmail(email));
     }
     
-    //Buscar un cliente
-    public Cliente BuscarEmail(string email)
+    //Buscar un cliente por email
+    public Cliente BuscarPorEmail(string email)
     {
         return gc.BuscarPorEmail(email);
     }
     
     //Buscar por nombre
-    public Cliente BuscarNombre(string nombre)
+    public Cliente BuscarPorNombre(string nombre)
     {
-        return gc.BuscarPorEmail(nombre);
+        return gc.BuscarPorNombre(nombre);
     }
     
     //Buscar por telefono
-    public Cliente BuscarTelefono(string telefono)
+    public Cliente BuscarPorTelefono(string telefono)
     {
-        return gc.BuscarPorEmail(telefono);
+        return gc.BuscarPorTelefono(telefono);
     }
     
     //Buscar por apellido
-    public Cliente BuscarApellido(string apellido)
+    public Cliente BuscarPorApellido(string apellido)
     {
-        return gc.BuscarPorEmail(apellido);
+        return gc.BuscarPorApellido(apellido);
     }
     
     //Ver todos los clientes

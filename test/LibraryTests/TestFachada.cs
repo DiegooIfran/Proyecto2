@@ -57,6 +57,21 @@ public class TestFachada
     }
     
     [Test]
+    public void ModificarTelefono_DeberiaActualizarElTelefonoDelCliente()
+    {
+        // Arrange
+        string email = "test2@mail.com";
+        fachada.AgregarCliente("Ana", "Lopez", "099222222", email, "F", new DateTime(1995, 5, 5));
+
+        // Act
+        fachada.ModificarTelefono(email, "099333333");
+        var cliente = fachada.BuscarTelefono(email);
+
+        // Assert
+        Assert.That(cliente.ObtenerNombre(), Is.EqualTo("Andrea"));
+    }
+    
+    [Test]
     public void EliminarCliente_DeberiaQuitarloDeLaLista()
     {
         // Arrange
