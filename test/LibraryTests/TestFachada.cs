@@ -18,7 +18,7 @@ public class TestFachada
         fachada.AgregarCliente("Juan", "Pérez", "099111111", email, "M", new DateTime(1990, 1, 1));
 
         // Act
-        var cliente = fachada.BuscarEmail(email);
+        var cliente = fachada.BuscarPorEmail(email);
 
         // Assert
         Assert.That(cliente, Is.Not.Null);
@@ -32,10 +32,11 @@ public class TestFachada
         // Arrange
         string email = "test2@mail.com";
         fachada.AgregarCliente("Ana", "Lopez", "099222222", email, "F", new DateTime(1995, 5, 5));
-
+        string nuevoNombre = "Diego";
+        
         // Act
-        fachada.ModificarNombre(email, "Andrea");
-        var cliente = fachada.BuscarEmail(email);
+        fachada.ModificarNombre(email, nuevoNombre);
+        var cliente = fachada.BuscarPorNombre(nuevoNombre);
 
         // Assert
         Assert.That(cliente.ObtenerNombre(), Is.EqualTo("Andrea"));
@@ -47,10 +48,11 @@ public class TestFachada
         // Arrange
         string email = "test3@mail.com";
         fachada.AgregarCliente("Mario", "Gomez", "099333333", email, "M", new DateTime(1992, 3, 3));
-
+        string nuevoApellido = "Ifran";
+        
         // Act
-        fachada.ModificarApellido(email, "Gonzalez");
-        var cliente = fachada.BuscarEmail(email);
+        fachada.ModificarApellido(email, nuevoApellido);
+        var cliente = fachada.BuscarPorApellido(nuevoApellido);
 
         // Assert
         Assert.That(cliente.ObtenerApellido(), Is.EqualTo("Gonzalez"));
@@ -62,13 +64,30 @@ public class TestFachada
         // Arrange
         string email = "test2@mail.com";
         fachada.AgregarCliente("Ana", "Lopez", "099222222", email, "F", new DateTime(1995, 5, 5));
-
+        string nuevoTelefono = "099333333";
+        
         // Act
-        fachada.ModificarTelefono(email, "099333333");
-        var cliente = fachada.BuscarTelefono(email);
+        fachada.ModificarTelefono(email, nuevoTelefono);
+        var cliente = fachada.BuscarPorTelefono(nuevoTelefono);
 
         // Assert
-        Assert.That(cliente.ObtenerNombre(), Is.EqualTo("Andrea"));
+        Assert.That(cliente.ObtenerTelefono(), Is.EqualTo("099333333"));
+    }
+    
+    [Test]
+    public void ModificarEmail_DeberiaActualizarElEmailDelCliente()
+    {
+        // Arrange
+        string email = "test2@mail.com";
+        fachada.AgregarCliente("Ana", "Lopez", "099222222", email, "F", new DateTime(1995, 5, 5));
+        string nuevoEmail = "test3@mail.com";
+
+        // Act
+        fachada.ModificarEmail(email, nuevoEmail);
+        var cliente = fachada.BuscarPorEmail(nuevoEmail);
+
+        // Assert
+        Assert.That(cliente.ObtenerEmail(), Is.EqualTo("test3@mail.com"));
     }
     
     [Test]
@@ -82,7 +101,7 @@ public class TestFachada
         fachada.EliminarCliente(email);
 
         // Assert
-        Assert.Throws<InvalidOperationException>(() => fachada.BuscarEmail(email));
+        Assert.Throws<InvalidOperationException>(() => fachada.BuscarPorEmail(email));
     }
     
     [Test]
