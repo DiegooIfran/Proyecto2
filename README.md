@@ -1,43 +1,20 @@
-# Qué hay configurado en esta plantilla
+Link de Trello: https://trello.com/invite/b/68f26d0031466266e029301d/ATTIfe55b1f651c7b98b6e6d08c39ccd1f1fD6FBA1F2/proyecto-programacion-2
 
-1. Un proyecto de biblioteca (creado con [`dotnet new classlib --name Library`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new?tabs=netcore22)) en la carpeta `src\Library`
-2. Un proyecto de aplicación de consola (creado con [`dotnet new console --name Program`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new?tabs=netcore22)) en la carpeta `src\Program`
-3. Un proyecto de prueba en [NUnit](https://nunit.org/) (creado con [`dotnet new nunit --name LibraryTests`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new?tabs=netcore22)) en la carpeta `test\LibraryTests`
-4. Un proyecto de [Doxygen](https://www.doxygen.nl/index.html) para generación de sitio web de documentación en la carpeta `docs`
-5. Análisis estático con [Roslyn analyzers](https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/overview) en los proyectos de biblioteca y de aplicación
-6. Análisis de estilo con [StyleCop](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/README.md) en los proyectos de biblioteca y de aplicación
-7. Una solución `ProjectTemplate.sln` que referencia todos los proyectos de C# y facilita la compilación con [`dotnet build`](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build).
-8. Tareas preconfiguradas para compilar y ejecutar los proyectos, ejecutar las pruebas, y generar documentación desde VSCode en la carpeta `.vscode`
-9. Análisis de cobertura de los casos de prueba mediante []() que aparece en los márgenes con el complemento de VS Code [Coverage Gutters](https://marketplace.visualstudio.com/items?itemName=ryanluker.vscode-coverage-gutters).
-10. Ejecución automática de compilación y prueba mediante [GitHub Actions](https://docs.github.com/en/actions) configuradas en el repositorio al hacer [push](https://github.com/git-guides/git-push) o [pull request](https://docs.github.com/en/github/collaborating-with-pull-requests).
+# Notas de reflexión
+## Segunda entrega
 
-Vean este 🎥 [video](https://web.microsoftstream.com/video/55c6a06c-07dc-4f95-a96d-768f198c9044) que explica el funcionamiento de la plantilla.
+### Qué desafíos de la entrega fueron los más difíciles
 
-## Convenciones
+En esta entrega, el mayor desafío que tuvimos fue la implementación de la fachada. Nos costó entender en qué consistía y cómo llevarla a cabo. Sin embargo, creemos que pudimos darle forma y resolverla correctamente. Otro desafío surgió al introducir algunos cambios que implicaron modificar partes del código en varias clases. De todas formas, dichos cambios fueron necesarios para pulir el funcionamiento del programa, cumplir con los principios y llegar a una mejor solución para cumplir con las historias de usuario.
+Por último, aunque no fue una tarea difícil, sí nos llevó más tiempo del que esperábamos trabajar con los comentarios y comprender el funcionamiento de Doxygen.
 
-[Convenciones de código en C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions)
+### Qué cosas aprendieron enfrentándose al proyecto que no aprendieron en clase como parte de la currícula
 
-[Convenciones de nombres en C#](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/naming-guidelines)
+Durante la preparación de esta entrega tuvimos que poner en práctica habilidades para negociar y llegar a acuerdos ante distintas ideas. Con frecuencia nos encontrábamos con varias opciones a la hora de implementar una clase, lo que implicaba tomar decisiones de manera constante. Estas decisiones de diseño, si bien por separado no parecen tener gran impacto, en conjunto son fundamentales para que las clases se relacionen correctamente entre sí y no generen errores innecesarios. Por eso, consideramos importante tomarlas en conjunto.
+Otra habilidad importante que aplicamos fue la descomposición de problemas grandes en partes más pequeñas, para poder abordarlos de manera más eficiente.
+En cuanto a herramientas y conocimientos más técnicos, aprendimos a utilizar el método IsMatch de la clase Regex, que nos facilitó el manejo de excepciones cuando los atributos pasados como string no cumplían con las características necesarias, como por ejemplo el uso de números en los nombres o apellidos de los usuarios.
 
-## Dónde encontrar información sobre los errores/avisos al compilar
+### Qué recursos (páginas web, libros, foros, etc) encontraron que les fueron valiosos para sortear los desafíos que encontraron
 
-[C# Compiler Errors (CS*)](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/)
-
-[Roslyn Analyzer Warnings (CA*)](https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/categories)
-
-[StyleCop Analyzer Warnings (SA*)](https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/DOCUMENTATION.md)
-
-# Cómo deshabilitar temporalmente los avisos al compilar
-
-## Roslyn Analyzer
-
-Comentar las siguientes líneas en los archivos de proyecto (`*.csproj`)
-```
-    <EnableNETAnalyzers>true</EnableNETAnalyzers>
-    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
-    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-```
-
-## StyleCop Analyzer
-
-Comentar la línea `<PackageReference Include="StyleCop.Analyzers" Version="1.1.118"/>` en los archivos de proyecto (`*.csproj`)
+Una herramienta que nos resultó más útil de lo que esperábamos fue Trello. A diferencia del semestre pasado, en este proyecto encontramos su uso esencial para organizarnos, dividir tareas y, sobre todo, hacer un seguimiento a los avances del proyecto.
+Otros recursos que consultamos fueron la documentación disponible en la web de la asignatura y las páginas oficiales de .NET. Además, para resolver algunas dudas puntuales, recurrimos a herramientas de inteligencia artificial, principalmente ChatGPT.
