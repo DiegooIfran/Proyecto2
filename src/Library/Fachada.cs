@@ -151,7 +151,7 @@ public class Fachada
     //Ver interacciones con los clientes
     public void VerInteraccionesCliente(string correo)
     {
-        //_vendedor.VerInteracciones(gc.BuscarPorEmail(correo, gc.TotalClientes));
+        gc.BuscarPorEmail(correo, gc.TotalClientes).ObtenerInteracciones();
     }
 
     //Crear un usuario
