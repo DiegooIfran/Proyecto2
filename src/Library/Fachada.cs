@@ -15,14 +15,14 @@ public class Fachada
     
     // Este constructor es interno para que en las pruebas se pueda injectar
     // un mock del repositorio de usuarios en lugar de un repositorio real.
-    /*
+
     internal Fachada(GestorCliente gc)
     {
         ArgumentNullException.ThrowIfNull(gc);
             
         this.gc = gc;
     }
-    */
+
     
     /// <summary>
     /// Obtiene la única instancia de la clase <see cref="Fachada"/>.
@@ -77,9 +77,27 @@ public class Fachada
     }
     
     //Buscar un cliente
-    public void BuscarCliente(string email)
+    public Cliente BuscarEmail(string email)
     {
-        gc.BuscarPorEmail(email);
+        return gc.BuscarPorEmail(email);
+    }
+    
+    //Buscar por nombre
+    public Cliente BuscarNombre(string nombre)
+    {
+        return gc.BuscarPorEmail(nombre);
+    }
+    
+    //Buscar por telefono
+    public Cliente BuscarTelefono(string telefono)
+    {
+        return gc.BuscarPorEmail(telefono);
+    }
+    
+    //Buscar por apellido
+    public Cliente BuscarApellido(string apellido)
+    {
+        return gc.BuscarPorEmail(apellido);
     }
     
     //Ver todos los clientes
