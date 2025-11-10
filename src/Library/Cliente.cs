@@ -111,7 +111,7 @@ public class Cliente : IGestionable
         {
             throw new ArgumentNullException(email);
         }
-        if (Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$")) //Valida que el email solo contenga una arroba y alguas cosas más
+        if (!Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$")) //Valida que el email solo contenga una arroba y alguas cosas más
         {
             throw new ArgumentException(email);
         }
@@ -124,7 +124,7 @@ public class Cliente : IGestionable
         {
             throw new ArgumentNullException(genero);
         }
-        if (Regex.IsMatch(genero, @"^[a-zA-Z ]+$")) //Valida que el nombre solo contenga letras
+        if (!Regex.IsMatch(genero, @"^[a-zA-Z ]+$")) //Valida que el nombre solo contenga letras
         {
             throw new ArgumentException(genero);
         }
