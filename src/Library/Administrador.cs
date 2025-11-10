@@ -1,5 +1,7 @@
 namespace Library;
-
+/// <summary>
+/// Representa un administrador en el sistema
+/// </summary>
 public class Administrador : Usuario, IGestionable
 {
     public Administrador(string nombre, string apellido, string telefono, string email)
@@ -8,12 +10,18 @@ public class Administrador : Usuario, IGestionable
         Singleton<Gestor<Administrador>>.Instance.Agregar(this); // Al crear un administrador lo agrego a la lista global de administradores
     }
     
+    /// <summary>
+    /// Crea nuevos vendedores
+    /// </summary>
     public void CrearVendedor(string nombre, string apellido, string telefono, string email) 
     {
         Vendedor nuevoVendedor = new Vendedor(nombre, apellido, telefono, email);
         Singleton<Gestor<Vendedor>>.Instance.Agregar(nuevoVendedor); //Lama al Singleton GestorVendedores para agregar el nuevo vendedor a la lista
     }
 
+    /// <summary>
+    /// Elimina un vendedor
+    /// </summary>
     public void EliminarVendedor(string email) // Se usa el email porque es único para cada vendedor
     {
         bool existe = false;
@@ -37,6 +45,9 @@ public class Administrador : Usuario, IGestionable
         }
     }
 
+    /// <summary>
+    /// Suspende un vendedor
+    /// </summary>
     public void SuspenderVendedor(string email) 
     {
         bool existe = false;

@@ -1,7 +1,10 @@
 using System.Text.RegularExpressions;
 
 namespace Library;
-
+/// <summary>
+/// Representa un usuario dentro del sistema.
+/// Contiene sus datos personales
+/// </summary>
 public abstract class Usuario : IGestionable
 {
 private string Nombre { get; }
@@ -9,6 +12,16 @@ private string Nombre { get; }
     private string Telefono { get; }
     private string Email { get; }
 
+    /// <summary>
+    /// Constructor de la clase Usuario.
+    /// Valida los datos ingresados antes de asignarlos a las propiedades.
+    /// </summary>
+    /// <param name="nombre">Nombre del usuario.</param>
+    /// <param name="apellido">Apellido del usuario.</param>
+    /// <param name="telefono">Número de teléfono del usuario.</param>
+    /// <param name="email">Correo electrónico del usuario.</param>
+    /// <exception cref="ArgumentNullException">Si alguno de los parámetros es nulo.</exception>
+    /// <exception cref="ArgumentException">Si algún parámetro no cumple con el formato esperado.</exception>
     protected Usuario(string nombre, string apellido, string telefono, string email)
     {
         if (nombre == null)

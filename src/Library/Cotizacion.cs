@@ -1,13 +1,24 @@
 namespace Library;
-// Representa una cotización ofrecida a un cliente.
-// Hereda de Interaccion porque también forma parte del historial de contacto
+/// <summary>
+/// Representa una cotización ofrecida a un cliente.
+/// Hereda de Interaccion porque también forma parte del historial de contacto
+/// </summary>
 public class Cotizacion : Interaccion
 {
     public int Precio { get; private set; }
     public string Estado { get; private set; }
     public Cliente Cliente { get; private set; }
 
-    // Constructor que inicializa una cotización con sus datos principales
+    /// <summary>
+    /// Constructor que inicializa una cotización con sus datos principales
+    /// </summary>
+    /// <param name="fecha"></param>
+    /// <param name="tema"></param>
+    /// <param name="notas"></param>
+    /// <param name="cliente"></param>
+    /// <param name="precio"></param>
+    /// <exception cref="ArgumentNullException"></exception>Si alguno de los parámetros es nulo.
+    /// <exception cref="ArgumentException"></exception>Si el precio es negativo.
     public Cotizacion(DateTime fecha, string tema, string notas, Cliente cliente, int precio)
         : base(fecha, tema, notas)
     {
@@ -29,8 +40,10 @@ public class Cotizacion : Interaccion
         Estado = "Abierta";
     }
     
-    // Cierra la cotización y genera automáticamente una nueva venta 
-    // asociada al cliente
+    /// <summary>
+    /// Cierra la cotización y genera automáticamente una nueva venta 
+    /// asociada al cliente
+    /// </summary>
     public void CerrarVenta()
     {
         Estado = "Cerrada";

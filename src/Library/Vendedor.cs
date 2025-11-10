@@ -1,13 +1,27 @@
 using System.Globalization;
 using System.Runtime.InteropServices;
-
 namespace Library;
-
+/// <summary>
+/// Representa un vendedor del sistema.
+/// Hereda de Usuario y gestiona una lista de clientes asociados,
+/// además de realizar acciones como enviar campañas o generar cotizaciones.
+/// </summary>
 public class Vendedor : Usuario
 {
+    /// <summary>
+    /// Lista de clientes a cargo del vendedor.
+    /// </summary> 
     private List<Cliente> Clientes { get; set; }
+    
+    /// <summary>
+    /// Indica si el vendedor está activo en el sistema.
+    /// </summary>
     public bool Activo { get; set; }
     
+    /// <summary>
+    /// Constructor de la clase Vendedor
+    /// Inicializa el vendedor con sus datos personales, lo marca como activo y crea su lista de clientes.
+    /// </summary>
     public Vendedor(string nombre, string apellido, string telefono, string email) //Constructor de vendedor
         : base(nombre, apellido, telefono, email)
     {
@@ -20,6 +34,11 @@ public class Vendedor : Usuario
         return this.Clientes;
     }
 
+    /// <summary>
+    /// Agrega un cliente a la lista del vendedor, si no está ya incluido.
+    /// </summary>
+    /// <param name="cliente">El cliente a agregar.</param>
+    /// <exception cref="ArgumentNullException">Si el cliente es nulo.</exception>
     public void AgregarCliente(Cliente cliente) //Agregar cliente a la lista
     {
         if (cliente == null) //Valida que el cliente no sea nulo
@@ -41,7 +60,10 @@ public class Vendedor : Usuario
         }
     }
 
-    public void FestejarCumpleanos() //Buscar clientes para decirles feliz cumple
+    /// <summary>
+    /// Envía un mensaje de cumpleaños a los clientes cuya fecha de nacimiento coincide con la fecha actual
+    /// </summary>
+    public void FestejarCumpleanos() 
     {
         foreach (Cliente cliente in Clientes)
         {
@@ -53,6 +75,9 @@ public class Vendedor : Usuario
         }
     }
 
+    /// <summary>
+    /// Crea y envía una campaña publicitaria a todos los clientes que poseen una etiqueta específica
+    /// </summary>
     public void Campana(Etiqueta etiqueta, string anuncio) //Crear un anuncio para clientes especificos
     {
         foreach (Cliente cliente in Clientes)
@@ -65,6 +90,15 @@ public class Vendedor : Usuario
         }
     }
 
+    /// <summary>
+    /// Crea una nueva cotización para un cliente específico, siempre que el cliente pertenezca al vendedor.
+    /// </summary>
+    /// <param name="fecha">Fecha de creación de la cotización.</param>
+    /// <param name="tema">Tema o título de la cotización.</param>
+    /// <param name="notas">Notas adicionales o detalles.</param>
+    /// <param name="cliente">Cliente asociado a la cotización.</param>
+    /// <param name="precio">Monto estimado o precio cotizado.</param>
+    /// <exception cref="ArgumentException">Si el cliente no pertenece al vendedor.</exception>
     public void NuevaCotizacion(DateTime fecha, string tema, string notas, Cliente cliente,
         int precio) //Crear una cotizacion
     {
@@ -98,8 +132,8 @@ public class Vendedor : Usuario
     {
         GestorInteracciones.NuevaReunion(cliente , fecha, tema, notas);
     }
-
-    public void TotalVentas(DateTime fechaInicio, DateTime fechaFinal) //Ver ventas de clientes
+    
+    public void TotalVentas(DateTime fechaInicio, DateTime fechaFinal) 
     {
         foreach (Cliente cliente in Clientes)
         {
@@ -113,7 +147,10 @@ public class Vendedor : Usuario
         }
     }
 
-    public void VerPanel() //Imprimir panel de clientes
+    /// <summary>
+    /// Muestra el panel visual del vendedor con sus datos y clientes asociados
+    /// </summary>
+    public void VerPanel() 
     {
         Panel.ImprimirPanel(this);
     }
