@@ -1,9 +1,20 @@
 namespace Library;
-
+/// <summary>
+/// Clase que gestiona las operaciones relacionadas con los clientes del sistema.
+/// Hereda de Gestor<Cliente> y agrega funcionalidades específicas
+/// como creación, búsqueda, modificación y asignación de clientes a vendedores
+/// </summary>
 public class GestorCliente : Gestor<Cliente>
 {
-    public List<Cliente> TotalClientes { get; set; } //Lista de todos los clientes
+    /// <summary>
+    /// Lista que contiene todos los clientes registrados en el sistema
+    /// </summary>
+    public List<Cliente> TotalClientes { get; set; } 
 
+    /// <summary>
+    /// Constructor del gestor de clientes.
+    /// Inicializa la lista de clientes vacía.
+    /// </summary>
     public GestorCliente() //Constructor del gestor
     {
         this.TotalClientes = new List<Cliente>();
@@ -16,6 +27,10 @@ public class GestorCliente : Gestor<Cliente>
         this.TotalClientes.Add(cliente);
     }
 
+    /// <summary>
+    /// Elimina un cliente de la lista utilizando su dirección de email como identificador
+    /// </summary>
+    /// <param name="email">Correo electrónico del cliente a eliminar.</param>
     public void EliminarCliente(string email) //Elimino un cliente
     {
         foreach (Cliente cliente in this.TotalClientes.ToList())
@@ -127,4 +142,3 @@ public class GestorCliente : Gestor<Cliente>
     }
 }
 
-//Esta clase implementa lo mismo que gestor pero unicamente cuando T es cliente, a su vez se encarga de hacer las busquedas y modificaciones pertinentes ya que es la experta.
