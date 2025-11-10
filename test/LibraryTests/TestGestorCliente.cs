@@ -5,6 +5,8 @@ public class TestGestorCliente
     [SetUp]
     public void Setup()
     {
+        Singleton<GestorCliente>.Instance.VerTotal().Clear();
+
     }
 
     [Test]
