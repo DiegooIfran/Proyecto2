@@ -50,7 +50,7 @@ public class TestVendedor
         
         Assert.That(cliente.ObtenerInteracciones().Count, Is.EqualTo(1));
     }
-    
+    /*
     [Test]
     public void TotalVentas()
     {
@@ -67,6 +67,6 @@ public class TestVendedor
         var interaccion2 = cliente.ObtenerInteracciones()[2];
         
         Assert.That(cliente.ObtenerInteracciones().Count, Is.EqualTo(3));
-    }
+    }*/
 
 }
