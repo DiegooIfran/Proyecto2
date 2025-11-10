@@ -16,13 +16,21 @@ public class Vendedor : Usuario
     }
 
     public List<Cliente> ObtenerClientes() //Obtener clientes
-    {
+    { 
         return this.Clientes;
     }
 
     public void AgregarCliente(Cliente cliente) //Agregar cliente a la lista
     {
-        this.Clientes.Add(cliente);
+        if (cliente == null) //Valida que el cliente no sea nulo
+        {
+            throw new ArgumentNullException(nameof(cliente));
+        }
+
+        if (!Clientes.Contains(cliente))
+        {
+            this.Clientes.Add(cliente);
+        }
     }
     
     public void VerClientes() //Imprimir clientes
@@ -57,10 +65,18 @@ public class Vendedor : Usuario
         }
     }
 
-    public void NuevaCotizacion(DateTime fecha, string tema, string notas, Cliente cliente, int precio) //Crear una cotizacion
+    public void NuevaCotizacion(DateTime fecha, string tema, string notas, Cliente cliente,
+        int precio) //Crear una cotizacion
     {
         Cotizacion nuevaCotizacion = new Cotizacion(DateTime.Now, tema, notas, cliente, precio);
-        cliente.AgregarInteraccion(nuevaCotizacion);
+        if (Clientes.Contains(cliente))
+        {
+            cliente.AgregarInteraccion(nuevaCotizacion);
+        }
+        else
+        {
+            throw new ArgumentException("Cliente no encotrado");
+        }
     }
 
     public void TotalVentas(DateTime fechaInicio, DateTime fechaFinal) //Ver ventas de clientes

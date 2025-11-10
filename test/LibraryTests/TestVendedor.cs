@@ -1,5 +1,4 @@
 using System.Runtime.InteropServices.JavaScript;
-
 namespace Library.Tests;
 
 public class TestVendedor

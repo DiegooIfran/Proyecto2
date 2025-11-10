@@ -1,6 +1,6 @@
 namespace Library;
 
-public class GestorCliente
+public class GestorCliente : Gestor<Cliente>
 {
     public List<Cliente> TotalClientes { get; set; } //Lista de todos los clientes
 
@@ -34,26 +34,47 @@ public class GestorCliente
 
     public void AsignarCliente(Vendedor vendedor, Cliente cliente) //Le asigno un cliente a otro vendedor
     {
+        if (vendedor == null) //Valida que el vendedor no sea nulo
+        {throw new ArgumentNullException(nameof(vendedor));} 
+        if (cliente == null) //Valida que el cliente no sea nulo
+        {throw new ArgumentNullException(nameof(cliente));}
         vendedor.AgregarCliente(cliente);
+        
     }
 
     public void ModificarNombre(string nombre, Cliente cliente) //Modifico el nombre de un cliente
     {
+        if (cliente == null) //Valida que el cliente no sea nulo
+        {
+            throw new ArgumentNullException(nameof(cliente));
+        }
         cliente.CambiarNombre(nombre);
     }
 
     public void ModificarApellido(string apellido, Cliente cliente) //Modifico el apellido de un cliente
     {
+        if (cliente == null) //Valida que el cliente no sea nulo
+        {
+            throw new ArgumentNullException(nameof(cliente));
+        }
         cliente.CambiarApellido(apellido);
     }
 
     public void ModificarTelefono(string telefono, Cliente cliente) //Modifico el telefono de un cliente
     {
+        if (cliente == null) //Valida que el cliente no sea nulo
+        {
+            throw new ArgumentNullException(nameof(cliente));
+        }
         cliente.CambiarTelefono(telefono);
     }
 
     public void ModificarEmail(string email, Cliente cliente) //Modifico el email de un cliente
     {
+        if (cliente == null) //Valida que el cliente no sea nulo
+        {
+            throw new ArgumentNullException(nameof(cliente));
+        }
         cliente.CambiarEmail(email);
     }
 
@@ -62,12 +83,10 @@ public class GestorCliente
         foreach (Cliente cliente in clientes)
         {
             if (nombre == cliente.ObtenerNombre())
-                
             {
                 return cliente;
             }
         }
-
         throw new InvalidOperationException("No se encontró ningún cliente con ese nombre.");
     }
 
@@ -80,7 +99,6 @@ public class GestorCliente
                 return cliente;
             }
         }
-
         throw new InvalidOperationException("No se encontró ningún cliente con ese apellido.");
     }
 
@@ -93,7 +111,6 @@ public class GestorCliente
                 return cliente;
             }
         }
-
         throw new InvalidOperationException("No se encontró ningún cliente con ese telefono.");
     }
 
@@ -106,7 +123,8 @@ public class GestorCliente
                 return cliente;
             }
         }
-
         throw new InvalidOperationException("No se encontró ningún cliente con ese email.");
     }
 }
+
+//Esta clase implementa lo mismo que gestor pero unicamente cuando T es cliente, a su vez se encarga de hacer las busquedas y modificaciones pertinentes ya que es la experta.

@@ -4,6 +4,10 @@ namespace Library
     {
         public static void VerCorreo(Cliente cliente)
         {
+            if (cliente == null) //Valida que el cliente no sea nulo
+            {
+                throw new ArgumentNullException(nameof(cliente));
+            }
             Console.WriteLine($"Correos del cliente {cliente.ObtenerNombre()}:");
 
             bool hayCorreos = false;
@@ -27,6 +31,10 @@ namespace Library
 
         public static void VerReunion(Cliente cliente)
         {
+            if (cliente == null) //Valida que el cliente no sea nulo
+            {
+                throw new ArgumentNullException(nameof(cliente));
+            }
             Console.WriteLine($"Reuniones del cliente {cliente.ObtenerNombre()}:");
 
             bool hayReuniones = false;
@@ -50,6 +58,10 @@ namespace Library
 
         public static void VerMensaje(Cliente cliente)
         {
+            if (cliente == null) //Valida que el cliente no sea nulo
+            {
+                throw new ArgumentNullException(nameof(cliente));
+            }
             Console.WriteLine($"Mensajes del cliente {cliente.ObtenerNombre()}:");
 
             bool hayMensajes = false;
@@ -73,6 +85,10 @@ namespace Library
 
         public static void VerLlamadas(Cliente cliente)
         {
+            if (cliente == null) //Valida que el cliente no sea nulo
+            {
+                throw new ArgumentNullException(nameof(cliente));
+            }
             Console.WriteLine($"Llamadas del cliente {cliente.ObtenerNombre()}:");
 
             bool hayLlamadas = false;
