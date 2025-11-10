@@ -173,21 +173,21 @@ public class Fachada
     }
 
     //Crear un usuario
-    public void CrearUsuario(string nombre, string apellido, string telefono, string email)
+    public void CrearVendedor(string nombre, string apellido, string telefono, string email, Administrador admin)
     {
-        Vendedor vendedor = new Vendedor(nombre, apellido, telefono, email);
+        admin.CrearVendedor(nombre,  apellido, telefono, email);
     }
     
     //Suspender un usuario
-    public void SuspenderUsuario(string email)
+    public void SuspenderUsuario(string email, Administrador admin)
     {
-        //admin.GestorVendedor().SuspenderVendedor(email);
+        admin.SuspenderVendedor(email);
     }
     
     //Eliminar un usuario
-    public void EliminarUsuario(string email)
+    public void EliminarUsuario(string email, Administrador admin)
     {
-        //admin.GestorVendedor().EliminarVendedor(email);
+        admin.EliminarVendedor(email);
     }
     
     //Asignar un cliente a otro vendedor
