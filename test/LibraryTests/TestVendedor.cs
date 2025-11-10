@@ -50,7 +50,7 @@ public class TestVendedor
         
         Assert.That(cliente.ObtenerInteracciones().Count, Is.EqualTo(1));
     }
-    /*
+    
     [Test]
     public void TotalVentas()
     {
@@ -61,12 +61,12 @@ public class TestVendedor
         vendedor.NuevaCotizacion(DateTime.Today,"Pelotas","Comprar 10 pelotas", cliente, 5000);
         vendedor.NuevaCotizacion(DateTime.Today,"Guantes","Comprar 2 pares de guantes", cliente, 1000);
         vendedor.NuevaCotizacion(DateTime.Today,"Arcos","Comprar 2 arcos", cliente, 3000);
+
+        Cotizacion interaccion0 = cliente.ObtenerInteracciones()[0];
+        var interaccion1 = cliente.ObtenerInteracciones()[1];
+        var interaccion2 = cliente.ObtenerInteracciones()[2];
         
-        cliente.ObtenerCotizaciones()[0].CerrarVenta();
-        cliente.ObtenerCotizaciones()[1].CerrarVenta();
-        cliente.ObtenerCotizaciones()[2].CerrarVenta();
-        
-        Assert.That(cliente.ObtenerCompras().Count, Is.EqualTo(3));
-    }*/
+        Assert.That(cliente.ObtenerInteracciones().Count, Is.EqualTo(3));
+    }
 
 }

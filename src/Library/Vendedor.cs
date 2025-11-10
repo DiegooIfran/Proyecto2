@@ -75,7 +75,7 @@ public class Vendedor : Usuario
         }
         else
         {
-            throw new ArgumentException("Cliente no encotrado");
+            throw new ArgumentException("Cliente no encontrado");
         }
     }
     
