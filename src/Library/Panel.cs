@@ -8,7 +8,7 @@ public static class Panel
         
         // total de clientes
         var clientes = vendedor.ObtenerClientes();
-        panel+=$"Clientes totales: {clientes.Count}";
+        panel+=$"Clientes totales: {clientes.Count}\n";
 
         //interacciones recientes de todos los clientes
         List<Interaccion> todasLasInteracciones = new();
@@ -22,14 +22,14 @@ public static class Panel
 
         if (todasLasInteracciones.Count == 0)
         {
-            panel+="No hay interacciones registradas\n";
+            panel+=$"No hay interacciones registradas\n";
         }
         else
         {
             // Ordeno por fecha descendente
             todasLasInteracciones.Sort((a, b) => b.ObtenerFecha().CompareTo(a.ObtenerFecha()));
 
-            panel+="Interacciones recientes:\n";
+            panel+=$"\nInteracciones recientes:\n";
             int mostradas = 0;
             foreach (var interaccion in todasLasInteracciones)
             {
@@ -41,7 +41,7 @@ public static class Panel
         
 
         // reuniones próximas (usando BuscadorInteracciones)
-        panel+="\nPróximas reuniones:\n";
+        panel+=$"\nPróximas reuniones:\n";
 
         bool hayReuniones = false;
 
@@ -53,7 +53,7 @@ public static class Panel
 
         if (!hayReuniones)
         {
-            panel+="No hay reuniones próximas.";
+            panel+=$"No hay reuniones próximas.";
         }
         return panel;
     }

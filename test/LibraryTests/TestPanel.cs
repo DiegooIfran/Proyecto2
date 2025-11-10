@@ -20,39 +20,21 @@ public class TestPanel
         [Test]
         public void TestImprimirPanel_MuestraClientesEInteracciones()
         {
-            // Arrange
             Vendedor vendedor = CrearVendedorConClientes();
-            var sw = new StringWriter();
-            Console.SetOut(sw);
-
-            // Act
-            Panel.ImprimirPanel(vendedor);
-            string output = sw.ToString();
-
-            // Assert
-            StringAssert.Contains("Panel del vendedor: Juan", output);
-            StringAssert.Contains("Clientes totales: 1", output);
-            StringAssert.Contains("Interacciones recientes:", output);
-            StringAssert.Contains("Reunion: Kickoff", output);
-            StringAssert.Contains("Correo: Oferta", output);
-            StringAssert.Contains("Próximas reuniones:", output);
+            
+            string panel = Panel.ImprimirPanel(vendedor);
+            Console.WriteLine(panel);
+            Assert.That(panel, Is.EqualTo("Panel del vendedor: Juan\nClientes totales: 1\n\nInteracciones recientes:\n Reunion: Kickoff 10/11/2025\n Correo: Oferta 9/11/2025\n\nPróximas reuniones:\n"));
+        
         }
 
         [Test]
         public void TestImprimirPanel_SinClientes_MuestraMensajeAdecuado()
         {
-            // Arrange
             Vendedor vendedor = new Vendedor("Ana", "Rodriguez", "096123456", "anarod@mail.com"); 
-            var sw = new StringWriter();
-            Console.SetOut(sw);
-
-            // Act
-            Panel.ImprimirPanel(vendedor);
-            string output = sw.ToString();
-
-            // Assert
-            StringAssert.Contains("Panel del vendedor: Ana", output);
-            StringAssert.Contains("Clientes totales: 0", output);
-            StringAssert.Contains("No hay interacciones registradas", output);
+            
+            string panel = Panel.ImprimirPanel(vendedor);
+            Console.WriteLine(panel);
+            Assert.That(panel, Is.EqualTo("Panel del vendedor: Ana\nClientes totales: 0\nNo hay interacciones registradas\n\nPróximas reuniones:\nNo hay reuniones próximas."));
         }
     }
