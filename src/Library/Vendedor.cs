@@ -78,6 +78,26 @@ public class Vendedor : Usuario
             throw new ArgumentException("Cliente no encotrado");
         }
     }
+    
+    public void NuevaLlamada(Cliente cliente, DateTime fecha, string tema, string notas, bool enviada)
+    {
+        GestorInteracciones.NuevaLlamada(cliente , fecha, tema, notas, enviada);
+    }
+    
+    public void NuevoMensaje(Cliente cliente, DateTime fecha, string tema, string notas, bool enviada)
+    {
+        GestorInteracciones.NuevoMensaje(cliente , fecha, tema, notas, enviada);
+    }
+    
+    public void NuevoCorreo(Cliente cliente, DateTime fecha, string tema, string notas, bool enviada)
+    {
+        GestorInteracciones.NuevoCorreo(cliente , fecha, tema, notas, enviada);
+    }
+    
+    public void NuevaReunion(Cliente cliente, DateTime fecha, string tema, string notas)
+    {
+        GestorInteracciones.NuevaReunion(cliente , fecha, tema, notas);
+    }
 
     public void TotalVentas(DateTime fechaInicio, DateTime fechaFinal) //Ver ventas de clientes
     {
