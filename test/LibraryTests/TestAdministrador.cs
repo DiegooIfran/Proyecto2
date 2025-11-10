@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace Library.Tests;
 
 public class TestAdministrador
@@ -5,14 +7,16 @@ public class TestAdministrador
     [SetUp]
     public void Setup()
     {
+        Singleton<Gestor<Administrador>>.Instance.VerTotal().Clear();
+        Singleton<Gestor<Vendedor>>.Instance.VerTotal().Clear();
     }
     
     [Test]
     public void CrearVendedores() // Que un admin cree un vendedor y lo almacene
     {
+        Gestor<Vendedor> gestor = Singleton<Gestor<Vendedor>>.Instance;
         Administrador admin = new Administrador("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com");
         admin.CrearVendedor("Federico", "Garcia", "231231", "fedegarcia@gmail.com");
-        Gestor<Administrador> gestor = Singleton<Gestor<Administrador>>.Instance;
         Assert.AreEqual(1, gestor.VerTotal().Count);
         Assert.AreEqual("Federico", gestor.VerTotal()[0].ObtenerNombre());
     }
@@ -30,10 +34,10 @@ public class TestAdministrador
     [Test]
     public void EliminarVendedores() // Elimino a un vendedor
     {
+        Gestor<Vendedor> gestor = Singleton<Gestor<Vendedor>>.Instance;
         Administrador admin = new Administrador("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com");
         admin.CrearVendedor("Federico", "Garcia", "231231", "fedegarcia@gmail.com");
         admin.EliminarVendedor("fedegarcia@gmail.com");
-        Gestor<Vendedor> gestor = Singleton<Gestor<Vendedor>>.Instance;
         Assert.AreEqual(0, gestor.VerTotal().Count);
     }
 }
