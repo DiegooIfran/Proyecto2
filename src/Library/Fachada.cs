@@ -175,7 +175,7 @@ public class Fachada
     //Asignar un cliente a otro vendedor
     public void AsignarCliente(Vendedor vendedor, string correo)
     {
-        //_vendedor.GestorCliente().AsignarCliente(vendedor, gc.BuscarPorEmail(correo, gc.TotalClientes));
+        gc.AsignarCliente(_vendedor, gc.BuscarPorEmail(correo, gc.TotalClientes));
     }
     
     public void VerPanel()
