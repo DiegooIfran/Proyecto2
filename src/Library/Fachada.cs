@@ -49,37 +49,37 @@ public class Fachada
     //Modificar nombre de un cliente
     public void ModificarNombre(string email, string nombreNuevo)
     {
-        gc.BuscarPorEmail(email, gc.TotalClientes).CambiarNombre(nombreNuevo);
+        gc.BuscarPorEmail(email).CambiarNombre(nombreNuevo);
     }
     
     //Modificar apellido de un cliente
     public void ModificarApellido(string email, string apellidoNuevo)
     {
-        gc.BuscarPorEmail(email, gc.TotalClientes).CambiarApellido(apellidoNuevo);
+        gc.BuscarPorEmail(email).CambiarApellido(apellidoNuevo);
     }
     
     //Modificar telefono de un cliente
     public void ModificarTelefono(string email, string telefonoNuevo)
     {
-        gc.BuscarPorEmail(email, gc.TotalClientes).CambiarTelefono(telefonoNuevo);
+        gc.BuscarPorEmail(email).CambiarTelefono(telefonoNuevo);
     }
     
     //Modificar email de un cliente
     public void ModificarEmail(string email, string emailNuevo)
     {
-        gc.BuscarPorEmail(email, gc.TotalClientes).CambiarEmail(emailNuevo);
+        gc.BuscarPorEmail(email).CambiarEmail(emailNuevo);
     }
 
     //Eliminar un cliente
     public void EliminarCliente(string email)
     {
-        gc.EliminarCliente(email);
+        gc.Eliminar(gc.BuscarPorEmail(email));
     }
     
     //Buscar un cliente
     public void BuscarCliente(string email)
     {
-        gc.BuscarPorEmail(email, gc.TotalClientes);
+        gc.BuscarPorEmail(email);
     }
     
     //Ver todos los clientes
@@ -121,7 +121,7 @@ public class Fachada
     //Agregar etiqueta a un cliente
     public void AgregarEtiqueta(string correo, Etiqueta etiqueta)
     {
-        etiqueta.AgregarEtiqueta(gc.BuscarPorEmail(correo, gc.TotalClientes));
+        etiqueta.AgregarEtiqueta(gc.BuscarPorEmail(correo));
     }
     
     //Realizar campaña publicitaria
@@ -133,13 +133,13 @@ public class Fachada
     //Realizar cotizacion de un producto (tema especifica un producto)
     public void RealizarCotizacion(DateTime fecha, string tema, string notas, string correo, int precio)
     {
-        _vendedor.NuevaCotizacion(fecha, tema, notas, gc.BuscarPorEmail(correo, gc.TotalClientes), precio);
+        _vendedor.NuevaCotizacion(fecha, tema, notas, gc.BuscarPorEmail(correo), precio);
     }
     
     //Realizar venta de una cotizacion previa (tema especifica un producto)
     public void RealizarVenta(string correo, string tema)
     {
-        foreach (Cotizacion interaccion in gc.BuscarPorEmail(correo, gc.TotalClientes).ObtenerInteracciones())
+        foreach (Cotizacion interaccion in gc.BuscarPorEmail(correo).ObtenerInteracciones())
         {
             if (interaccion.ObtenerTema() == tema)
             {
@@ -151,7 +151,7 @@ public class Fachada
     //Ver interacciones con los clientes
     public void VerInteraccionesCliente(string correo)
     {
-        gc.BuscarPorEmail(correo, gc.TotalClientes).ObtenerInteracciones();
+        gc.BuscarPorEmail(correo).ObtenerInteracciones();
     }
 
     //Crear un usuario
@@ -175,7 +175,7 @@ public class Fachada
     //Asignar un cliente a otro vendedor
     public void AsignarCliente(Vendedor vendedor, string correo)
     {
-        gc.AsignarCliente(_vendedor, gc.BuscarPorEmail(correo, gc.TotalClientes));
+        gc.AsignarCliente(_vendedor, gc.BuscarPorEmail(correo));
     }
     
     public void VerPanel()

@@ -2,36 +2,18 @@ namespace Library;
 
 public class GestorCliente : Gestor<Cliente>
 {
-    public List<Cliente> TotalClientes { get; set; } //Lista de todos los clientes
 
     public GestorCliente() //Constructor del gestor
     {
-        this.TotalClientes = new List<Cliente>();
     }
 
     public void AgregarCliente(string name, string apellido, string telefono, string email, string genero,
         DateTime fechaNacimiento) //Creo un cliente
     {
         Cliente cliente = new Cliente(name, apellido, telefono, email, genero, fechaNacimiento);
-        this.TotalClientes.Add(cliente);
+        this.Agregar(cliente); 
     }
-
-    public void EliminarCliente(string email) //Elimino un cliente
-    {
-        foreach (Cliente cliente in this.TotalClientes.ToList())
-        {
-            if (cliente.ObtenerEmail() == email)
-            {
-                this.TotalClientes.Remove(cliente);
-            }
-        }
-    }
-
-    public List<Cliente> VerTotalClientes() //Devuelvo una lista con todos los clientes
-    {
-        return this.TotalClientes;
-    }
-
+    
     public void AsignarCliente(Vendedor vendedor, Cliente cliente) //Le asigno un cliente a otro vendedor
     {
         if (vendedor == null) //Valida que el vendedor no sea nulo
@@ -78,9 +60,9 @@ public class GestorCliente : Gestor<Cliente>
         cliente.CambiarEmail(email);
     }
 
-    public Cliente BuscarPorNombre(string nombre, List<Cliente> clientes) //Busco un cliente por nombre
+    public Cliente BuscarPorNombre(string nombre) //Busco un cliente por nombre
     {
-        foreach (Cliente cliente in clientes)
+        foreach (Cliente cliente in this.VerTotal())
         {
             if (nombre == cliente.ObtenerNombre())
             {
@@ -90,9 +72,9 @@ public class GestorCliente : Gestor<Cliente>
         throw new InvalidOperationException("No se encontró ningún cliente con ese nombre.");
     }
 
-    public Cliente BuscarPorApellido(string apellido, List<Cliente> clientes) //Busco un cliente por apellido
+    public Cliente BuscarPorApellido(string apellido) //Busco un cliente por apellido
     {
-        foreach (Cliente cliente in clientes)
+        foreach (Cliente cliente in this.VerTotal())
         {
             if (apellido == cliente.ObtenerApellido())
             {
@@ -102,9 +84,9 @@ public class GestorCliente : Gestor<Cliente>
         throw new InvalidOperationException("No se encontró ningún cliente con ese apellido.");
     }
 
-    public Cliente BuscarPorTelefono(string telefono, List<Cliente> clientes) //Busco un cliente por telefono
+    public Cliente BuscarPorTelefono(string telefono) //Busco un cliente por telefono
     {
-        foreach (Cliente cliente in clientes)
+        foreach (Cliente cliente in this.VerTotal())
         {
             if (telefono == cliente.ObtenerTelefono())
             {
@@ -114,9 +96,9 @@ public class GestorCliente : Gestor<Cliente>
         throw new InvalidOperationException("No se encontró ningún cliente con ese telefono.");
     }
 
-    public Cliente BuscarPorEmail(string email, List<Cliente> clientes) //Busco un cliente por email
+    public Cliente BuscarPorEmail(string email) //Busco un cliente por email
     {
-        foreach (Cliente cliente in clientes)
+        foreach (Cliente cliente in this.VerTotal())
         {
             if (email == cliente.ObtenerEmail())
             {
