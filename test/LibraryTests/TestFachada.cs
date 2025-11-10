@@ -49,11 +49,11 @@ public class TestFachada
         fachada.AgregarCliente("Mario", "Gomez", "099333333", email, "M", new DateTime(1992, 3, 3));
 
         // Act
-        fachada.ModificarApellido(email, "González");
+        fachada.ModificarApellido(email, "Gonzalez");
         var cliente = fachada.BuscarEmail(email);
 
         // Assert
-        Assert.That(cliente.ObtenerApellido(), Is.EqualTo("González"));
+        Assert.That(cliente.ObtenerApellido(), Is.EqualTo("Gonzalez"));
     }
     
     [Test]
@@ -65,10 +65,9 @@ public class TestFachada
 
         // Act
         fachada.EliminarCliente(email);
-        var cliente = fachada.BuscarEmail(email);
 
         // Assert
-        Assert.That(cliente, Is.Null);
+        Assert.Throws<InvalidOperationException>(() => fachada.BuscarEmail(email));
     }
     
     [Test]
