@@ -131,7 +131,7 @@ public class Fachada
     }
     
     //Realizar cotizacion de un producto (tema especifica un producto)
-    public void RealizarCotizacion(DateTime fecha, string tema, string notas, string correo, int precio)
+    public void RealizarCotizacion(string correo, DateTime fecha, string tema, string notas, int precio)
     {
         _vendedor.NuevaCotizacion(fecha, tema, notas, gc.BuscarPorEmail(correo, gc.TotalClientes), precio);
     }
