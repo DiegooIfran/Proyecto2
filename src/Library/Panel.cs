@@ -2,7 +2,7 @@ namespace Library;
 
 public static class Panel
 {
-    public static void ImprimirPanel(Vendedor vendedor)
+    public static string ImprimirPanel(Vendedor vendedor)
     {
         string panel = $"Panel del vendedor: {vendedor.ObtenerNombre()}\n";
         
@@ -55,6 +55,6 @@ public static class Panel
         {
             panel+="No hay reuniones próximas.";
         }
-
+        return panel;
     }
 }
