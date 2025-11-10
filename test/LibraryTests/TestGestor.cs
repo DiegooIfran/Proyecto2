@@ -8,6 +8,8 @@ namespace Library.Tests
         [SetUp]
         public void Setup()
         {
+            Singleton<Gestor<Cliente>>.Instance.VerTotal().Clear();
+
         }
 
         [Test]

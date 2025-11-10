@@ -30,19 +30,19 @@ private string Nombre { get; }
         {
             throw new ArgumentNullException(email);
         }
-        if (Regex.IsMatch(nombre, @"^[a-zA-Z ]+$")) //Valida que el nombre solo contenga letras
+        if (!Regex.IsMatch(nombre, @"^[a-zA-Z ]+$")) //Valida que el nombre solo contenga letras
         {
             throw new ArgumentException(nombre);
         }
-        if (Regex.IsMatch(apellido, @"^[a-zA-Z ]+$")) //Valida que el apellido solo contenga letras
+        if (!Regex.IsMatch(apellido, @"^[a-zA-Z ]+$")) //Valida que el apellido solo contenga letras
         {
             throw new ArgumentException(apellido);
         }
-        if (Regex.IsMatch(telefono, @"^[0-9 +]+$")) //Valida que el teléfono solo contenga números o +
+        if (!Regex.IsMatch(telefono, @"^[0-9 +]+$")) //Valida que el teléfono solo contenga números o +
         {
             throw new ArgumentException(telefono);
         }
-        if (Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$")) //Valida que el email solo contenga una arroba y alguas cosas más
+        if (!Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$")) //Valida que el email solo contenga una arroba y alguas cosas más
         {
             throw new ArgumentException(email);
         }

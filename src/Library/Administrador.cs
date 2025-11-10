@@ -17,11 +17,11 @@ public class Administrador : Usuario, IGestionable
     public void EliminarVendedor(string email) // Se usa el email porque es único para cada vendedor
     {
         bool existe = false;
-        foreach (var vendedor in Singleton<Gestor<Vendedor>>.Instance.VerTotal())//Recorre los la lista de vendedores
+        for (int i = 0; i < Singleton<Gestor<Vendedor>>.Instance.VerTotal().Count; i++)//Recorre los la lista de vendedores
         {
-            if (vendedor.ObtenerEmail()== email)//Cuando el email del vendedor coincide con la string que se pasó se elimina el vendedor
+            if (Singleton<Gestor<Vendedor>>.Instance.VerTotal()[i].ObtenerEmail()== email)//Cuando el email del vendedor coincide con la string que se pasó se elimina el vendedor
             {
-                Singleton<Gestor<Vendedor>>.Instance.Eliminar(vendedor);
+                Singleton<Gestor<Vendedor>>.Instance.Eliminar((Singleton<Gestor<Vendedor>>.Instance.VerTotal()[i]));
                 existe = true;
             }
         }
