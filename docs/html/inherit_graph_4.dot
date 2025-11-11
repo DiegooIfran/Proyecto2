@@ -1,0 +1,26 @@
+digraph "Graphical Class Hierarchy"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [id="Node000000",label="Library.Interaccion",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Interaccion.html",tooltip="Clase abstracta base que representa una interacción con el cliente. Sirve como clase padre para disti..."];
+  Node0 -> Node1 [id="edge7_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="Library.Cotizacion",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Cotizacion.html",tooltip="Representa una cotización ofrecida a un cliente. Hereda de Interaccion porque también forma parte del..."];
+  Node0 -> Node2 [id="edge8_Node000000_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Library.Online",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Online.html",tooltip="Clase abstracta que representa una interacción digital entre el sistema y un cliente...."];
+  Node2 -> Node3 [id="edge9_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Library.Correo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Correo.html",tooltip="Representa una interacción de tipo correo electrónico dentro del sistema. Hereda de Online,..."];
+  Node2 -> Node4 [id="edge10_Node000002_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Library.Llamadas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Llamadas.html",tooltip="Representa una interacción de tipo llamada telefónica dentro del sistema. Hereda de Online ya que se ..."];
+  Node2 -> Node5 [id="edge11_Node000002_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Library.Mensaje",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Mensaje.html",tooltip="Representa una interacción de tipo mensaje dentro del sistema. Hereda de Online, ya que es una comuni..."];
+  Node0 -> Node6 [id="edge12_Node000000_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="Library.Presencial",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Presencial.html",tooltip="Representa una interacción presencial entre el sistema (o vendedor) y un cliente. Hereda de Interacci..."];
+  Node6 -> Node7 [id="edge13_Node000006_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="Library.Reunion",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Reunion.html",tooltip="Representa una reunión presencial entre un cliente y un vendedor o representante del sistema...."];
+  Node0 -> Node8 [id="edge14_Node000000_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="Library.Venta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Venta.html",tooltip="Representa una venta registrada como una interacción con el cliente."];
+}
