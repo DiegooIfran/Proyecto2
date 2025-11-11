@@ -1,11 +1,15 @@
 namespace Library;
-
+/// <summary>
+/// Clase estática que gestiona todas las interacciones entre el sistema y los clientes.
+/// Permite crear nuevas interacciones (mensajes, llamadas, correos y reuniones),
+/// registrar las existentes y obtener información sobre ellas.
+/// </summary>
 public static class GestorInteracciones
 {
-    private static List<Interaccion> _todasInteracciones = new List<Interaccion>(); //Creo una lista para ver todas las interacciones
-    public static void NuevoMensaje(Cliente cliente, DateTime fecha, string tema, string notas, bool enviada) //Creo un nuevo mensaje
+    private static List<Interaccion> _todasInteracciones = new List<Interaccion>(); 
+    public static void NuevoMensaje(Cliente cliente, DateTime fecha, string tema, string notas, bool enviada) 
     {
-        if (cliente == null) //Valida que el cliente no sea nulo
+        if (cliente == null) 
         {
             throw new ArgumentNullException(nameof(cliente));
         }
@@ -13,9 +17,9 @@ public static class GestorInteracciones
         cliente.AgregarInteraccion(mensaje);
         _todasInteracciones.Add(mensaje);
     }
-    public static void NuevaLlamada(Cliente cliente, DateTime fecha, string tema, string notas, bool enviada) //Creo una nueva llamada
+    public static void NuevaLlamada(Cliente cliente, DateTime fecha, string tema, string notas, bool enviada) 
     {
-        if (cliente == null) //Valida que el cliente no sea nulo
+        if (cliente == null) 
         {
             throw new ArgumentNullException(nameof(cliente));
         }
@@ -23,9 +27,9 @@ public static class GestorInteracciones
         cliente.AgregarInteraccion(llamada);
         _todasInteracciones.Add(llamada);
     }
-    public static void NuevoCorreo(Cliente cliente, DateTime fecha, string tema, string notas, bool enviada) //Creo un nuevo correo
+    public static void NuevoCorreo(Cliente cliente, DateTime fecha, string tema, string notas, bool enviada) 
     {
-        if (cliente == null) //Valida que el cliente no sea nulo
+        if (cliente == null) 
         {
             throw new ArgumentNullException(nameof(cliente));
         }
@@ -33,9 +37,9 @@ public static class GestorInteracciones
         cliente.AgregarInteraccion(correo);
         _todasInteracciones.Add(correo);
     }
-    public static void NuevaReunion(Cliente cliente, DateTime fecha, string tema, string notas) //Creo una nueva reunion
+    public static void NuevaReunion(Cliente cliente, DateTime fecha, string tema, string notas)
     {
-        if (cliente == null) //Valida que el cliente no sea nulo
+        if (cliente == null) 
         {
             throw new ArgumentNullException(nameof(cliente));
         }
@@ -43,18 +47,25 @@ public static class GestorInteracciones
         cliente.AgregarInteraccion(reunion);
         _todasInteracciones.Add(reunion);
     }
-
-    public static List<Interaccion> UltimasInteracciones() //Devuelvo una lista de las ultimas interacciones
+    /// <summary>
+    /// Devuelve las cinco interacciones más recientes registradas en el sistema
+    /// </summary>
+    public static List<Interaccion> UltimasInteracciones() 
     {
         return _todasInteracciones
-            .OrderByDescending(i => i.Fecha) //Ordena por fecha
-            .Take(5) //Toma 5
+            .OrderByDescending(i => i.Fecha) 
+            .Take(5) 
             .ToList();
     }
-
-    public static void VerInteracciones(Cliente cliente) //Imprimo todas las interacciones
+    
+    /// <summary>
+    /// Muestra todas las interacciones de un cliente específico
+    /// </summary>
+    /// <param name="cliente">Cliente cuyas interacciones se desean ver</param>
+    /// <exception cref="ArgumentNullException">Si el cliente es nulo</exception>
+    public static void VerInteracciones(Cliente cliente)
     {
-        if (cliente == null) //Valida que el cliente no sea nulo
+        if (cliente == null) 
         {
             throw new ArgumentNullException(nameof(cliente));
         }
@@ -64,11 +75,16 @@ public static class GestorInteracciones
         }
     }
 
-    public static List<Online> InteraccionesPendientes() //Devuelvo una lista de interacciones pendientes
+    /// <summary>
+    /// Devuelve una lista de interacciones en línea (mensajes, correos, llamadas)
+    /// que fueron enviadas pero aún no respondidas.
+    /// </summary>
+    /// <returns>Lista de interacciones pendientes de respuesta</returns>
+    public static List<Online> InteraccionesPendientes() 
     {
         return _todasInteracciones
-            .OfType<Online>() // Solo queremos las de tipo Mensaje, Correo, Llamada
-            .Where(ic => ic.ObtenerEnviada() && !ic.ObtenerRespondido()) // Filtra las enviadas pero no respondidas
+            .OfType<Online>() 
+            .Where(ic => ic.ObtenerEnviada() && !ic.ObtenerRespondido()) 
             .ToList();
     }
 }

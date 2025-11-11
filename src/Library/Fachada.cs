@@ -162,6 +162,7 @@ public class Fachada
             if (cotizacion.ObtenerTema() == tema)
             {
                 cotizacion.CerrarVenta();
+                break;
             }
         }
     }

@@ -1,66 +1,70 @@
 namespace Library;
-
+/// <summary>
+/// Clase que gestiona las operaciones relacionadas con los clientes del sistema.
+/// Hereda de <see cref="Gestor{Cliente}"/> y agrega funcionalidades específicas
+/// como creación, búsqueda, modificación y asignación de clientes a vendedores.
+/// </summary>
 public class GestorCliente : Gestor<Cliente>
 {
 
-    public GestorCliente() //Constructor del gestor
+    public GestorCliente() 
     {
     }
 
     public void AgregarCliente(string name, string apellido, string telefono, string email, string genero,
-        DateTime fechaNacimiento) //Creo un cliente
+        DateTime fechaNacimiento) 
     {
         Cliente cliente = new Cliente(name, apellido, telefono, email, genero, fechaNacimiento);
         this.Agregar(cliente); 
     }
     
-    public void AsignarCliente(Vendedor vendedor, Cliente cliente) //Le asigno un cliente a otro vendedor
+    public void AsignarCliente(Vendedor vendedor, Cliente cliente) 
     {
-        if (vendedor == null) //Valida que el vendedor no sea nulo
+        if (vendedor == null) 
         {throw new ArgumentNullException(nameof(vendedor));} 
-        if (cliente == null) //Valida que el cliente no sea nulo
+        if (cliente == null) 
         {throw new ArgumentNullException(nameof(cliente));}
         vendedor.AgregarCliente(cliente);
         
     }
 
-    public void ModificarNombre(string nombre, Cliente cliente) //Modifico el nombre de un cliente
+    public void ModificarNombre(string nombre, Cliente cliente) 
     {
-        if (cliente == null) //Valida que el cliente no sea nulo
+        if (cliente == null)
         {
             throw new ArgumentNullException(nameof(cliente));
         }
         cliente.CambiarNombre(nombre);
     }
 
-    public void ModificarApellido(string apellido, Cliente cliente) //Modifico el apellido de un cliente
+    public void ModificarApellido(string apellido, Cliente cliente) 
     {
-        if (cliente == null) //Valida que el cliente no sea nulo
+        if (cliente == null) 
         {
             throw new ArgumentNullException(nameof(cliente));
         }
         cliente.CambiarApellido(apellido);
     }
 
-    public void ModificarTelefono(string telefono, Cliente cliente) //Modifico el telefono de un cliente
+    public void ModificarTelefono(string telefono, Cliente cliente) 
     {
-        if (cliente == null) //Valida que el cliente no sea nulo
+        if (cliente == null) 
         {
             throw new ArgumentNullException(nameof(cliente));
         }
         cliente.CambiarTelefono(telefono);
     }
 
-    public void ModificarEmail(string email, Cliente cliente) //Modifico el email de un cliente
+    public void ModificarEmail(string email, Cliente cliente) 
     {
-        if (cliente == null) //Valida que el cliente no sea nulo
+        if (cliente == null) 
         {
             throw new ArgumentNullException(nameof(cliente));
         }
         cliente.CambiarEmail(email);
     }
 
-    public Cliente BuscarPorNombre(string nombre) //Busco un cliente por nombre
+    public Cliente BuscarPorNombre(string nombre) 
     {
         foreach (Cliente cliente in this.VerTotal())
         {
@@ -72,7 +76,7 @@ public class GestorCliente : Gestor<Cliente>
         throw new InvalidOperationException("No se encontró ningún cliente con ese nombre.");
     }
 
-    public Cliente BuscarPorApellido(string apellido) //Busco un cliente por apellido
+    public Cliente BuscarPorApellido(string apellido) 
     {
         foreach (Cliente cliente in this.VerTotal())
         {
@@ -84,7 +88,7 @@ public class GestorCliente : Gestor<Cliente>
         throw new InvalidOperationException("No se encontró ningún cliente con ese apellido.");
     }
 
-    public Cliente BuscarPorTelefono(string telefono) //Busco un cliente por telefono
+    public Cliente BuscarPorTelefono(string telefono) 
     {
         foreach (Cliente cliente in this.VerTotal())
         {
@@ -96,7 +100,7 @@ public class GestorCliente : Gestor<Cliente>
         throw new InvalidOperationException("No se encontró ningún cliente con ese telefono.");
     }
 
-    public Cliente BuscarPorEmail(string email) //Busco un cliente por email
+    public Cliente BuscarPorEmail(string email) 
     {
         foreach (Cliente cliente in this.VerTotal())
         {
@@ -108,5 +112,3 @@ public class GestorCliente : Gestor<Cliente>
         throw new InvalidOperationException("No se encontró ningún cliente con ese email.");
     }
 }
-
-//Esta clase implementa lo mismo que gestor pero unicamente cuando T es cliente, a su vez se encarga de hacer las busquedas y modificaciones pertinentes ya que es la experta.
