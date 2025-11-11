@@ -19,7 +19,7 @@ var hierarchy =
       [ "Library.Cotizacion", "classLibrary_1_1Cotizacion.html", null ],
       [ "Library.Online", "classLibrary_1_1Online.html", [
         [ "Library.Correo", "classLibrary_1_1Correo.html", null ],
-        [ "Library.Llamadas", "classLibrary_1_1Llamadas.html", null ],
+        [ "Library.Llamada", "classLibrary_1_1Llamada.html", null ],
         [ "Library.Mensaje", "classLibrary_1_1Mensaje.html", null ]
       ] ],
       [ "Library.Presencial", "classLibrary_1_1Presencial.html", [

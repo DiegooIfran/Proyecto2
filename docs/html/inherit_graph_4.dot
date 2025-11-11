@@ -14,7 +14,7 @@ digraph "Graphical Class Hierarchy"
   Node2 -> Node3 [id="edge9_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="Library.Correo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Correo.html",tooltip="Representa una interacción de tipo correo electrónico dentro del sistema. Hereda de Online,..."];
   Node2 -> Node4 [id="edge10_Node000002_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="Library.Llamadas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Llamadas.html",tooltip="Representa una interacción de tipo llamada telefónica dentro del sistema. Hereda de Online ya que se ..."];
+  Node4 [id="Node000004",label="Library.Llamada",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Llamada.html",tooltip="Representa una interacción de tipo llamada telefónica dentro del sistema. Hereda de Online ya que se ..."];
   Node2 -> Node5 [id="edge11_Node000002_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="Library.Mensaje",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Mensaje.html",tooltip="Representa una interacción de tipo mensaje dentro del sistema. Hereda de Online, ya que es una comuni..."];
   Node0 -> Node6 [id="edge12_Node000000_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];

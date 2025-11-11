@@ -13,7 +13,7 @@ var dir_f741251061e5c7c7ed48ab45c3348f11 =
     [ "GestorInteracciones.cs", "GestorInteracciones_8cs_source.html", null ],
     [ "IGestionable.cs", "IGestionable_8cs_source.html", null ],
     [ "Interaccion.cs", "Interaccion_8cs_source.html", null ],
-    [ "Llamadas.cs", "Llamadas_8cs_source.html", null ],
+    [ "Llamada.cs", "Llamada_8cs_source.html", null ],
     [ "Mensaje.cs", "Mensaje_8cs_source.html", null ],
     [ "Online.cs", "Online_8cs_source.html", null ],
     [ "Panel.cs", "Panel_8cs_source.html", null ],

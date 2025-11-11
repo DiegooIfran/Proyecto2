@@ -26,7 +26,7 @@ var annotated_dup =
       [ "GestorCliente", "classLibrary_1_1GestorCliente.html", null ],
       [ "IGestionable", "interfaceLibrary_1_1IGestionable.html", null ],
       [ "Interaccion", "classLibrary_1_1Interaccion.html", "classLibrary_1_1Interaccion" ],
-      [ "Llamadas", "classLibrary_1_1Llamadas.html", null ],
+      [ "Llamada", "classLibrary_1_1Llamada.html", null ],
       [ "Mensaje", "classLibrary_1_1Mensaje.html", null ],
       [ "Online", "classLibrary_1_1Online.html", "classLibrary_1_1Online" ],
       [ "Presencial", "classLibrary_1_1Presencial.html", null ],
