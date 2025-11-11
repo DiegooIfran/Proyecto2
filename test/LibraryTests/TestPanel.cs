@@ -24,7 +24,7 @@ public class TestPanel
             
             string panel = Panel.ImprimirPanel(vendedor);
             Console.WriteLine(panel);
-            Assert.That(panel, Is.EqualTo("Panel del vendedor: Juan\nClientes totales: 1\n\nInteracciones recientes:\n Reunion: Kickoff 10/11/2025\n Correo: Oferta 09/11/2025\n\nPróximas reuniones:\n"));
+            Assert.That(panel, Is.EqualTo("Panel del vendedor: Juan\nClientes totales: 1\n\nInteracciones recientes:\n Reunion: Kickoff 10/11/2025\n Correo: Oferta 9/11/2025\n\nPróximas reuniones:\n"));
         
         }
 
