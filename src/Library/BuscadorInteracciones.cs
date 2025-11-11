@@ -98,7 +98,7 @@ namespace Library
 
             foreach (var interaccion in cliente.ObtenerInteracciones())
             {
-                if (interaccion is Llamadas llamada)
+                if (interaccion is Llamada llamada)
                 {
                     Console.WriteLine($"Tema: {llamada.ObtenerTema()} | Fecha: {llamada.ObtenerFecha().ToShortDateString()}");
 

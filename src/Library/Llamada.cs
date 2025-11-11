@@ -3,7 +3,7 @@ namespace Library;
 /// Representa una interacción de tipo llamada telefónica dentro del sistema.
 /// Hereda de <see cref="Online"/> ya que se trata de una comunicación que puede ser realizada o recibida de manera remota
 /// </summary>
-public class Llamadas: Online
+public class Llamada: Online
 {
-    public Llamadas(DateTime fecha, string tema, string notas, bool enviada) : base(fecha, tema, notas, enviada) { }
+    public Llamada(DateTime fecha, string tema, string notas, bool enviada) : base(fecha, tema, notas, enviada) { }
 }

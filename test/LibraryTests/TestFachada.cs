@@ -7,6 +7,11 @@ public class TestFachada
     [SetUp]
     public void Setup()
     {
+        // Codigo provisto por ChatGPT para lograr reiniciar el singleton en cada test evitando problemas de que este persista en aquellos.
+        typeof(Fachada)
+            .GetField("instance", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static)
+            ?.SetValue(null, null);
+        
         fachada = Fachada.Instance;
     }
     
@@ -153,7 +158,7 @@ public class TestFachada
 
         // Assert
         Assert.That(cliente.ObtenerInteracciones().Count, Is.GreaterThan(0));
-        Assert.That(cliente.ObtenerInteracciones()[0].GetType().Name, Is.EqualTo("Llamadas"));
+        Assert.That(cliente.ObtenerInteracciones()[0].GetType().Name, Is.EqualTo("Llamada"));
     }
     
     [Test]

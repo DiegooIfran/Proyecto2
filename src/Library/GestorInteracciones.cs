@@ -23,7 +23,7 @@ public static class GestorInteracciones
         {
             throw new ArgumentNullException(nameof(cliente));
         }
-        Llamadas llamada = new Llamadas(fecha, tema, notas, enviada);
+        Llamada llamada = new Llamada(fecha, tema, notas, enviada);
         cliente.AgregarInteraccion(llamada);
         _todasInteracciones.Add(llamada);
     }

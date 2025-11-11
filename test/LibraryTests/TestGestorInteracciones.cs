@@ -24,7 +24,7 @@ public class TestGestorInteracciones
         GestorInteracciones.NuevaLlamada(cliente, DateTime.Now, "Tema mensaje", "Notas", true);
         List<Interaccion> interaccionesCliente = cliente.ObtenerInteracciones();
         Assert.That(interaccionesCliente.Count, Is.EqualTo(1));
-        Assert.That(interaccionesCliente[0], Is.TypeOf<Llamadas>());
+        Assert.That(interaccionesCliente[0], Is.TypeOf<Llamada>());
     }
     
     [Test]

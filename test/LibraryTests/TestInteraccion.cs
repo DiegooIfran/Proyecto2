@@ -29,12 +29,12 @@ public class TestInteraccion
         const string temaPrueba = "Consulta de Producto X";
         const string notasPrueba = "Cliente preguntó por stock y precio.";
         const bool fueEnviado = true;
-        Llamadas llamadas = new Llamadas(fecha: fechaPrueba, tema: temaPrueba, notas: notasPrueba, enviada: fueEnviado);
-        Assert.That(llamadas.ObtenerFecha(), Is.EqualTo(fechaPrueba));
-        Assert.That(llamadas.ObtenerTema(), Is.EqualTo(temaPrueba));
-        Assert.That(llamadas.ObtenerNota(), Is.EqualTo(notasPrueba));
-        Assert.That(llamadas.ObtenerEnviada(), Is.EqualTo(fueEnviado));
-        Assert.That(llamadas.ObtenerRespondido(), Is.EqualTo(false));
+        Llamada llamada = new Llamada(fecha: fechaPrueba, tema: temaPrueba, notas: notasPrueba, enviada: fueEnviado);
+        Assert.That(llamada.ObtenerFecha(), Is.EqualTo(fechaPrueba));
+        Assert.That(llamada.ObtenerTema(), Is.EqualTo(temaPrueba));
+        Assert.That(llamada.ObtenerNota(), Is.EqualTo(notasPrueba));
+        Assert.That(llamada.ObtenerEnviada(), Is.EqualTo(fueEnviado));
+        Assert.That(llamada.ObtenerRespondido(), Is.EqualTo(false));
     }
     
     [Test]

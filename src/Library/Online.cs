@@ -9,7 +9,7 @@ public class Online: Interaccion
     private bool Respondidas { get; set; }
     
     /// <summary>
-    /// Constructor protegido utilizado por las subclases (<see cref="Correo"/>, <see cref="Mensaje"/>, <see cref="Llamadas"/>).
+    /// Constructor protegido utilizado por las subclases (<see cref="Correo"/>, <see cref="Mensaje"/>, <see cref="Llamada"/>).
     /// </summary>
     /// <param name="fecha">Fecha en la que se realizó la interacción.</param>
     /// <param name="tema">Tema o asunto de la interacción.</param>
