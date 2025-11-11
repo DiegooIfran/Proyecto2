@@ -2,17 +2,16 @@ namespace Library;
 
 public static class Panel
 {
-    public static void ImprimirPanel(Vendedor vendedor)
+    public static string ImprimirPanel(Vendedor vendedor)
     {
-        Console.WriteLine($"Panel del vendedor: {vendedor.ObtenerNombre()}");
-
+        string panel = $"Panel del vendedor: {vendedor.ObtenerNombre()}\n";
+        
         // total de clientes
         var clientes = vendedor.ObtenerClientes();
-        Console.WriteLine($"Clientes totales: {clientes.Count}");
+        panel+=$"Clientes totales: {clientes.Count}\n";
 
         //interacciones recientes de todos los clientes
         List<Interaccion> todasLasInteracciones = new();
-
         foreach (var cliente in clientes)
         {
             if (cliente.ObtenerInteracciones() != null)
@@ -23,27 +22,26 @@ public static class Panel
 
         if (todasLasInteracciones.Count == 0)
         {
-            Console.WriteLine("No hay interacciones registradas");
+            panel+=$"No hay interacciones registradas\n";
         }
         else
         {
             // Ordeno por fecha descendente
             todasLasInteracciones.Sort((a, b) => b.ObtenerFecha().CompareTo(a.ObtenerFecha()));
 
-            Console.WriteLine("Interacciones recientes:");
+            panel+=$"\nInteracciones recientes:\n";
             int mostradas = 0;
             foreach (var interaccion in todasLasInteracciones)
             {
-                Console.WriteLine($" {interaccion.GetType().Name}: {interaccion.ObtenerTema()} {interaccion.ObtenerFecha().ToShortDateString()}");
+                panel+=$" {interaccion.GetType().Name}: {interaccion.ObtenerTema()} {interaccion.ObtenerFecha().ToShortDateString()}\n";
                 mostradas++;
                 if (mostradas == 5) break; // mostrar solo 5 más recientes
             }
         }
-
-        Console.WriteLine();
+        
 
         // reuniones próximas (usando BuscadorInteracciones)
-        Console.WriteLine("Próximas reuniones:");
+        panel+=$"\nPróximas reuniones:\n";
 
         bool hayReuniones = false;
 
@@ -55,8 +53,8 @@ public static class Panel
 
         if (!hayReuniones)
         {
-            Console.WriteLine("No hay reuniones próximas.");
+            panel+=$"No hay reuniones próximas.";
         }
-
+        return panel;
     }
 }

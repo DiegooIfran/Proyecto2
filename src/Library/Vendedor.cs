@@ -158,8 +158,8 @@ public class Vendedor : Usuario
     /// <summary>
     /// Muestra el panel visual del vendedor con sus datos y clientes asociados
     /// </summary>
-    public void VerPanel() 
+    public string VerPanel() 
     {
-        Panel.ImprimirPanel(this);
+        return Panel.ImprimirPanel(this);
     }
 }
