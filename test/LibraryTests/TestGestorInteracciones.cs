@@ -63,7 +63,7 @@ public class TestGestorInteracciones
     [Test]
     public void InteraccionesPendientes() //Chequea que funcione la funcion InteraccionesPendientes
     {
-        Cliente cliente = new Cliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990,10,20));
+        Cliente cliente = new Cliente("Juan", "Martinez", "091827989", "martin@gmail.com", "hombre", new DateTime(1990,10,20));
         var msg = new Mensaje(DateTime.Now, "msg", "nota", true);
         msg.Respondida();
         var correo = new Correo(DateTime.Now, "correo", "nota", true);
