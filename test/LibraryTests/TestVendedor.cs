@@ -65,7 +65,7 @@ public class TestVendedor
         cliente.AgregarInteraccion(venta1);
         cliente.AgregarInteraccion(venta0);
         
-        Assert.That(vendedor.TotalVentas(new DateTime(2024, 5, 11),new DateTime(2026, 5, 12)), Is.EqualTo($"Lista de todas las ventas:\n- Juan Perez compró Porteñitas por $55 el 30/8/2025 0:00:00\n- Juan Perez compró CocaCola 3L por $150 el 4/12/2025 0:00:00\n"));
+        Assert.That(vendedor.TotalVentas(new DateTime(2024, 5, 11),new DateTime(2026, 5, 12)), Is.EqualTo($"Lista de todas las ventas:\n- Juan Perez compró Porteñitas por $55 el 30/08/2025 0:00:00\n- Juan Perez compró CocaCola 3L por $150 el 04/12/2025 0:00:00\n"));
         Console.WriteLine(vendedor.TotalVentas(new DateTime(2024, 5, 11),new DateTime(2026, 5, 12)));
     }
 
