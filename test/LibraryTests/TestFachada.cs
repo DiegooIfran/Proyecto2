@@ -15,7 +15,7 @@ public class TestFachada
     {
         // Arrange
         string email = "test1@mail.com";
-        fachada.AgregarCliente("Juan", "Pérez", "099111111", email, "M", new DateTime(1990, 1, 1));
+        fachada.AgregarCliente("Juan", "Perez", "099111111", email, "M", new DateTime(1990, 1, 1));
 
         // Act
         var cliente = fachada.BuscarPorEmail(email);
@@ -24,6 +24,8 @@ public class TestFachada
         Assert.That(cliente, Is.Not.Null);
         Assert.That(cliente.ObtenerEmail(), Is.EqualTo(email));
         Assert.That(cliente.ObtenerNombre(), Is.EqualTo("Juan"));
+        Assert.That(cliente.ObtenerApellido(), Is.EqualTo("Perez"));
+        Assert.That(cliente.ObtenerTelefono(), Is.EqualTo("099111111"));
     }
     
     [Test]
@@ -39,7 +41,7 @@ public class TestFachada
         var cliente = fachada.BuscarPorNombre(nuevoNombre);
 
         // Assert
-        Assert.That(cliente.ObtenerNombre(), Is.EqualTo("Andrea"));
+        Assert.That(cliente.ObtenerNombre(), Is.EqualTo(nuevoNombre));
     }
 
     [Test]
@@ -55,7 +57,7 @@ public class TestFachada
         var cliente = fachada.BuscarPorApellido(nuevoApellido);
 
         // Assert
-        Assert.That(cliente.ObtenerApellido(), Is.EqualTo("Gonzalez"));
+        Assert.That(cliente.ObtenerApellido(), Is.EqualTo(nuevoApellido));
     }
     
     [Test]
@@ -71,7 +73,7 @@ public class TestFachada
         var cliente = fachada.BuscarPorTelefono(nuevoTelefono);
 
         // Assert
-        Assert.That(cliente.ObtenerTelefono(), Is.EqualTo("099333333"));
+        Assert.That(cliente.ObtenerTelefono(), Is.EqualTo(nuevoTelefono));
     }
     
     [Test]
@@ -87,7 +89,7 @@ public class TestFachada
         var cliente = fachada.BuscarPorEmail(nuevoEmail);
 
         // Assert
-        Assert.That(cliente.ObtenerEmail(), Is.EqualTo("test3@mail.com"));
+        Assert.That(cliente.ObtenerEmail(), Is.EqualTo(nuevoEmail));
     }
     
     [Test]
@@ -102,6 +104,90 @@ public class TestFachada
 
         // Assert
         Assert.Throws<InvalidOperationException>(() => fachada.BuscarPorEmail(email));
+    }
+    
+    [Test]
+    public void CrearEtiquetaYAgregarlaACliente_DeberiaAsociarseCorrectamente()
+    {
+        // Arrange
+        string email = "etiqueta@mail.com";
+        fachada.AgregarCliente("Sofia", "Torres", "099999999", email, "F", new DateTime(1997, 7, 7));
+        var etiqueta = new Etiqueta("VIP", "Clientes importantes");
+
+        // Act
+        fachada.AgregarEtiqueta(email, etiqueta);
+
+        // Assert
+        var cliente = fachada.BuscarPorEmail(email);
+        Assert.That(cliente.ObtenerEtiquetas(), Does.Contain(etiqueta));
+    }
+    
+    [Test]
+    public void RegistrarReunion_DeberiaAgregarUnaInteraccionDeTipoReunion()
+    {
+    // Arrange
+    string email = "reunion@mail.com";
+    Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com");
+    fachada.AgregarCliente("Diego", "Ifran", "091111111", email, "M", new DateTime(2003, 3, 3));
+    fachada.AsignarVendedor(vendedor);
+    // Act
+    fachada.RegistrarReunion(email, DateTime.Now, "Presentación", "Reunión de presentación");
+    var cliente = fachada.BuscarPorEmail(email);
+
+    // Assert
+    Assert.That(cliente.ObtenerInteracciones().Count, Is.GreaterThan(0));
+    Assert.That(cliente.ObtenerInteracciones()[0].GetType().Name, Is.EqualTo("Reunion"));
+    }
+    
+    [Test]
+    public void RegistrarLlamada_DeberiaAgregarUnaInteraccionDeTipoLlamada()
+    {
+        // Arrange
+        string email = "reunion@mail.com";
+        Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com");
+        fachada.AgregarCliente("Diego", "Ifran", "091111111", email, "M", new DateTime(2003, 3, 3));
+        fachada.AsignarVendedor(vendedor);
+        // Act
+        fachada.RegistrarLlamada(email, DateTime.Now, "Presentación", "Reunión de presentación", true);
+        var cliente = fachada.BuscarPorEmail(email);
+
+        // Assert
+        Assert.That(cliente.ObtenerInteracciones().Count, Is.GreaterThan(0));
+        Assert.That(cliente.ObtenerInteracciones()[0].GetType().Name, Is.EqualTo("Llamada"));
+    }
+    
+    [Test]
+    public void RegistrarCorreo_DeberiaAgregarUnaInteraccionDeTipoCorreo()
+    {
+        // Arrange
+        string email = "reunion@mail.com";
+        Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com");
+        fachada.AgregarCliente("Diego", "Ifran", "091111111", email, "M", new DateTime(2003, 3, 3));
+        fachada.AsignarVendedor(vendedor);
+        // Act
+        fachada.RegistrarCorreo(email, DateTime.Now, "Presentación", "Reunión de presentación", true);
+        var cliente = fachada.BuscarPorEmail(email);
+
+        // Assert
+        Assert.That(cliente.ObtenerInteracciones().Count, Is.GreaterThan(0));
+        Assert.That(cliente.ObtenerInteracciones()[0].GetType().Name, Is.EqualTo("Correo"));
+    }
+    
+    [Test]
+    public void RegistrarMensaje_DeberiaAgregarUnaInteraccionDeTipoMensaje()
+    {
+        // Arrange
+        string email = "reunion@mail.com";
+        Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com");
+        fachada.AgregarCliente("Diego", "Ifran", "091111111", email, "M", new DateTime(2003, 3, 3));
+        fachada.AsignarVendedor(vendedor);
+        // Act
+        fachada.RegistrarMensaje(email, DateTime.Now, "Presentación", "Reunión de presentación", true);
+        var cliente = fachada.BuscarPorEmail(email);
+
+        // Assert
+        Assert.That(cliente.ObtenerInteracciones().Count, Is.GreaterThan(0));
+        Assert.That(cliente.ObtenerInteracciones()[0].GetType().Name, Is.EqualTo("Mensaje"));
     }
     
     [Test]

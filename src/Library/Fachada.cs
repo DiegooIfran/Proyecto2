@@ -178,6 +178,12 @@ public class Fachada
         admin.CrearVendedor(nombre,  apellido, telefono, email);
     }
     
+    //Para añadir un vendedor a la fachada
+    public void AsignarVendedor(Vendedor vendedor)
+    {
+        this._vendedor = vendedor;
+    }
+    
     //Suspender un usuario
     public void SuspenderUsuario(string email, Administrador admin)
     {
