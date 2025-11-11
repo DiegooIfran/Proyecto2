@@ -5,6 +5,10 @@ public class TestGestorInteracciones
     [SetUp]
     public void Setup()
     {
+        var field = typeof(GestorInteracciones).GetField("_todasInteracciones",
+            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
+        field.SetValue(null, new List<Interaccion>());
+        //Idem que en Testeos de fachada, la lista persiste entre los testeos por ende buscamos reiniciarlos para poder testear cada funcion especificamente
     }
     
     [Test]
