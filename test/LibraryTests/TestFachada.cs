@@ -153,7 +153,7 @@ public class TestFachada
 
         // Assert
         Assert.That(cliente.ObtenerInteracciones().Count, Is.GreaterThan(0));
-        Assert.That(cliente.ObtenerInteracciones()[0].GetType().Name, Is.EqualTo("Llamada"));
+        Assert.That(cliente.ObtenerInteracciones()[0].GetType().Name, Is.EqualTo("Llamadas"));
     }
     
     [Test]
