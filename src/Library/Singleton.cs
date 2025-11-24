@@ -1,6 +1,6 @@
 namespace Library;
 
-public class Singleton<T> where T : class, new()
+public class Singleton<T> where T : ISingleton, new()
 {
     private static T _instance;
     private Singleton()

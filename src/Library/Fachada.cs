@@ -1,44 +1,13 @@
 namespace Library;
 
-public class Fachada
+public class Fachada : ISingleton
 {
-    private Vendedor _vendedor { get; set; }
-    private GestorCliente gc { get; set; }
-    private static Fachada instance;
     
-    // Este constructor privado impide que otras clases puedan crear instancias
-    // de esta.
-    private Fachada()
-    {
-        this.gc = new GestorCliente();
-    }
     
-    // Este constructor es interno para que en las pruebas se pueda injectar
-    // un mock del repositorio de usuarios en lugar de un repositorio real.
+    private Gestor<Vendedor> gv = Singleton<Gestor<Vendedor>>.Instance;
+    private GestorCliente gc = Singleton<GestorCliente>.Instance;
+    private Gestor<Administrador> ga = Singleton<Gestor<Administrador>>.Instance;
 
-    internal Fachada(GestorCliente gc)
-    {
-        ArgumentNullException.ThrowIfNull(gc);
-            
-        this.gc = gc;
-    }
-
-    
-    /// <summary>
-    /// Obtiene la única instancia de la clase <see cref="Fachada"/>.
-    /// </summary>
-    public static Fachada Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = new Fachada();
-            }
-
-            return instance;
-        }
-    }
     
     //Agregar un cliente
     public void AgregarCliente(string name, string apellido, string telefono, string email, string genero, DateTime fechaNacimiento)
@@ -101,33 +70,37 @@ public class Fachada
     }
     
     //Ver todos los clientes
-    public void VerTotalClientes()
+    public void VerTotalClientes(Vendedor vendedor)
     {
-        _vendedor.VerClientes();
+        vendedor.VerClientes();
     }
 
     //Registrar llamada con un cliente
-    public void RegistrarLlamada(string correo, DateTime fecha, string tema, string nota, bool enviada)
+    public void RegistrarLlamada(string nick, string correo, DateTime fecha, string tema, string nota, bool enviada)
     {
-        _vendedor.NuevaLlamada(gc.BuscarPorEmail(correo), fecha, tema, nota, enviada);
+        Vendedor vendedor = gv.BuscarPorNick(nick);
+        vendedor.NuevaLlamada(gc.BuscarPorEmail(correo), fecha, tema, nota, enviada);
     }
     
     //Registrar correo con un cliente
-    public void RegistrarCorreo(string correo, DateTime fecha, string tema, string nota, bool enviada)
+    public void RegistrarCorreo(string nick, string correo, DateTime fecha, string tema, string nota, bool enviada)
     {
-        _vendedor.NuevoCorreo(gc.BuscarPorEmail(correo), fecha, tema, nota, enviada);
+        Vendedor vendedor = gv.BuscarPorNick(nick);
+        vendedor.NuevoCorreo(gc.BuscarPorEmail(correo), fecha, tema, nota, enviada);
     }
     
     //Registrar mensaje con un cliente
-    public void RegistrarMensaje(string correo, DateTime fecha, string tema, string nota, bool enviada)
+    public void RegistrarMensaje(string nick, string correo, DateTime fecha, string tema, string nota, bool enviada)
     {
-        _vendedor.NuevoMensaje(gc.BuscarPorEmail(correo), fecha, tema, nota, enviada);
+        Vendedor vendedor = gv.BuscarPorNick(nick);
+        vendedor.NuevoMensaje(gc.BuscarPorEmail(correo), fecha, tema, nota, enviada);
     }
     
     //Registrar reunion con un cliente
-    public void RegistrarReunion(string correo, DateTime fecha, string tema, string nota)
+    public void RegistrarReunion(string nick, string correo, DateTime fecha, string tema, string nota)
     {
-        _vendedor.NuevaReunion(gc.BuscarPorEmail(correo), fecha, tema, nota);
+        Vendedor vendedor = gv.BuscarPorNick(nick);
+        vendedor.NuevaReunion(gc.BuscarPorEmail(correo), fecha, tema, nota);
     }
     
     //Crear una etiqueta
@@ -137,21 +110,23 @@ public class Fachada
     }
     
     //Agregar etiqueta a un cliente
-    public void AgregarEtiqueta(string correo, Etiqueta etiqueta)
+    public void AgregarEtiqueta(string correo, Etiqueta etiqueta) // ARREGLAR ESTO!)!)!)!!)!
     {
         etiqueta.AgregarEtiqueta(gc.BuscarPorEmail(correo));
     }
     
     //Realizar campaña publicitaria
-    public void RealizarCampana(Etiqueta etiqueta, string anuncio)
+    public void RealizarCampana(string nick, Etiqueta etiqueta, string anuncio) // ARREGLAR LO DE LA ETIQUETAA
     {
-        _vendedor.Campana(etiqueta, anuncio);
+        Vendedor vendedor = gv.BuscarPorNick(nick);
+        vendedor.Campana(etiqueta, anuncio);
     }
     
     //Realizar cotizacion de un producto (tema especifica un producto)
-    public void RealizarCotizacion(string correo, DateTime fecha, string tema, string notas, int precio)
+    public void RealizarCotizacion(string nick, string correo, DateTime fecha, string tema, string notas, int precio)
     {
-        _vendedor.NuevaCotizacion(fecha, tema, notas, gc.BuscarPorEmail(correo), precio);
+        Vendedor vendedor = gv.BuscarPorNick(nick);
+        vendedor.NuevaCotizacion(fecha, tema, notas, gc.BuscarPorEmail(correo), precio);
     }
     
     //Realizar venta de una cotizacion previa (tema especifica un producto)
@@ -174,37 +149,36 @@ public class Fachada
     }
 
     //Crear un usuario
-    public void CrearVendedor(string nombre, string apellido, string telefono, string email, Administrador admin)
+    public void CrearVendedor(string nombre, string apellido, string telefono, string email, string nick)
     {
+        Administrador admin = ga.BuscarPorNick(nick);
         admin.CrearVendedor(nombre,  apellido, telefono, email);
     }
     
-    //Para añadir un vendedor a la fachada
-    public void AsignarVendedor(Vendedor vendedor)
-    {
-        this._vendedor = vendedor;
-    }
-    
     //Suspender un usuario
-    public void SuspenderUsuario(string email, Administrador admin)
+    public void SuspenderUsuario(string email, string nick)
     {
+        Administrador admin = ga.BuscarPorNick(nick);
         admin.SuspenderVendedor(email);
     }
     
     //Eliminar un usuario
-    public void EliminarUsuario(string email, Administrador admin)
+    public void EliminarUsuario(string email, string nick)
     {
+        Administrador admin = ga.BuscarPorNick(nick);
         admin.EliminarVendedor(email);
     }
     
     //Asignar un cliente a otro vendedor
-    public void AsignarCliente(Vendedor vendedor, string correo)
+    public void AsignarCliente(string nick, string correo)
     {
-        gc.AsignarCliente(_vendedor, gc.BuscarPorEmail(correo));
+        Vendedor vendedor = gv.BuscarPorNick(nick);
+        gc.AsignarCliente(vendedor, gc.BuscarPorEmail(correo));
     }
     
-    public void VerPanel()
+    public void VerPanel(string nick)
     {
-        _vendedor.VerPanel();
+        Vendedor vendedor = gv.BuscarPorNick(nick);
+        vendedor.VerPanel();
     }
 }

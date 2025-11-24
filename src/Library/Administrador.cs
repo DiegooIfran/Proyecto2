@@ -2,7 +2,7 @@ namespace Library;
 /// <summary>
 /// Representa un administrador en el sistema
 /// </summary>
-public class Administrador : Usuario, IGestionable
+public class Administrador : Usuario, IPersona
 {
     public Administrador(string nombre, string apellido, string telefono, string email)
         : base(nombre, apellido, telefono, email)

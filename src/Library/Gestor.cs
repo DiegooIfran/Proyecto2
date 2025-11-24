@@ -5,7 +5,7 @@ namespace Library;
 /// </summary>
 /// <typeparam name="T">Tipo de objeto gestionado. Debe implementar IGestionable.</typeparam>
 
-public class Gestor<T> where T : IGestionable
+public class Gestor<T> : ISingleton where T : IPersona
 {
     /// <summary>
     /// Lista que contiene todos los elementos gestionados (por ejemplo, vendedores o administradores)
@@ -53,4 +53,14 @@ public class Gestor<T> where T : IGestionable
 
         return false;
     }
+    public T BuscarPorNick(string nick) 
+    {
+        foreach (T usuario in this.VerTotal())
+        {
+            if (nick == usuario.ObtenerNick())
+            {
+                return usuario;
+            }
+        }
+        throw new InvalidOperationException("No se encontró ningún usuario con ese nombre.");
 }

@@ -6,7 +6,7 @@ namespace Library;
 /// Hereda de Usuario y gestiona una lista de clientes asociados,
 /// además de realizar acciones como enviar campañas o generar cotizaciones.
 /// </summary>
-public class Vendedor : Usuario
+public class Vendedor : Usuario, IPersona
 {
     /// <summary>
     /// Lista de clientes a cargo del vendedor.
@@ -54,9 +54,10 @@ public class Vendedor : Usuario
     
     public void VerClientes() //Imprimir clientes
     {
+        string clientes = "";
         foreach (Cliente cliente in Clientes)
         {
-            Console.WriteLine($"{cliente.ObtenerNombre()} {cliente.ObtenerApellido}");
+            clientes += $"{cliente.ObtenerNombre()} {cliente.ObtenerApellido} + \n";
         }
     }
 

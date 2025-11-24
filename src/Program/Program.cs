@@ -9,6 +9,7 @@ internal static class Program
 {
     private static void Main()
     {
-        
+        Fachada fachada = Singleton<Fachada>.Instance;
+
     }
 }

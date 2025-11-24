@@ -5,7 +5,7 @@ namespace Library;
 /// Representa un cliente dentro del sistema.
 /// Contiene sus datos personales, etiquetas asociadas y el historial de interacciones
 /// </summary>
-public class Cliente : IGestionable
+public class Cliente : ISingleton, IPersona
 {
     private string Nombre { get; set; }
     private string Apellido { get; set; }

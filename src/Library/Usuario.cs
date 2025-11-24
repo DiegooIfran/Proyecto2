@@ -5,7 +5,7 @@ namespace Library;
 /// Representa un usuario dentro del sistema.
 /// Contiene sus datos personales
 /// </summary>
-public abstract class Usuario : IGestionable
+public abstract class Usuario : ISingleton
 {
 private string Nombre { get; }
     private string Apellido { get;}
