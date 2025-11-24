@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using Discord.Commands;
 using Discord.WebSocket;
-using Ucu.Poo.DiscordDemo.DomainLibrary;
+using Library;
 
 namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
 {
@@ -44,7 +44,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             string userName =
                 displayName ?? CommandHelper.GetDisplayName(Context);
 
-            string result = Facade.Instance.GetUserInfo(userName);
+            string result = Fachada.Instance;
 
             await ReplyAsync(result);
         }
