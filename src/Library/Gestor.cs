@@ -53,7 +53,8 @@ public class Gestor<T> : ISingleton where T : IPersona
 
         return false;
     }
-    public T BuscarPorNick(string nick) 
+
+    public T BuscarPorNick(string nick)
     {
         foreach (T usuario in this.VerTotal())
         {
@@ -62,8 +63,10 @@ public class Gestor<T> : ISingleton where T : IPersona
                 return usuario;
             }
         }
+
         throw new InvalidOperationException("No se encontró ningún usuario con ese nombre.");
-     
+    }
+
     /// <summary>
     /// Crea nuevos vendedores
     /// </summary>

@@ -88,4 +88,8 @@ private string Nombre { get; }
     {
         return this.Email;
     }
+    public string ObtenerNick()
+    {
+        return this.Nickname;
+    }
 }

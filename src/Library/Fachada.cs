@@ -151,22 +151,19 @@ public class Fachada : ISingleton
     //Crear un usuario
     public void CrearVendedor(string nombre, string apellido, string telefono, string email, string nick)
     {
-        Administrador admin = ga.BuscarPorNick(nick);
-        admin.CrearVendedor(nombre,  apellido, telefono, email);
+        ga.CrearVendedor(nombre,  apellido, telefono, email, nick);
     }
     
     //Suspender un usuario
-    public void SuspenderUsuario(string email, string nick)
+    public void SuspenderUsuario(string email)
     {
-        Administrador admin = ga.BuscarPorNick(nick);
-        admin.SuspenderVendedor(email);
+        ga.SuspenderVendedor(email);
     }
     
     //Eliminar un usuario
-    public void EliminarUsuario(string email, string nick)
+    public void EliminarUsuario(string email)
     {
-        Administrador admin = ga.BuscarPorNick(nick);
-        admin.EliminarVendedor(email);
+        ga.EliminarVendedor(email);
     }
     
     //Asignar un cliente a otro vendedor
@@ -180,5 +177,10 @@ public class Fachada : ISingleton
     {
         Vendedor vendedor = gv.BuscarPorNick(nick);
         vendedor.VerPanel();
+    }
+    //Crear un Administrador
+    public void CrearAdministrador(string nombre, string apellido, string telefono, string email, string nick)
+    {
+        new Administrador(nombre,  apellido, telefono, email, nick);
     }
 }
