@@ -63,16 +63,14 @@ public static class GestorInteracciones
     /// </summary>
     /// <param name="cliente">Cliente cuyas interacciones se desean ver</param>
     /// <exception cref="ArgumentNullException">Si el cliente es nulo</exception>
-    public static void VerInteracciones(Cliente cliente)
+    public static List<string> VerInteracciones(Cliente cliente)
     {
-        if (cliente == null) 
-        {
+        if (cliente == null)
             throw new ArgumentNullException(nameof(cliente));
-        }
-        foreach (Interaccion interaccion in cliente.ObtenerInteracciones())
-        {
-            Console.WriteLine($"{interaccion}");
-        }
+
+        return cliente.ObtenerInteracciones()
+            .Select(i => i.ToString())
+            .ToList()!;
     }
 
     /// <summary>

@@ -52,13 +52,13 @@ public class Vendedor : Usuario
         }
     }
     
-    public void VerClientes() //Imprimir clientes
+    public List<string> VerClientes()
     {
-        foreach (Cliente cliente in Clientes)
-        {
-            Console.WriteLine($"{cliente.ObtenerNombre()} {cliente.ObtenerApellido}");
-        }
+        return Clientes
+            .Select(c => $"{c.ObtenerNombre()} {c.ObtenerApellido()}")
+            .ToList();
     }
+
 
     /// <summary>
     /// Envía un mensaje de cumpleaños a los clientes cuya fecha de nacimiento coincide con la fecha actual
