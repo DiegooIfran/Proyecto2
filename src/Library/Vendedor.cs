@@ -22,8 +22,8 @@ public class Vendedor : Usuario
     /// Constructor de la clase Vendedor
     /// Inicializa el vendedor con sus datos personales, lo marca como activo y crea su lista de clientes.
     /// </summary>
-    public Vendedor(string nombre, string apellido, string telefono, string email) //Constructor de vendedor
-        : base(nombre, apellido, telefono, email)
+    public Vendedor(string nombre, string apellido, string telefono, string email, string nickname) //Constructor de vendedor
+        : base(nombre, apellido, telefono, email, nickname)
     {
         this.Activo = true;
         this.Clientes = new List<Cliente>();

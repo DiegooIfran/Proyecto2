@@ -57,9 +57,9 @@ public class Gestor<T> where T : IGestionable
     /// <summary>
     /// Crea nuevos vendedores
     /// </summary>
-    public void CrearVendedor(string nombre, string apellido, string telefono, string email) 
+    public void CrearVendedor(string nombre, string apellido, string telefono, string email, string nickname) 
     {
-        Vendedor nuevoVendedor = new Vendedor(nombre, apellido, telefono, email);
+        Vendedor nuevoVendedor = new Vendedor(nombre, apellido, telefono, email, nickname);
         Singleton<Gestor<Vendedor>>.Instance.Agregar(nuevoVendedor); //Lama al Singleton GestorVendedores para agregar el nuevo vendedor a la lista
     }
 

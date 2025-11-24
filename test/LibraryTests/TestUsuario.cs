@@ -10,7 +10,7 @@ public class TestUsuario
     [Test]
     public void Heredar() // Verifico que efectivamente hereden los atributos
     {
-        var vendedor = new Vendedor("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com");
+        var vendedor = new Vendedor("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com", TODO);
 
         Assert.AreEqual("Lautaro", vendedor.ObtenerNombre());
         Assert.AreEqual("Ramirez", vendedor.ObtenerApellido());
@@ -21,10 +21,10 @@ public class TestUsuario
     [Test]
     public void InstanciasDe() // Verifico que administrador y vendedor sean instancias de usuario
     {
-        Usuario administrador = new Administrador("Carlos", "Diaz", "3213138", "carlosdiaz@gmail.com");
+        Usuario administrador = new Administrador("Carlos", "Diaz", "3213138", "carlosdiaz@gmail.com", TODO);
         Assert.IsInstanceOf<Usuario>(administrador);
         
-        Usuario vendedor= new Vendedor("Federico", "Garcia", "231231", "fedegarcia@gmail.com");
+        Usuario vendedor= new Vendedor("Federico", "Garcia", "231231", "fedegarcia@gmail.com", TODO);
         Assert.IsInstanceOf<Usuario>(vendedor);
     }
 

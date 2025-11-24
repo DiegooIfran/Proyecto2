@@ -11,6 +11,8 @@ private string Nombre { get; }
     private string Apellido { get;}
     private string Telefono { get; }
     private string Email { get; }
+    
+    private string Nickname { get; }
 
     /// <summary>
     /// Constructor de la clase Usuario.
@@ -22,7 +24,7 @@ private string Nombre { get; }
     /// <param name="email">Correo electrónico del usuario.</param>
     /// <exception cref="ArgumentNullException">Si alguno de los parámetros es nulo.</exception>
     /// <exception cref="ArgumentException">Si algún parámetro no cumple con el formato esperado.</exception>
-    protected Usuario(string nombre, string apellido, string telefono, string email)
+    protected Usuario(string nombre, string apellido, string telefono, string email, string nickname)
     {
         if (nombre == null)
         {
@@ -42,6 +44,10 @@ private string Nombre { get; }
         if (email == null)
         {
             throw new ArgumentNullException(email);
+        }
+        if (nickname == null)
+        {
+            throw new ArgumentNullException(nickname);
         }
         if (!Regex.IsMatch(nombre, @"^[a-zA-Z ]+$")) //Valida que el nombre solo contenga letras
         {
@@ -63,6 +69,7 @@ private string Nombre { get; }
         this.Apellido = apellido;
         this.Telefono = telefono;
         this.Email = email;
+        this.Nickname = nickname;
     }
 
     public string ObtenerNombre()

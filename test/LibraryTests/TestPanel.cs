@@ -12,7 +12,7 @@ public class TestPanel
 
         private Vendedor CrearVendedorConClientes()
         {
-            Vendedor vendedor = new Vendedor("Juan", "Silva", "092678999", "juansil@MailAddress.com");
+            Vendedor vendedor = new Vendedor("Juan", "Silva", "092678999", "juansil@MailAddress.com", TODO);
             vendedor.AgregarCliente(CrearClienteConInteracciones());
             return vendedor;
         }
@@ -31,7 +31,7 @@ public class TestPanel
         [Test]
         public void TestImprimirPanel_SinClientes_MuestraMensajeAdecuado()
         {
-            Vendedor vendedor = new Vendedor("Ana", "Rodriguez", "096123456", "anarod@mail.com"); 
+            Vendedor vendedor = new Vendedor("Ana", "Rodriguez", "096123456", "anarod@mail.com", TODO); 
             
             string panel = Panel.ImprimirPanel(vendedor);
             Console.WriteLine(panel);

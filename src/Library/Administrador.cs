@@ -4,8 +4,8 @@ namespace Library;
 /// </summary>
 public class Administrador : Usuario, IGestionable
 {
-    public Administrador(string nombre, string apellido, string telefono, string email)
-        : base(nombre, apellido, telefono, email)
+    public Administrador(string nombre, string apellido, string telefono, string email, string nickname)
+        : base(nombre, apellido, telefono, email, nickname)
     {
         Singleton<Gestor<Administrador>>.Instance.Agregar(this); // Al crear un administrador lo agrego a la lista global de administradores
     }
