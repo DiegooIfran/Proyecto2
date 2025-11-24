@@ -49,7 +49,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         /// </summary>
         [Command("modificarApellido")]
         [Summary(
-            "Modifica el apellido de un cliente. Uso !modificarNombre email apellidoNuevo")]
+            "Modifica el apellido de un cliente. Uso !modificarApellido email apellidoNuevo")]
         // ReSharper disable once UnusedMember.Global
         public async Task ExecuteAsync(string email, string apellidoNuevo)
         {
