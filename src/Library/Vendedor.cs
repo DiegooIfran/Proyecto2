@@ -22,8 +22,8 @@ public class Vendedor : Usuario, IPersona
     /// Constructor de la clase Vendedor
     /// Inicializa el vendedor con sus datos personales, lo marca como activo y crea su lista de clientes.
     /// </summary>
-    public Vendedor(string nombre, string apellido, string telefono, string email) //Constructor de vendedor
-        : base(nombre, apellido, telefono, email)
+    public Vendedor(string nombre, string apellido, string telefono, string email, string nickname) //Constructor de vendedor
+        : base(nombre, apellido, telefono, email, nickname)
     {
         this.Activo = true;
         this.Clientes = new List<Cliente>();
@@ -52,14 +52,13 @@ public class Vendedor : Usuario, IPersona
         }
     }
     
-    public void VerClientes() //Imprimir clientes
+    public List<string> VerClientes()
     {
-        string clientes = "";
-        foreach (Cliente cliente in Clientes)
-        {
-            clientes += $"{cliente.ObtenerNombre()} {cliente.ObtenerApellido} + \n";
-        }
+        return Clientes
+            .Select(c => $"{c.ObtenerNombre()} {c.ObtenerApellido()}")
+            .ToList();
     }
+
 
     /// <summary>
     /// Envía un mensaje de cumpleaños a los clientes cuya fecha de nacimiento coincide con la fecha actual

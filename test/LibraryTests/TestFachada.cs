@@ -132,7 +132,7 @@ public class TestFachada
     {
     // Arrange
     string email = "reunion@mail.com";
-    Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com");
+    Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com", TODO);
     fachada.AgregarCliente("Diego", "Ifran", "091111111", email, "M", new DateTime(2003, 3, 3));
     fachada.AsignarVendedor(vendedor);
     // Act
@@ -149,7 +149,7 @@ public class TestFachada
     {
         // Arrange
         string email = "reunion@mail.com";
-        Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com");
+        Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com", TODO);
         fachada.AgregarCliente("Diego", "Ifran", "091111111", email, "M", new DateTime(2003, 3, 3));
         fachada.AsignarVendedor(vendedor);
         // Act
@@ -166,7 +166,7 @@ public class TestFachada
     {
         // Arrange
         string email = "reunion@mail.com";
-        Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com");
+        Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com", TODO);
         fachada.AgregarCliente("Diego", "Ifran", "091111111", email, "M", new DateTime(2003, 3, 3));
         fachada.AsignarVendedor(vendedor);
         // Act
@@ -183,7 +183,7 @@ public class TestFachada
     {
         // Arrange
         string email = "reunion@mail.com";
-        Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com");
+        Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com", TODO);
         fachada.AgregarCliente("Diego", "Ifran", "091111111", email, "M", new DateTime(2003, 3, 3));
         fachada.AsignarVendedor(vendedor);
         // Act

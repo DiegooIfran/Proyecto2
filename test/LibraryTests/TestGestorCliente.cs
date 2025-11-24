@@ -47,7 +47,7 @@ public class TestGestorCliente
     {
         GestorCliente gestor = Singleton<GestorCliente>.Instance;
         gestor.AgregarCliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990,10,20));
-        Vendedor vendedor = new Vendedor("Lucia", "Dominguez", "093213589", "lucia@gmail.com");
+        Vendedor vendedor = new Vendedor("Lucia", "Dominguez", "093213589", "lucia@gmail.com", TODO);
         gestor.AsignarCliente(vendedor, gestor.VerTotal()[0]);
         Assert.That(vendedor.ObtenerClientes().Contains(gestor.VerTotal()[0]), Is.True);
     }

@@ -15,7 +15,7 @@ public class TestAdministrador
     public void CrearVendedores() // Que un admin cree un vendedor y lo almacene
     {
         Gestor<Vendedor> gestor = Singleton<Gestor<Vendedor>>.Instance;
-        Administrador admin = new Administrador("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com");
+        Administrador admin = new Administrador("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com", TODO);
         admin.CrearVendedor("Federico", "Garcia", "231231", "fedegarcia@gmail.com");
         Assert.AreEqual(1, gestor.VerTotal().Count);
         Assert.AreEqual("Federico", gestor.VerTotal()[0].ObtenerNombre());
@@ -24,7 +24,7 @@ public class TestAdministrador
     [Test]
     public void SuspenderVendedores() // Suspendo a un vendedor
     {
-        Administrador admin = new Administrador("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com");
+        Administrador admin = new Administrador("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com", TODO);
         admin.CrearVendedor("Federico", "Garcia", "231231", "fedegarcia@gmail.com");
         admin.SuspenderVendedor("fedegarcia@gmail.com");
         Gestor<Vendedor> gestor = Singleton<Gestor<Vendedor>>.Instance;
@@ -35,7 +35,7 @@ public class TestAdministrador
     public void EliminarVendedores() // Elimino a un vendedor
     {
         Gestor<Vendedor> gestor = Singleton<Gestor<Vendedor>>.Instance;
-        Administrador admin = new Administrador("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com");
+        Administrador admin = new Administrador("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com", TODO);
         admin.CrearVendedor("Federico", "Garcia", "231231", "fedegarcia@gmail.com");
         admin.EliminarVendedor("fedegarcia@gmail.com");
         Assert.AreEqual(0, gestor.VerTotal().Count);

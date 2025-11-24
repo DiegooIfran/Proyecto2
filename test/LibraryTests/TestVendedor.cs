@@ -11,7 +11,7 @@ public class TestVendedor
     [Test]
     public void FestejarCumpleanos()
     {
-        Vendedor vendedor = new Vendedor("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com");
+        Vendedor vendedor = new Vendedor("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com", TODO);
         Cliente cumpleaniero = new Cliente("Juan", "Perez", "0923", "juan@gmail.com","hombre", DateTime.Today);
         Cliente otro = new Cliente("Carlos", "Diaz", "09232", "carlos@gmail.com","hombre", DateTime.Today.AddDays(2));
         vendedor.AgregarCliente(cumpleaniero);
@@ -26,7 +26,7 @@ public class TestVendedor
     [Test]
     public void Campana()
     {
-        Vendedor vendedor = new Vendedor("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com");
+        Vendedor vendedor = new Vendedor("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com", TODO);
         Cliente mayor = new Cliente("Juan", "Perez", "0923", "juan@gmail.com","hombre", DateTime.Today);
         Cliente otro = new Cliente("Carlos", "Diaz", "09232", "carlos@gmail.com","hombre", DateTime.Today.AddDays(2));
         vendedor.AgregarCliente(mayor);
@@ -42,7 +42,7 @@ public class TestVendedor
     [Test]
     public void Cotizacion()
     {
-        Vendedor vendedor = new Vendedor("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com");
+        Vendedor vendedor = new Vendedor("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com", TODO);
         Cliente cliente = new Cliente("Juan", "Perez", "0923", "juan@gmail.com","hombre", DateTime.Today);
         vendedor.AgregarCliente(cliente);
         
@@ -54,7 +54,7 @@ public class TestVendedor
     [Test]
     public void TotalVentas()
     {
-        Vendedor vendedor = new Vendedor("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com");
+        Vendedor vendedor = new Vendedor("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com", TODO);
         Cliente cliente = new Cliente("Juan", "Perez", "0923", "juan@gmail.com","hombre", DateTime.Today);
         vendedor.AgregarCliente(cliente);
         
