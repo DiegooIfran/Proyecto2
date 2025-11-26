@@ -4,9 +4,9 @@ public class Fachada : ISingleton
 {
     
     
-    private Gestor<Vendedor> gv = Singleton<Gestor<Vendedor>>.Instance;
+    private GestorVendedor gv = Singleton<GestorVendedor>.Instance;
     private GestorCliente gc = Singleton<GestorCliente>.Instance;
-    private Gestor<Administrador> ga = Singleton<Gestor<Administrador>>.Instance;
+    private GestorAdministrador ga = Singleton<GestorAdministrador>.Instance;
 
     
     //Agregar un cliente
@@ -151,19 +151,19 @@ public class Fachada : ISingleton
     //Crear un usuario
     public void CrearVendedor(string nombre, string apellido, string telefono, string email, string nick)
     {
-        ga.CrearVendedor(nombre,  apellido, telefono, email, nick);
+        gv.CrearVendedor(nombre,  apellido, telefono, email, nick);
     }
     
     //Suspender un usuario
     public void SuspenderUsuario(string email)
     {
-        ga.SuspenderVendedor(email);
+        gv.SuspenderVendedor(email);
     }
     
     //Eliminar un usuario
-    public void EliminarUsuario(string email)
+    public void EliminarVendedor(string email)
     {
-        ga.EliminarVendedor(email);
+        gv.EliminarVendedor(email);
     }
     
     //Asignar un cliente a otro vendedor
@@ -184,3 +184,4 @@ public class Fachada : ISingleton
         new Administrador(nombre,  apellido, telefono, email, nick);
     }
 }
+ajdasd como estas
