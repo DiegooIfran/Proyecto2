@@ -1,6 +1,7 @@
 using System.Text.RegularExpressions;
 
 namespace Library;
+
 /// <summary>
 /// Representa un cliente dentro del sistema.
 /// Contiene sus datos personales, etiquetas asociadas y el historial de interacciones
@@ -20,7 +21,8 @@ public class Cliente : ISingleton, IPersona
     /// <summary>
     /// Constructor que inicializa un nuevo cliente con sus datos personales
     /// </summary>
-    public Cliente(string nombre, string apellido, string telefono, string email, string genero, DateTime fechaNacimiento)
+    public Cliente(string nombre, string apellido, string telefono, string email, string genero,
+        DateTime fechaNacimiento)
     {
         Nombre = nombre;
         Apellido = apellido;
@@ -28,6 +30,11 @@ public class Cliente : ISingleton, IPersona
         Email = email;
         Genero = genero;
         FechaNacimiento = fechaNacimiento;
+    }
+
+    public override string ToString()
+    {
+        return $"cliiente {this.Nombre} {this.Apellido} - Contacto: correo {this.Email}, teléfono {this.Telefono}";
     }
 
     public string ObtenerNombre()
@@ -76,10 +83,12 @@ public class Cliente : ISingleton, IPersona
         {
             throw new ArgumentNullException(nombre);
         }
+
         if (!Regex.IsMatch(nombre, @"^[a-zA-Z ]+$")) //Valida que el nombre solo contenga letras
         {
             throw new ArgumentException(nombre);
         }
+
         this.Nombre = nombre;
     }
 
@@ -89,10 +98,12 @@ public class Cliente : ISingleton, IPersona
         {
             throw new ArgumentNullException(apellido);
         }
+
         if (!Regex.IsMatch(apellido, @"^[a-zA-Z ]+$")) //Valida que el nombre solo contenga letras
         {
             throw new ArgumentException(apellido);
         }
+
         this.Apellido = apellido;
     }
 
@@ -102,10 +113,12 @@ public class Cliente : ISingleton, IPersona
         {
             throw new ArgumentNullException(telefono);
         }
+
         if (!Regex.IsMatch(telefono, @"^[0-9 +]+$")) //Valida que el teléfono solo contenga números o +
         {
             throw new ArgumentException(telefono);
         }
+
         this.Telefono = telefono;
     }
 
@@ -115,10 +128,13 @@ public class Cliente : ISingleton, IPersona
         {
             throw new ArgumentNullException(email);
         }
-        if (!Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$")) //Valida que el email solo contenga una arroba y alguas cosas más
+
+        if (!Regex.IsMatch(email,
+                @"^[^@\s]+@[^@\s]+\.[^@\s]+$")) //Valida que el email solo contenga una arroba y alguas cosas más
         {
             throw new ArgumentException(email);
         }
+
         this.Email = email;
     }
 
@@ -128,12 +144,15 @@ public class Cliente : ISingleton, IPersona
         {
             throw new ArgumentNullException(genero);
         }
+
         if (!Regex.IsMatch(genero, @"^[a-zA-Z ]+$")) //Valida que el nombre solo contenga letras
         {
             throw new ArgumentException(genero);
         }
+
         this.Genero = genero;
     }
+
     /// <summary>
     /// Agrega una nueva interacción (como una venta o cotización) al historial del cliente
     /// </summary>
@@ -141,21 +160,24 @@ public class Cliente : ISingleton, IPersona
     {
         this._interacciones.Add(interaccion);
     }
-    
+
     /// <summary>
     /// Devuelve la última interacción realizada con el cliente,
     /// comparando las fechas de todas sus interacciones registradas
     /// </summary>
     public Interaccion UltimaInteraccion()
     {
-            Interaccion ultimaInteraccion = this.ObtenerInteracciones()[0];
-            foreach (Interaccion interaccion in _interacciones) 
-            {if ((ultimaInteraccion.ObtenerFecha() < interaccion.ObtenerFecha()) && (interaccion.ObtenerFecha()<DateTime.Now))
-                {
-                    ultimaInteraccion= interaccion;
-                }
+        Interaccion ultimaInteraccion = this.ObtenerInteracciones()[0];
+        foreach (Interaccion interaccion in _interacciones)
+        {
+            if ((ultimaInteraccion.ObtenerFecha() < interaccion.ObtenerFecha()) &&
+                (interaccion.ObtenerFecha() < DateTime.Now))
+            {
+                ultimaInteraccion = interaccion;
             }
-            return ultimaInteraccion;
+        }
+
+        return ultimaInteraccion;
     }
 }
 

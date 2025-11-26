@@ -52,7 +52,7 @@ public class Fachada : ISingleton
     }
     
     //Buscar por nombre
-    public Cliente BuscarPorNombre(string nombre)
+    public  List<Cliente>  BuscarPorNombre(string nombre)
     {
         return gc.BuscarPorNombre(nombre);
     }
@@ -64,7 +64,7 @@ public class Fachada : ISingleton
     }
     
     //Buscar por apellido
-    public Cliente BuscarPorApellido(string apellido)
+    public  List<Cliente>  BuscarPorApellido(string apellido)
     {
         return gc.BuscarPorApellido(apellido);
     }
