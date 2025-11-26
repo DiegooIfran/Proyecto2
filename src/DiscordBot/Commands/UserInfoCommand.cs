@@ -44,9 +44,9 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             string userName =
                 displayName ?? CommandHelper.GetDisplayName(Context);
 
-            string result = Fachada.Instance;
+            //string result = Fachada;
 
-            await ReplyAsync(result);
+            await ReplyAsync("result");
         }
     }
 }
