@@ -25,7 +25,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             {
                 _fachada.CrearEtiqueta(nombre, descripcion);
 
-                await ReplyAsync($"Etiqueta **{nombre}** creada correctamente.\n📝 Descripción: {descripcion}");
+                await ReplyAsync($"Etiqueta **{nombre}** creada correctamente.\n Descripción: {descripcion}");
             }
             catch (Exception ex)
             {

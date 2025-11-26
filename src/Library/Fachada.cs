@@ -3,6 +3,8 @@ namespace Library;
 public class Fachada : ISingleton
 {
     
+    //VA ASI GESTOR INTERACCIONES O NO??????????????????
+    //private GestorInteracciones<Interaccion> gi = Singleton<GestorInteracciones<Interaccion>>.Instance
     private GestorEtiquetas<Etiqueta> ge = Singleton<GestorEtiquetas<Etiqueta>>.Instance;
     private GestorVendedor gv = Singleton<GestorVendedor>.Instance;
     private GestorCliente gc = Singleton<GestorCliente>.Instance;
