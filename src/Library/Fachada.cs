@@ -3,7 +3,8 @@ namespace Library;
 public class Fachada : ISingleton
 {
     
-    
+    //private GestorInteracciones<Interaccion> gi = Singleton<GestorInteracciones<Interaccion>>.Instance;
+    private GestorEtiquetas<Etiqueta> ge = Singleton<GestorEtiquetas<Etiqueta>>.Instance;
     private GestorVendedor gv = Singleton<GestorVendedor>.Instance;
     private GestorCliente gc = Singleton<GestorCliente>.Instance;
     private GestorAdministrador ga = Singleton<GestorAdministrador>.Instance;
@@ -106,13 +107,13 @@ public class Fachada : ISingleton
     //Crear una etiqueta
     public void CrearEtiqueta(string nombre, string descripcion)
     {
-        Etiqueta etiqueta = new Etiqueta(nombre, descripcion);
+        ge.CrearEtiqueta(nombre, descripcion);
     }
     
     //Agregar etiqueta a un cliente
-    public void AgregarEtiqueta(string correo, Etiqueta etiqueta) // ARREGLAR ESTO!)!)!)!!)!
+    public void AgregarEtiqueta(string correo, string nombreEtiqueta)
     {
-        etiqueta.AgregarEtiqueta(gc.BuscarPorEmail(correo));
+        ge.AgregarEtiqueta(gc.BuscarPorEmail(correo), ge.RetornarEtiqueta(nombreEtiqueta));
     }
     
     //Realizar campaña publicitaria

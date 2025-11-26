@@ -42,6 +42,18 @@ public class GestorEtiquetas<T> : ISingleton where T : Etiqueta
         return _etiquetas;
     }
 
+    public Etiqueta RetornarEtiqueta(string nombre)
+    {
+        foreach (Etiqueta etiqueta in _etiquetas)
+        {
+            if (etiqueta.Nombre == nombre)
+            {
+                return etiqueta;
+            }
+        }
+        return null;
+    }
+
     /// <summary>
     /// Elimina una etiqueta de un cliente si ya la tiene
     /// </summary>
