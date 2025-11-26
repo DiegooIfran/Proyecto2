@@ -9,11 +9,15 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
     {
         private readonly Fachada _fachada;
 
+        // Inyectás la fachada por constructor (recomendado en Discord.NET con DI)
         public ComandoRealizarCampana(Fachada fachada)
         {
             _fachada = fachada;
         }
 
+        /// <summary>
+        /// Implementa el comando 'RealizarCampana'.
+        /// </summary>
         [Command("campana")]
         [Summary("Realiza una campaña publicitaria. Uso: !campana nick etiqueta anuncio")]
         public async Task ExecuteAsync(string nick, string nombreEtiqueta, [Remainder] string anuncio)
