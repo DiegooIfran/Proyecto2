@@ -184,4 +184,3 @@ public class Fachada : ISingleton
         new Administrador(nombre,  apellido, telefono, email, nick);
     }
 }
-ajdasd como estas
