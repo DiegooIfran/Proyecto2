@@ -28,40 +28,4 @@ public class Etiqueta
         Nombre = nombre;
         Descripcion = descripcion;
     }
-    
-    /// <summary>
-    /// Asocia una etiqueta a un cliente
-    /// </summary>
-    /// <param name="cliente"></param>
-    /// <exception cref="ArgumentNullException"></exception>
-    public void AgregarEtiqueta(Cliente cliente)
-    {
-        if (cliente == null) //Valida que el cliente no sea nulo
-        {
-            throw new ArgumentNullException(nameof(cliente));
-        }
-        cliente.ObtenerEtiquetas().Add(this);
-    }
-    
-    /// <summary>
-    /// Elimina una etiqueta de un cliente si ya la tiene
-    /// </summary>
-    /// <param name="cliente"></param>
-    /// <param name="etiqueta"></param>
-    /// <exception cref="ArgumentNullException"></exception>
-    public void BorrarEtiqueta(Cliente cliente, Etiqueta etiqueta)
-    {
-        if (cliente == null) //Valida que el cliente no sea nulo
-        {
-            throw new ArgumentNullException(nameof(cliente));
-        }
-        if (etiqueta == null) //Valida que el etiqueta no sea nulo
-        {
-            throw new ArgumentNullException(nameof(etiqueta));
-        }
-        if (cliente.ObtenerEtiquetas().Contains(etiqueta))
-        {
-            cliente.ObtenerEtiquetas().Remove(etiqueta);
-        }
-    }
 }
