@@ -17,19 +17,19 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         /// <summary>
         /// Implementa el comando 'ModificarNombre'.
         /// </summary>
-        [Command("crearetiqueta")]
-        [Summary("Crea una etiqueta. Uso: !crearetiqueta nombre descripcion")]
+        [Command("crearEtiqueta")]
+        [Summary("Crea una etiqueta. Uso: !crearEtiqueta nombre descripcion")]
         public async Task ExecuteAsync(string nombre, [Remainder] string descripcion)
         {
             try
             {
                 _fachada.CrearEtiqueta(nombre, descripcion);
 
-                await ReplyAsync($"✔️ Etiqueta **{nombre}** creada correctamente.\n📝 Descripción: {descripcion}");
+                await ReplyAsync($"Etiqueta **{nombre}** creada correctamente.\n📝 Descripción: {descripcion}");
             }
             catch (Exception ex)
             {
-                await ReplyAsync($"❌ Error: {ex.Message}");
+                await ReplyAsync($"Error: {ex.Message}");
             }
         }
     }
