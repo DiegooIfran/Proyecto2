@@ -3,7 +3,6 @@ namespace Library;
 public class Fachada : ISingleton
 {
     
-    //private GestorInteracciones<Interaccion> gi = Singleton<GestorInteracciones<Interaccion>>.Instance;
     private GestorEtiquetas<Etiqueta> ge = Singleton<GestorEtiquetas<Etiqueta>>.Instance;
     private GestorVendedor gv = Singleton<GestorVendedor>.Instance;
     private GestorCliente gc = Singleton<GestorCliente>.Instance;
@@ -117,10 +116,10 @@ public class Fachada : ISingleton
     }
     
     //Realizar campaña publicitaria
-    public void RealizarCampana(string nick, Etiqueta etiqueta, string anuncio) // ARREGLAR LO DE LA ETIQUETAA
+    public void RealizarCampana(string nick, string nombreEtiqueta, string anuncio)
     {
         Vendedor vendedor = gv.BuscarPorNick(nick);
-        vendedor.Campana(etiqueta, anuncio);
+        vendedor.Campana(ge.RetornarEtiqueta(nombreEtiqueta), anuncio);
     }
     
     //Realizar cotizacion de un producto (tema especifica un producto)
