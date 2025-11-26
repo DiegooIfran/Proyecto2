@@ -64,28 +64,46 @@ public class GestorCliente : Gestor<Cliente>
         cliente.CambiarEmail(email);
     }
 
-    public Cliente BuscarPorNombre(string nombre) 
+    public List<Cliente> BuscarPorNombre(string nombre)
     {
+        List<Cliente> resultado = new List<Cliente>();
         foreach (Cliente cliente in this.VerTotal())
         {
             if (nombre == cliente.ObtenerNombre())
             {
-                return cliente;
+                resultado.Add(cliente);
             }
         }
-        throw new InvalidOperationException("No se encontró ningún cliente con ese nombre.");
+
+        if (resultado.Any())
+        {
+            return resultado;
+        }
+        else
+        {
+            throw new InvalidOperationException("No se encontró ningún cliente con ese nombre.");     
+        }
     }
 
-    public Cliente BuscarPorApellido(string apellido) 
+    public  List<Cliente> BuscarPorApellido(string apellido) 
     {
+        List<Cliente> resultado = new List<Cliente>();
         foreach (Cliente cliente in this.VerTotal())
         {
-            if (apellido == cliente.ObtenerApellido())
+            if (apellido == cliente.ObtenerNombre())
             {
-                return cliente;
+                resultado.Add(cliente);
             }
         }
-        throw new InvalidOperationException("No se encontró ningún cliente con ese apellido.");
+
+        if (resultado.Any())
+        {
+            return resultado;
+        }
+        else
+        {
+            throw new InvalidOperationException("No se encontró ningún cliente con ese nombre.");     
+        }
     }
 
     public Cliente BuscarPorTelefono(string telefono) 
