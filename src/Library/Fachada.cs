@@ -115,6 +115,12 @@ public class Fachada : ISingleton
         ge.AgregarEtiqueta(gc.BuscarPorEmail(correo), ge.RetornarEtiqueta(nombreEtiqueta));
     }
     
+    //Borrar etiqueta a un cliente
+    public void BorrarEtiqueta(string correo, string nombreEtiqueta)
+    {
+        ge.BorrarEtiqueta(gc.BuscarPorEmail(correo), ge.RetornarEtiqueta(nombreEtiqueta));
+    }
+    
     //Realizar campaña publicitaria
     public void RealizarCampana(string nick, string nombreEtiqueta, string anuncio)
     {

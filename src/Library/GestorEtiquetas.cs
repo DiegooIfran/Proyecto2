@@ -42,7 +42,7 @@ public class GestorEtiquetas<T> : ISingleton where T : Etiqueta
         return _etiquetas;
     }
 
-    public Etiqueta RetornarEtiqueta(string nombre)
+    public Etiqueta RetornarEtiqueta(string nombre) //NO ESTA BIEN, FALTAN EXCEPCIONES
     {
         foreach (Etiqueta etiqueta in _etiquetas)
         {
