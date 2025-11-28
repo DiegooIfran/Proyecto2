@@ -59,6 +59,19 @@ public class Fachada : ISingleton
         return gc.BuscarPorNombre(nombre);
     }
     
+    //Buscar por vendedor por nick
+    public Usuario BuscarVendedorNick(string nick)
+    {
+            return gv.BuscarPorNick(nick);
+    }
+    
+    
+    //Buscar por nick administrador
+    public Usuario BuscarAdministradorNick(string nick)
+    {
+        return ga.BuscarPorNick(nick);
+    }
+    
     //Buscar por telefono
     public Cliente BuscarPorTelefono(string telefono)
     {
