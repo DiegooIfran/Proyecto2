@@ -35,7 +35,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             }
             catch (InvalidOperationException)
             {
-                await ReplyAsync("❌ No existe un administrador con ese nick.");
+                await ReplyAsync("No existe un administrador con ese nick.");
             }
 
         }
