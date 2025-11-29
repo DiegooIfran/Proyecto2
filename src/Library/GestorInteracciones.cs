@@ -4,10 +4,10 @@ namespace Library;
 /// Permite crear nuevas interacciones (mensajes, llamadas, correos y reuniones),
 /// registrar las existentes y obtener información sobre ellas.
 /// </summary>
-public static class GestorInteracciones
+public class GestorInteracciones : ISingleton
 {
-    private static List<Interaccion> _todasInteracciones = new List<Interaccion>(); 
-    public static void NuevoMensaje(Cliente cliente, DateTime fecha, string tema, string notas, bool enviada) 
+    private  List<Interaccion> _todasInteracciones = new List<Interaccion>(); 
+    public void NuevoMensaje(Cliente cliente, DateTime fecha, string tema, string notas, bool enviada) 
     {
         if (cliente == null) 
         {
@@ -17,7 +17,7 @@ public static class GestorInteracciones
         cliente.AgregarInteraccion(mensaje);
         _todasInteracciones.Add(mensaje);
     }
-    public static void NuevaLlamada(Cliente cliente, DateTime fecha, string tema, string notas, bool enviada) 
+    public void NuevaLlamada(Cliente cliente, DateTime fecha, string tema, string notas, bool enviada) 
     {
         if (cliente == null) 
         {
@@ -27,7 +27,7 @@ public static class GestorInteracciones
         cliente.AgregarInteraccion(llamada);
         _todasInteracciones.Add(llamada);
     }
-    public static void NuevoCorreo(Cliente cliente, DateTime fecha, string tema, string notas, bool enviada) 
+    public void NuevoCorreo(Cliente cliente, DateTime fecha, string tema, string notas, bool enviada) 
     {
         if (cliente == null) 
         {
@@ -37,7 +37,7 @@ public static class GestorInteracciones
         cliente.AgregarInteraccion(correo);
         _todasInteracciones.Add(correo);
     }
-    public static void NuevaReunion(Cliente cliente, DateTime fecha, string tema, string notas)
+    public void NuevaReunion(Cliente cliente, DateTime fecha, string tema, string notas)
     {
         if (cliente == null) 
         {
@@ -50,7 +50,7 @@ public static class GestorInteracciones
     /// <summary>
     /// Devuelve las cinco interacciones más recientes registradas en el sistema
     /// </summary>
-    public static List<Interaccion> UltimasInteracciones() 
+    public List<Interaccion> UltimasInteracciones() 
     {
         return _todasInteracciones
             .OrderByDescending(i => i.Fecha) 
@@ -63,7 +63,7 @@ public static class GestorInteracciones
     /// </summary>
     /// <param name="cliente">Cliente cuyas interacciones se desean ver</param>
     /// <exception cref="ArgumentNullException">Si el cliente es nulo</exception>
-    public static List<string> VerInteracciones(Cliente cliente)
+    public List<string> VerInteracciones(Cliente cliente)
     {
         if (cliente == null)
             throw new ArgumentNullException(nameof(cliente));
@@ -78,7 +78,7 @@ public static class GestorInteracciones
     /// que fueron enviadas pero aún no respondidas.
     /// </summary>
     /// <returns>Lista de interacciones pendientes de respuesta</returns>
-    public static List<Online> InteraccionesPendientes() 
+    public List<Online> InteraccionesPendientes() 
     {
         return _todasInteracciones
             .OfType<Online>() 

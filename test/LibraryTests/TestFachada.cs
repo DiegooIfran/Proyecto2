@@ -7,12 +7,7 @@ public class TestFachada
     [SetUp]
     public void Setup()
     {
-        // Codigo provisto por ChatGPT para lograr reiniciar el singleton en cada test evitando problemas de que este persista en aquellos.
-        typeof(Fachada)
-            .GetField("instance", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static)
-            ?.SetValue(null, null);
-        
-        fachada = Fachada.Instance;
+        Fachada fachada = Singleton<Fachada>.Instance;
     }
     
     [Test]
@@ -23,7 +18,7 @@ public class TestFachada
         fachada.AgregarCliente("Juan", "Perez", "099111111", email, "M", new DateTime(1990, 1, 1));
 
         // Act
-        var cliente = fachada.BuscarPorEmail(email);
+        var cliente = fachada.BuscarPorNombre("Juan").First();
 
         // Assert
         Assert.That(cliente, Is.Not.Null);
@@ -43,7 +38,7 @@ public class TestFachada
         
         // Act
         fachada.ModificarNombre(email, nuevoNombre);
-        var cliente = fachada.BuscarPorNombre(nuevoNombre);
+        var cliente = fachada.BuscarPorNombre(nuevoNombre).First();
 
         // Assert
         Assert.That(cliente.ObtenerNombre(), Is.EqualTo(nuevoNombre));
@@ -59,7 +54,7 @@ public class TestFachada
         
         // Act
         fachada.ModificarApellido(email, nuevoApellido);
-        var cliente = fachada.BuscarPorApellido(nuevoApellido);
+        var cliente = fachada.BuscarPorApellido(nuevoApellido).First();
 
         // Assert
         Assert.That(cliente.ObtenerApellido(), Is.EqualTo(nuevoApellido));
@@ -132,11 +127,11 @@ public class TestFachada
     {
     // Arrange
     string email = "reunion@mail.com";
-    Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com", TODO);
+    Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com", "diego");
     fachada.AgregarCliente("Diego", "Ifran", "091111111", email, "M", new DateTime(2003, 3, 3));
-    fachada.AsignarVendedor(vendedor);
+    fachada.AsignarCliente("diego", email);
     // Act
-    fachada.RegistrarReunion(email, DateTime.Now, "Presentación", "Reunión de presentación");
+    fachada.RegistrarReunion("diego",email, DateTime.Now, "Presentación", "Reunión de presentación");
     var cliente = fachada.BuscarPorEmail(email);
 
     // Assert
@@ -149,11 +144,11 @@ public class TestFachada
     {
         // Arrange
         string email = "reunion@mail.com";
-        Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com", TODO);
+        Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com", "diego");
         fachada.AgregarCliente("Diego", "Ifran", "091111111", email, "M", new DateTime(2003, 3, 3));
-        fachada.AsignarVendedor(vendedor);
+        fachada.AsignarCliente("diego",email);
         // Act
-        fachada.RegistrarLlamada(email, DateTime.Now, "Presentación", "Reunión de presentación", true);
+        fachada.RegistrarLlamada("diego",email, DateTime.Now, "Presentación", "Reunión de presentación", true);
         var cliente = fachada.BuscarPorEmail(email);
 
         // Assert
@@ -166,11 +161,11 @@ public class TestFachada
     {
         // Arrange
         string email = "reunion@mail.com";
-        Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com", TODO);
+        Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com", "diego");
         fachada.AgregarCliente("Diego", "Ifran", "091111111", email, "M", new DateTime(2003, 3, 3));
-        fachada.AsignarVendedor(vendedor);
+        fachada.AsignarCliente("diego",email);
         // Act
-        fachada.RegistrarCorreo(email, DateTime.Now, "Presentación", "Reunión de presentación", true);
+        fachada.RegistrarCorreo("diego",email, DateTime.Now, "Presentación", "Reunión de presentación", true);
         var cliente = fachada.BuscarPorEmail(email);
 
         // Assert
@@ -183,11 +178,11 @@ public class TestFachada
     {
         // Arrange
         string email = "reunion@mail.com";
-        Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com", TODO);
+        Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com", "diego");
         fachada.AgregarCliente("Diego", "Ifran", "091111111", email, "M", new DateTime(2003, 3, 3));
-        fachada.AsignarVendedor(vendedor);
+        fachada.AsignarCliente("diego",email);
         // Act
-        fachada.RegistrarMensaje(email, DateTime.Now, "Presentación", "Reunión de presentación", true);
+        fachada.RegistrarMensaje("diego",email, DateTime.Now, "Presentación", "Reunión de presentación", true);
         var cliente = fachada.BuscarPorEmail(email);
 
         // Assert
@@ -199,8 +194,8 @@ public class TestFachada
     public void Singleton_DeberiaDevolverLaMismaInstancia()
     {
         // Act
-        var instancia1 = Fachada.Instance;
-        var instancia2 = Fachada.Instance;
+        Fachada instancia1 = Singleton<Fachada>.Instance;
+        Fachada instancia2 = Singleton<Fachada>.Instance;
 
         // Assert
         Assert.That(instancia1, Is.SameAs(instancia2));

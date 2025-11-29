@@ -8,6 +8,8 @@ namespace Library;
 /// </summary>
 public class Vendedor : Usuario, IPersona
 {
+    Fachada fachada = Singleton<Fachada>.Instance;
+
     /// <summary>
     /// Lista de clientes a cargo del vendedor.
     /// </summary> 
@@ -88,7 +90,7 @@ public class Vendedor : Usuario, IPersona
                     anuncio, true);
             }
         }
-    }
+    } //Arreglar esto
 
     /// <summary>
     /// Crea una nueva cotización para un cliente específico, siempre que el cliente pertenezca al vendedor.
