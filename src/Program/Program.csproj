@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <ProjectReference Include="..\DiscordBot\DiscordBot.csproj" />
     <ProjectReference Include="..\Library\Library.csproj" />
   </ItemGroup>
 

@@ -1,42 +1,47 @@
 ﻿using Discord;
 using Discord.WebSocket;
 using Library;
+using Ucu.Poo.DiscordDemo.DiscordBot.Services;
 
 namespace Program;
 
 /// <summary>
 /// Un programa que implementa un bot de Discord.
 /// </summary>
-public class Program
-{
-    private Fachada fachada = Singleton<Fachada>.Instance;
-    private static DiscordSocketClient _client;
 
-    public static async Task Main()
+    /// <summary>
+    /// Un programa que implementa un bot de Discord.
+    /// </summary>
+    internal static class Program
     {
-        _client = new DiscordSocketClient();
+        /// <summary>
+        /// Punto de entrada al programa.
+        /// </summary>
+        private static void Main(string [] args)
+        {
+            if (args.Length != 0)
+            {
+                DemoFacade(args);
+            }
+            else
+            {
+                DemoBot();
+            }
+        }
 
-        _client.Log += Log;
+        private static void DemoFacade(string [] args)
+        {
+            if (args.Length > 0)
+            {
+                // línea simple en Main/DemoFacade
+             //   Console.WriteLine(Singleton<Fachada>.Instance.BuscarPorEmail(args[0])?.ToString() ?? "Cliente no encontrado");
 
-        //  You can assign your bot token to a string, and pass that in to connect.
-        //  This is, however, insecure, particularly if you plan to have your code hosted in a public repository.
-        var token = "token";
+            }
+        }
 
-        // Some alternative options would be to keep your token in an Environment Variable or a standalone file.
-        // var token = Environment.GetEnvironmentVariable("NameOfYourEnvironmentVariable");
-        // var token = File.ReadAllText("token.txt");
-        // var token = JsonConvert.DeserializeObject<AConfigurationClass>(File.ReadAllText("config.json")).Token;
-
-        await _client.LoginAsync(TokenType.Bot, token);
-        await _client.StartAsync();
-
-        // Block this task until the program is closed.
-        await Task.Delay(-1);
+        private static void DemoBot()
+        {
+            BotLoader.LoadAsync().GetAwaiter().GetResult();
+        }
     }
 
-    private static Task Log(LogMessage msg)
-    {
-        Console.WriteLine(msg.ToString());
-        return Task.CompletedTask;
-    }
-}

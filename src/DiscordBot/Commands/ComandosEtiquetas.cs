@@ -10,9 +10,9 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         private readonly Fachada _fachada;
 
         // Inyectás la fachada por constructor (recomendado en Discord.NET con DI)
-        public ComandosCrearEtiqueta(Fachada fachada)
+        public ComandosCrearEtiqueta()
         {
-            _fachada = fachada;
+            this._fachada = Singleton<Fachada>.Instance;
         }
         /// <summary>
         /// Implementa el comando 'CrearEtiqueta'.
@@ -39,9 +39,9 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         private readonly Fachada _fachada;
 
         // Inyectás la fachada por constructor (recomendado en Discord.NET con DI)
-        public ComandosAgregarEtiqueta(Fachada fachada)
+        public ComandosAgregarEtiqueta()
         {
-            _fachada = fachada;
+            this._fachada = Singleton<Fachada>.Instance;
         }
         /// <summary>
         /// Implementa el comando 'AgregarEtiqueta'.
@@ -68,9 +68,9 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         private readonly Fachada _fachada;
 
         // Inyectás la fachada por constructor (recomendado en Discord.NET con DI)
-        public ComandosBorrarEtiqueta(Fachada fachada)
+        public ComandosBorrarEtiqueta()
         {
-            _fachada = fachada;
+            this._fachada = Singleton<Fachada>.Instance;
         }
         /// <summary>
         /// Implementa el comando 'BorrarEtiqueta'.

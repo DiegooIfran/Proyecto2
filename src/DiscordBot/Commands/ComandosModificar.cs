@@ -10,9 +10,9 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         private readonly Fachada _fachada;
 
         // Inyectás la fachada por constructor (recomendado en Discord.NET con DI)
-        public ComandosModificarNombre(Fachada fachada)
+        public ComandosModificarNombre()
         {
-            _fachada = fachada;
+            this._fachada = Singleton<Fachada>.Instance;
         }
             /// <summary>
             /// Implementa el comando 'ModificarNombre'.
@@ -40,9 +40,9 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         private readonly Fachada _fachada;
 
         // Inyectás la fachada por constructor (recomendado en Discord.NET con DI)
-        public ComandosModificarApellido(Fachada fachada)
+        public ComandosModificarApellido()
         {
-            _fachada = fachada;
+            this._fachada = Singleton<Fachada>.Instance;
         }
         /// <summary>
         /// Implementa el comando 'modificarApellido'.
@@ -71,9 +71,9 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         private readonly Fachada _fachada;
 
         // Inyectás la fachada por constructor (recomendado en Discord.NET con DI)
-        public ComandosModificarTelefono(Fachada fachada)
+        public ComandosModificarTelefono()
         {
-            _fachada = fachada;
+            this._fachada = Singleton<Fachada>.Instance;
         }
         /// <summary>
         /// Implementa el comando 'modificarTelefono'.
@@ -102,9 +102,9 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         private readonly Fachada _fachada;
 
         // Inyectás la fachada por constructor (recomendado en Discord.NET con DI)
-        public ComandosModificarEmail(Fachada fachada)
+        public ComandosModificarEmail()
         {
-            _fachada = fachada;
+            this._fachada = Singleton<Fachada>.Instance;
         }
         /// <summary>
         /// Implementa el comando 'modificarEmail'.

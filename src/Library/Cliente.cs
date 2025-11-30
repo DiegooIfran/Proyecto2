@@ -35,7 +35,7 @@ public class Cliente : ISingleton, IPersona
 
     public override string ToString()
     {
-        return $"cliiente {this.Nombre} {this.Apellido} - Contacto: correo {this.Email}, teléfono {this.Telefono}";
+        return $"cliente {this.Nombre} {this.Apellido} - Contacto: correo {this.Email}, teléfono {this.Telefono}";
     }
 
     public string ObtenerNombre()

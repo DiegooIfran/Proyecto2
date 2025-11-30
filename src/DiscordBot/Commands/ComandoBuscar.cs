@@ -11,9 +11,9 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         private readonly Fachada _fachada;
 
         // Inyectás la fachada por constructor (recomendado en Discord.NET con DI)
-        public ComandoBuscarClientePorEmail(Fachada fachada)
+        public ComandoBuscarClientePorEmail()
         {
-            _fachada = fachada;
+            this._fachada = Singleton<Fachada>.Instance;
         }
         /// <summary>
         /// Implementa el comando 'buscarClientePorEmail'.
@@ -39,9 +39,9 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         private readonly Fachada _fachada;
 
         // Inyectás la fachada por constructor (recomendado en Discord.NET con DI)
-        public ComandoBuscarClientePorTelefono(Fachada fachada)
+        public ComandoBuscarClientePorTelefono()
         {
-            _fachada = fachada;
+            this._fachada = Singleton<Fachada>.Instance;
         }
         /// <summary>
         /// Implementa el comando 'buscarClientePorTelefono'.
@@ -67,9 +67,9 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         private readonly Fachada _fachada;
 
         // Inyectás la fachada por constructor (recomendado en Discord.NET con DI)
-        public ComandoBuscarClientePorNombre(Fachada fachada)
+        public ComandoBuscarClientePorNombre()
         {
-            _fachada = fachada;
+            this._fachada = Singleton<Fachada>.Instance;
         }
         /// <summary>
         /// Implementa el comando 'buscarClientePorNombre'.
@@ -100,9 +100,9 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         private readonly Fachada _fachada;
 
         // Inyectás la fachada por constructor (recomendado en Discord.NET con DI)
-        public ComandoBuscarClientePorApellido(Fachada fachada)
+        public ComandoBuscarClientePorApellido()
         {
-            _fachada = fachada;
+            this._fachada = Singleton<Fachada>.Instance;
         }
         /// <summary>
         /// Implementa el comando 'buscarClientePorApellido'.

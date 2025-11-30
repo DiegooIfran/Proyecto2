@@ -10,9 +10,9 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         private readonly Fachada _fachada;
 
         // Inyectás la fachada por constructor (recomendado en Discord.NET con DI)
-        public ComandoRealizarCampana(Fachada fachada)
+        public ComandoRealizarCampana()
         {
-            _fachada = fachada;
+            this._fachada = Singleton<Fachada>.Instance;
         }
 
         /// <summary>

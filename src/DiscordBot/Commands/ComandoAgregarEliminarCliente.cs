@@ -12,9 +12,9 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             private readonly Fachada _fachada;
 
             // Inyectás la fachada por constructor (recomendado en Discord.NET con DI)
-            public ComandoAgregarCliente(Fachada fachada)
+            public ComandoAgregarCliente()
             {
-                _fachada = fachada;
+                this._fachada = Singleton<Fachada>.Instance;
             }
             /// <summary>
             /// Implementa el comando 'agregarCliente'.
@@ -44,9 +44,9 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             private readonly Fachada _fachada;
 
             // Inyectás la fachada por constructor (recomendado en Discord.NET con DI)
-            public ComandoEliminarCliente(Fachada fachada)
+            public ComandoEliminarCliente()
             {
-                _fachada = fachada;
+                this._fachada = Singleton<Fachada>.Instance;
             }
             /// <summary>
             /// Implementa el comando 'eliminarCliente'.
@@ -74,9 +74,9 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             private readonly Fachada _fachada;
 
             // Inyectás la fachada por constructor (recomendado en Discord.NET con DI)
-            public ComandoAsignarCliente(Fachada fachada)
+            public ComandoAsignarCliente()
             {
-                _fachada = fachada;
+                this._fachada = Singleton<Fachada>.Instance;
             }
             /// <summary>
             /// Implementa el comando 'asignarCliente'.
