@@ -4,6 +4,9 @@ public class GestorVendedor:Gestor<Vendedor>
 {
     /// <summary>
     /// Crea nuevos vendedores
+    /// Patron Creator: Crea los vendedores ya que los almacena y los usa
+    /// Principio SRP: unicamente gestiona los vendedores
+    /// OCP: Se puede agregar funciones sin modificar lo ya hecho
     /// </summary>
     public void CrearVendedor(string nombre, string apellido, string telefono, string email, string nickname) 
     {
