@@ -1,6 +1,7 @@
 namespace Library;
 /// <summary>
 /// Representa un administrador en el sistema
+/// Aplica el principio SRP: esta clase solo gestiona acciones del Administrador.
 /// </summary>
 public class Administrador : Usuario, IPersona
 {
@@ -25,5 +26,3 @@ public class Administrador : Usuario, IPersona
         Singleton<Gestor<Vendedor>>.Instance.Eliminar(vendedor);
     }
 }
-
-// El vendedor es el encargado de Eliminar vendedores 

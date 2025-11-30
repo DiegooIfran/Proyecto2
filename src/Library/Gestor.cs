@@ -2,6 +2,8 @@ namespace Library;
 /// <summary>
 /// Clase genérica que gestiona colecciones de objetos que implementan la interfaz IGestionable.
 /// Puede utilizarse para administrar distintos tipos de usuarios, como administradores o vendedores.
+/// DIP, depende de clases genericas
+/// Creator: es el encargado de agregar objetos a sus listas ya que los contiene
 /// </summary>
 /// <typeparam name="T">Tipo de objeto gestionado. Debe implementar IGestionable.</typeparam>
 

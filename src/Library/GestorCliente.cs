@@ -3,6 +3,7 @@ namespace Library;
 /// Clase que gestiona las operaciones relacionadas con los clientes del sistema.
 /// Hereda de <see cref="Gestor{Cliente}"/> y agrega funcionalidades específicas
 /// como creación, búsqueda, modificación y asignación de clientes a vendedores.
+/// La clase tiene una única responsabilidad: administrar clientes (crear, buscar, modificar, asignar).
 /// </summary>
 public class GestorCliente : Gestor<Cliente>
 {

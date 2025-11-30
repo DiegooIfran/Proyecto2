@@ -3,6 +3,7 @@ using System.Text.RegularExpressions;
 namespace Library;
 /// <summary>
 /// Representa una etiqueta que puede asociarse a un cliente
+/// Aplica el principio SRP: su responsabilidad es contener la informacion de la etiqueta
 /// </summary>
 public class Etiqueta
 {

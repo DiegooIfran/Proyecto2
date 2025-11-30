@@ -1,6 +1,7 @@
 namespace Library
     /// <summary>
     /// Utilidades para visualizar las interacciones de un cliente por tipo (correo, reunión, mensaje, llamada).
+    /// Aplica el principio SRP: su responsabilidad es consultar las interacciones.
     /// </summary>
 {
     public static class BuscadorInteracciones

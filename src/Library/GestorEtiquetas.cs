@@ -4,6 +4,8 @@ public class GestorEtiquetas<T> : ISingleton where T : Etiqueta
 {
     /// <summary>
     /// Lista que contiene todas las etiquetas
+    ///  SRP:Su única responsabilidad es administrar etiquetas (crearlas, buscarlas y asignarlas).
+    /// Creator: El gestor conoce la colección de etiquetas, por lo tanto es quien debe crearlas.
     /// </summary>
     private List<Etiqueta> _etiquetas = new List<Etiqueta>();
     

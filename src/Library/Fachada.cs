@@ -2,7 +2,13 @@ namespace Library;
 
 public class Fachada : ISingleton
 {
+    /// <summary>
+    /// Aplica el principio SRP: su responsabilidad es delegar operaciones a las demas clases
+    /// Aplica el principio DIP: depende de interfaces y clases abstractas
 
+    /// </summary>
+    
+    
     private GestorInteracciones gi = Singleton<GestorInteracciones>.Instance;
     private GestorEtiquetas<Etiqueta> ge = Singleton<GestorEtiquetas<Etiqueta>>.Instance;
     private GestorVendedor gv = Singleton<GestorVendedor>.Instance;

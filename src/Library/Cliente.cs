@@ -5,6 +5,7 @@ namespace Library;
 /// <summary>
 /// Representa un cliente dentro del sistema.
 /// Contiene sus datos personales, etiquetas asociadas y el historial de interacciones
+/// Aplica el principio SRP: su responsabilidad es contener la informacion que el cliente posee
 /// </summary>
 public class Cliente : ISingleton, IPersona
 {
