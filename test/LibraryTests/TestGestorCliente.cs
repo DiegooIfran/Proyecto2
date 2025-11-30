@@ -47,7 +47,7 @@ public class TestGestorCliente
     {
         GestorCliente gestor = Singleton<GestorCliente>.Instance;
         gestor.AgregarCliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990,10,20));
-        Vendedor vendedor = new Vendedor("Lucia", "Dominguez", "093213589", "lucia@gmail.com", TODO);
+        Vendedor vendedor = new Vendedor("Lucia", "Dominguez", "093213589", "lucia@gmail.com", "lucia");
         gestor.AsignarCliente(vendedor, gestor.VerTotal()[0]);
         Assert.That(vendedor.ObtenerClientes().Contains(gestor.VerTotal()[0]), Is.True);
     }
@@ -97,21 +97,24 @@ public class TestGestorCliente
         List<Cliente> listaClientes = gestor.VerTotal();
         Cliente cliente1 = listaClientes[0];
         Cliente cliente2 = listaClientes[1];
-        Assert.That(gestor.BuscarPorNombre("Juan"), Is.EqualTo(cliente1));
-        Assert.That(gestor.BuscarPorNombre("Ana"), Is.EqualTo(cliente2));
+        Assert.That(gestor.BuscarPorNombre("Martinez")[0].ObtenerEmail(), Is.EqualTo(cliente1.ObtenerEmail()));
+
+        Assert.That(gestor.BuscarPorNombre("Romero")[0].ObtenerEmail(), Is.EqualTo(cliente1.ObtenerEmail()));
     }
+
     [Test]
     public void TestBuscarPorApellido()
     {
         // Justificación: comprueba que el método BuscarPorApellido funciona
         GestorCliente gestor = Singleton<GestorCliente>.Instance;
-        gestor.AgregarCliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990,10,20));
-        gestor.AgregarCliente("Ana", "Romero", "091222982", "anaromeroo@gmail.com", "mujer", new DateTime(1994,4,20));
+        gestor.AgregarCliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre",
+            new DateTime(1990, 10, 20));
+        gestor.AgregarCliente("Ana", "Romero", "091222982", "anaromeroo@gmail.com", "mujer", new DateTime(1994, 4, 20));
         List<Cliente> listaClientes = gestor.VerTotal();
         Cliente cliente1 = listaClientes[0];
         Cliente cliente2 = listaClientes[1];
-        Assert.That(gestor.BuscarPorApellido("Martinez"), Is.EqualTo(cliente1));
-        Assert.That(gestor.BuscarPorApellido("Romero"), Is.EqualTo(cliente2));
+        Assert.That(gestor.BuscarPorApellido("Martinez")[0].ObtenerEmail(), Is.EqualTo(cliente1.ObtenerEmail()));
+        Assert.That(gestor.BuscarPorApellido("Romero")[0].ObtenerEmail(), Is.EqualTo(cliente2.ObtenerEmail()));
     }
     [Test]
     public void TestBuscarPorTelefono()

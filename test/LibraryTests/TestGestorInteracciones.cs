@@ -2,6 +2,8 @@ namespace Library.Tests;
 
 public class TestGestorInteracciones
 {
+    private Fachada fachada;
+
     [SetUp]
     public void Setup()
     {
@@ -15,7 +17,7 @@ public class TestGestorInteracciones
     public void NuevoMensaje() //Chequea que funcione la funcion NuevoMensaje
     {
         Cliente cliente = new Cliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990,10,20));
-        GestorInteracciones.NuevoMensaje(cliente, DateTime.Now, "Tema mensaje", "Notas", true);
+        fachada.RegistrarMensaje("carlos","jmartin@gmail.com", DateTime.Now, "Tema mensaje", "Notas", true);
         List<Interaccion> interaccionesCliente = cliente.ObtenerInteracciones();
         Assert.That(interaccionesCliente.Count, Is.EqualTo(1));
         Assert.That(interaccionesCliente[0], Is.TypeOf<Mensaje>());
@@ -25,7 +27,7 @@ public class TestGestorInteracciones
     public void NuevaLlamada() //Chequea que funcione la funcion NuevaLlamada
     {
         Cliente cliente = new Cliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990,10,20));
-        GestorInteracciones.NuevaLlamada(cliente, DateTime.Now, "Tema mensaje", "Notas", true);
+        fachada.RegistrarLlamada("carlos","jmartin@gmail.com", DateTime.Now, "Tema mensaje", "Notas", true);
         List<Interaccion> interaccionesCliente = cliente.ObtenerInteracciones();
         Assert.That(interaccionesCliente.Count, Is.EqualTo(1));
         Assert.That(interaccionesCliente[0], Is.TypeOf<Llamada>());
@@ -35,7 +37,7 @@ public class TestGestorInteracciones
     public void NuevoCorreo() //Chequea que funcione la funcion NuevoCorreo
     {
         Cliente cliente = new Cliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990,10,20));
-        GestorInteracciones.NuevoCorreo(cliente, DateTime.Now, "Tema mensaje", "Notas", true);
+        fachada.RegistrarCorreo("carlos","jmartin@gmail.com", DateTime.Now, "Tema mensaje", "Notas", true);
         List<Interaccion> interaccionesCliente = cliente.ObtenerInteracciones();
         Assert.That(interaccionesCliente.Count, Is.EqualTo(1));
         Assert.That(interaccionesCliente[0], Is.TypeOf<Correo>());
@@ -45,7 +47,7 @@ public class TestGestorInteracciones
     public void NuevaReunion() //Chequea que funcione la funcion NuevaReunion
     {
         Cliente cliente = new Cliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990,10,20));
-        GestorInteracciones.NuevaReunion(cliente, DateTime.Now, "Tema mensaje", "Notas");
+        fachada.RegistrarReunion("carlos","jmartin@gmail.com", DateTime.Now, "Tema mensaje", "Notas");
         List<Interaccion> interaccionesCliente = cliente.ObtenerInteracciones();
         Assert.That(interaccionesCliente.Count, Is.EqualTo(1));
         Assert.That(interaccionesCliente[0], Is.TypeOf<Reunion>());
@@ -57,7 +59,7 @@ public class TestGestorInteracciones
         Cliente cliente = new Cliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990,10,20));
         for (int i = 0; i < 7; i++)
         {
-            GestorInteracciones.NuevoMensaje(cliente, DateTime.Now.AddDays(-i), $"Tema {i}", "Notas", true);
+            fachada.RegistrarMensaje("carlos","jmartin@gmail.com", DateTime.Now, "Tema mensaje", "Notas", true);
         }
         var ultimas = GestorInteracciones.UltimasInteracciones();
         Assert.That(ultimas.Count, Is.EqualTo(5));

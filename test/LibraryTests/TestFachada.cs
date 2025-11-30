@@ -115,7 +115,7 @@ public class TestFachada
         var etiqueta = new Etiqueta("VIP", "Clientes importantes");
 
         // Act
-        fachada.AgregarEtiqueta(email, etiqueta);
+        fachada.AgregarEtiqueta(email, "VIP");
 
         // Assert
         var cliente = fachada.BuscarPorEmail(email);

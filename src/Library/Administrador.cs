@@ -25,3 +25,5 @@ public class Administrador : Usuario, IPersona
         Singleton<Gestor<Vendedor>>.Instance.Eliminar(vendedor);
     }
 }
+
+// El vendedor es el encargado de Eliminar vendedores 
