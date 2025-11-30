@@ -9,6 +9,7 @@ namespace Library;
 public class Vendedor : Usuario, IPersona
 {
     Fachada fachada = Singleton<Fachada>.Instance;
+    private GestorInteracciones gi = Singleton<GestorInteracciones>.Instance;
 
     /// <summary>
     /// Lista de clientes a cargo del vendedor.
@@ -71,7 +72,7 @@ public class Vendedor : Usuario, IPersona
         {
             if (cliente.ObtenerFechaNacimiento() == DateTime.Today)
             {
-                GestorInteracciones.NuevoMensaje(cliente, DateTime.Today, "Feliz cumpleaños!!",
+                gi.NuevoMensaje(cliente, DateTime.Today, "Feliz cumpleaños!!",
                     "Feliz cumpleaños! ¿Porque no lo festejas con los descuentos especiales que tenemos para vos?", true);
             }
         }
@@ -86,7 +87,7 @@ public class Vendedor : Usuario, IPersona
         {
             if (cliente.ObtenerEtiquetas().IndexOf(etiqueta) != -1)
             {
-                GestorInteracciones.NuevoMensaje(cliente, DateTime.Today, "Camapaña unica! No te lo pierdas",
+                gi.NuevoMensaje(cliente, DateTime.Today, "Camapaña unica! No te lo pierdas",
                     anuncio, true);
             }
         }
@@ -117,22 +118,22 @@ public class Vendedor : Usuario, IPersona
     
     public void NuevaLlamada(Cliente cliente, DateTime fecha, string tema, string notas, bool enviada)
     {
-        GestorInteracciones.NuevaLlamada(cliente , fecha, tema, notas, enviada);
+        gi.NuevaLlamada(cliente , fecha, tema, notas, enviada);
     }
     
     public void NuevoMensaje(Cliente cliente, DateTime fecha, string tema, string notas, bool enviada)
     {
-        GestorInteracciones.NuevoMensaje(cliente , fecha, tema, notas, enviada);
+        gi.NuevoMensaje(cliente , fecha, tema, notas, enviada);
     }
     
     public void NuevoCorreo(Cliente cliente, DateTime fecha, string tema, string notas, bool enviada)
     {
-        GestorInteracciones.NuevoCorreo(cliente , fecha, tema, notas, enviada);
+        gi.NuevoCorreo(cliente , fecha, tema, notas, enviada);
     }
     
     public void NuevaReunion(Cliente cliente, DateTime fecha, string tema, string notas)
     {
-        GestorInteracciones.NuevaReunion(cliente , fecha, tema, notas);
+        gi.NuevaReunion(cliente , fecha, tema, notas);
     }
     
     /// <summary>
