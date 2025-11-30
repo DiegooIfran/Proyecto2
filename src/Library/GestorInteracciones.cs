@@ -1,8 +1,11 @@
 namespace Library;
 /// <summary>
-/// Clase estática que gestiona todas las interacciones entre el sistema y los clientes.
+/// Clase que gestiona todas las interacciones entre el sistema y los clientes.
 /// Permite crear nuevas interacciones (mensajes, llamadas, correos y reuniones),
 /// registrar las existentes y obtener información sobre ellas.
+/// Patrón Creator: es responsable de crear objetos de tipo Interaccion
+/// Aplica el principio OCP ya que se puede extender sin modificar lo ya hecho
+/// SRP: se encarga de gestionar las interacciones
 /// </summary>
 public class GestorInteracciones : ISingleton
 {

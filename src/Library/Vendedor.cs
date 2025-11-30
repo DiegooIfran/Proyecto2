@@ -5,6 +5,7 @@ namespace Library;
 /// Representa un vendedor del sistema.
 /// Hereda de Usuario y gestiona una lista de clientes asociados,
 /// además de realizar acciones como enviar campañas o generar cotizaciones.
+/// SRP: Su razon de cambio es si modificas las funciones de vendedor
 /// </summary>
 public class Vendedor : Usuario, IPersona
 {

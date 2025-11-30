@@ -21,7 +21,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         /// </summary>
         [Command("asignarCliente")]
         [Summary(
-            "Suspendo a un vendedor. Uso !asignarCliente nick, email")]
+            "Asigno un cliente a un vendedor. Uso !asignarCliente nick, email")]
         // Pide el nick del vendedor y el email del cliente a asignar
 
         public async Task AsignarCliente(string nick, string email)
