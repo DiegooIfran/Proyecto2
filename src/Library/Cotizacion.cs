@@ -26,7 +26,7 @@ public class Cotizacion : Interaccion
         {
             throw new ArgumentNullException(nameof(cliente));
         }
-        if (precio == null) //Valida que el cliente no sea nulo
+        if (precio.ToString() == null) //Valida que el cliente no sea nulo
         {
             throw new ArgumentNullException(nameof(precio));
         }
