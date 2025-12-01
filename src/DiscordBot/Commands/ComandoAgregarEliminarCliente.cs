@@ -69,34 +69,5 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
                 }
             }
         }
-        public class ComandoAsignarCliente : ModuleBase<SocketCommandContext>
-        {
-            private readonly Fachada _fachada;
-
-            // Inyectás la fachada por constructor (recomendado en Discord.NET con DI)
-            public ComandoAsignarCliente()
-            {
-                this._fachada = Singleton<Fachada>.Instance;
-            }
-            /// <summary>
-            /// Implementa el comando 'asignarCliente'.
-            /// </summary>
-            [Command("asignarCliente")]
-            [Summary(
-                "Asigna un cliente a un vendedor.")]
-            public async Task ExecuteAsync(string nickVendedor, string correoCliente)
-            {
-                try
-                {
-                    _fachada.AsignarCliente(nickVendedor, correoCliente);
-
-                    await ReplyAsync($"El cliente con email {correoCliente} fue asignado a {nickVendedor} con éxito.");
-                }
-                catch (Exception ex)
-                {
-                    await ReplyAsync($"Error: {ex.Message}");
-                }
-            }
-        }
     }
 }
