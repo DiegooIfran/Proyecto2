@@ -5,12 +5,14 @@ namespace Library.Tests;
 public class TestAdministrador
 {
     Fachada fachada = Singleton<Fachada>.Instance;
-
+    private GestorVendedor gv = Singleton<GestorVendedor>.Instance;
+    private GestorAdministrador ga = Singleton<GestorAdministrador>.Instance;
+    
     [SetUp]
     public void Setup()
     {
-        Singleton<Gestor<Administrador>>.Instance.VerTotal().Clear();
-        Singleton<Gestor<Vendedor>>.Instance.VerTotal().Clear();
+        Singleton<GestorAdministrador>.Instance.VerTotal().Clear();
+        Singleton<GestorVendedor>.Instance.VerTotal().Clear();
 
     }
     
@@ -30,17 +32,16 @@ public class TestAdministrador
         Administrador admin = new Administrador("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com", "lauta");
         fachada.CrearVendedor("Federico", "Garcia", "231231", "fedegarcia@gmail.com", "lauta");
         fachada.SuspenderUsuario("fedegarcia@gmail.com");
-        Gestor<Vendedor> gestor = Singleton<Gestor<Vendedor>>.Instance;
-        Assert.That(gestor.VerTotal()[0].Activo, Is.EqualTo(false));
+        Assert.That(gv.VerTotal()[0].Activo, Is.EqualTo(false));
     }
     
     [Test]
     public void EliminarVendedores() // Elimino a un vendedor
     {
-        Gestor<Vendedor> gestor = Singleton<Gestor<Vendedor>>.Instance;
+        
         Administrador admin = new Administrador("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com", "lauta");
         fachada.CrearVendedor("Federico", "Garcia", "231231", "fedegarcia@gmail.com", "lauta");
         fachada.EliminarVendedor("fedegarcia@gmail.com");
-        Assert.AreEqual(0, gestor.VerTotal().Count);
+        Assert.AreEqual(0, gv.VerTotal().Count);
     }
 }
