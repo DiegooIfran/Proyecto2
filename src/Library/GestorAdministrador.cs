@@ -1,6 +1,6 @@
 namespace Library;
 
-public class GestorAdministrador: Gestor<Administrador>
+public class GestorAdministrador : Gestor<Administrador>, ISingleton
 { 
     /// <summary>
     /// SRP: La responsabilidad de esta clase es únicamente gestionar administradores
@@ -21,6 +21,6 @@ public class GestorAdministrador: Gestor<Administrador>
     public void CrearAdministrador(string nombre, string apellido, string telefono, string email, string nickname) 
     {
         Administrador nuevoAdministrador = new Administrador(nombre, apellido, telefono, email, nickname);
-        Singleton<Gestor<Administrador>>.Instance.Agregar(nuevoAdministrador); //Lama al Singleton GestorAdministrador para agregar el nuevo administrador a la lista
+        this.Agregar(nuevoAdministrador);
     }
 }

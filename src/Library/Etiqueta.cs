@@ -5,7 +5,7 @@ namespace Library;
 /// Representa una etiqueta que puede asociarse a un cliente
 /// Aplica el principio SRP: su responsabilidad es contener la informacion de la etiqueta
 /// </summary>
-public class Etiqueta
+public class Etiqueta : ISingleton
 {
     public string Nombre { get; private set; }
     public string Descripcion { get; private set; }

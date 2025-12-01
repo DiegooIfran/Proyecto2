@@ -5,7 +5,7 @@ namespace Library;
 /// como creación, búsqueda, modificación y asignación de clientes a vendedores.
 /// La clase tiene una única responsabilidad: administrar clientes (crear, buscar, modificar, asignar).
 /// </summary>
-public class GestorCliente : Gestor<Cliente>
+public class GestorCliente : Gestor<Cliente>, ISingleton
 {
 
     public GestorCliente() 
