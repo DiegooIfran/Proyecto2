@@ -20,7 +20,8 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         /// </summary>
         [Command("verTotalClientes")]
         [Summary(
-            "Muestra todos los clientes. Uso !verTotalClientes vendedor")]
+            "Muestra todos los clientes. Uso !verTotalClientes nick")]
+        // Pones el nick del vendedor a buscar
         // ReSharper disable once UnusedMember.Global
 
         public async Task ExecuteAsync(string nick)

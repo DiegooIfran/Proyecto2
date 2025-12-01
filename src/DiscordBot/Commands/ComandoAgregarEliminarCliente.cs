@@ -59,7 +59,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             /// </summary>
             [Command("eliminarCliente")]
             [Summary(
-                "Elimina un cliente a la lista de clientes.")]
+                "Elimina un cliente a la lista de clientes. Usa !eliminarCliente email")]
             
             public async Task ExecuteAsync(string email)
             {
