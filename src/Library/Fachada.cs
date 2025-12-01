@@ -90,9 +90,9 @@ public class Fachada : ISingleton
     }
     
     //Ver todos los clientes
-    public void VerTotalClientes(Vendedor vendedor)
+    public List<string> VerTotalClientes(Vendedor vendedor)
     {
-        vendedor.VerClientes();
+        return vendedor.VerClientes();
     }
 
     //Registrar llamada con un cliente
@@ -212,6 +212,6 @@ public class Fachada : ISingleton
     //Crear un Administrador
     public void CrearAdministrador(string nombre, string apellido, string telefono, string email, string nick)
     {
-        new Administrador(nombre,  apellido, telefono, email, nick);
+         ga.CrearAdministrador(nombre, apellido, telefono, email, nick);
     }
 }
