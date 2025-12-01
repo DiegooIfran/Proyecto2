@@ -9,7 +9,7 @@ namespace Library;
 /// </summary>
 public class GestorInteracciones : ISingleton
 {
-    private  List<Interaccion> _todasInteracciones = new List<Interaccion>(); 
+    private static List<Interaccion> _todasInteracciones = new List<Interaccion>(); 
     public void NuevoMensaje(Cliente cliente, DateTime fecha, string tema, string notas, bool enviada) 
     {
         if (cliente == null) 
@@ -53,7 +53,7 @@ public class GestorInteracciones : ISingleton
     /// <summary>
     /// Devuelve las cinco interacciones más recientes registradas en el sistema
     /// </summary>
-    public List<Interaccion> UltimasInteracciones() 
+    public static List<Interaccion> UltimasInteracciones() 
     {
         return _todasInteracciones
             .OrderByDescending(i => i.Fecha) 
@@ -81,7 +81,7 @@ public class GestorInteracciones : ISingleton
     /// que fueron enviadas pero aún no respondidas.
     /// </summary>
     /// <returns>Lista de interacciones pendientes de respuesta</returns>
-    public List<Online> InteraccionesPendientes() 
+    public static List<Online> InteraccionesPendientes() 
     {
         return _todasInteracciones
             .OfType<Online>() 
