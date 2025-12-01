@@ -77,10 +77,9 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
 
             public async Task HabilitarVendedor(string email)
             {
-                Usuario admin = null;
                 try
                 {
-                    admin = _fachada.BuscarAdministradorNick(Context.User.Username);
+                    Usuario admin = _fachada.BuscarAdministradorNick(Context.User.Username);
                 }
                 catch (InvalidOperationException)
                 {
