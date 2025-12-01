@@ -3,6 +3,8 @@ namespace Library.Tests;
 
 public class TestVendedor
 {
+    Fachada fachada = Singleton<Fachada>.Instance;
+
     [SetUp]
     public void Setup()
     {
@@ -31,9 +33,9 @@ public class TestVendedor
         Cliente otro = new Cliente("Carlos", "Diaz", "09232", "carlos@gmail.com","hombre", DateTime.Today.AddDays(2));
         vendedor.AgregarCliente(mayor);
         vendedor.AgregarCliente(otro);
-        Etiqueta etiqueta = new Etiqueta("Mayor", "Sos mayor");
-        etiqueta.AgregarEtiqueta(mayor);
-        vendedor.Campana(etiqueta, "Sos mayor de edad!");
+        fachada.CrearEtiqueta("Mayor", "Sos mayor");
+        fachada.AgregarEtiqueta("juan@gmail.com", "Mayor");
+        fachada.RealizarCampana(".luty","Mayor", "Sos mayor de edad!");
 
         Assert.That(mayor.ObtenerInteracciones().Count, Is.EqualTo(1));
         Assert.That(otro.ObtenerInteracciones().Count, Is.EqualTo(0));

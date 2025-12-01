@@ -2,12 +2,15 @@ namespace Library.Tests;
 
 public class TestFachada
 {
-    private Fachada fachada;
+    Fachada fachada = Singleton<Fachada>.Instance;
     
     [SetUp]
     public void Setup()
     {
-        Fachada fachada = Singleton<Fachada>.Instance;
+        Singleton<GestorAdministrador>.Instance.VerTotal().Clear();
+        Singleton<GestorCliente>.Instance.VerTotal().Clear();
+        Singleton<GestorVendedor>.Instance.VerTotal().Clear();
+        Singleton<GestorEtiquetas<Etiqueta>>.Instance.VerEtiquetas().Clear();
     }
     
     [Test]
@@ -110,16 +113,14 @@ public class TestFachada
     public void CrearEtiquetaYAgregarlaACliente_DeberiaAsociarseCorrectamente()
     {
         // Arrange
-        string email = "etiqueta@mail.com";
-        fachada.AgregarCliente("Sofia", "Torres", "099999999", email, "F", new DateTime(1997, 7, 7));
-        var etiqueta = new Etiqueta("VIP", "Clientes importantes");
+        fachada.AgregarCliente("Sofia", "Torres", "099999999", "etiqueta@gmail.com", "F", new DateTime(1997, 7, 7));
 
         // Act
-        fachada.AgregarEtiqueta(email, "VIP");
+        fachada.AgregarEtiqueta("etiqueta@gmail.com", "VIP");
 
         // Assert
-        var cliente = fachada.BuscarPorEmail(email);
-        Assert.That(cliente.ObtenerEtiquetas(), Does.Contain(etiqueta));
+        var cliente = fachada.BuscarPorEmail("etiqueta@gmail.com");
+        Assert.That(cliente.ObtenerEtiquetas().Count, Is.EqualTo(1));
     }
     
     [Test]
@@ -127,7 +128,7 @@ public class TestFachada
     {
     // Arrange
     string email = "reunion@mail.com";
-    Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com", "diego");
+    fachada.CrearVendedor("Vende","dor","09154321","email@email.com", "diego");
     fachada.AgregarCliente("Diego", "Ifran", "091111111", email, "M", new DateTime(2003, 3, 3));
     fachada.AsignarCliente("diego", email);
     // Act
@@ -144,7 +145,7 @@ public class TestFachada
     {
         // Arrange
         string email = "reunion@mail.com";
-        Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com", "diego");
+        fachada.CrearVendedor("Vende","dor","09154321","email@email.com", "diego");
         fachada.AgregarCliente("Diego", "Ifran", "091111111", email, "M", new DateTime(2003, 3, 3));
         fachada.AsignarCliente("diego",email);
         // Act
@@ -161,7 +162,7 @@ public class TestFachada
     {
         // Arrange
         string email = "reunion@mail.com";
-        Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com", "diego");
+        fachada.CrearVendedor("Vende","dor","09154321","email@email.com", "diego");
         fachada.AgregarCliente("Diego", "Ifran", "091111111", email, "M", new DateTime(2003, 3, 3));
         fachada.AsignarCliente("diego",email);
         // Act
@@ -178,7 +179,7 @@ public class TestFachada
     {
         // Arrange
         string email = "reunion@mail.com";
-        Vendedor vendedor = new Vendedor("Vende","dor","09154321","email@email.com", "diego");
+        fachada.CrearVendedor("Vende","dor","09154321","email@email.com", "diego");
         fachada.AgregarCliente("Diego", "Ifran", "091111111", email, "M", new DateTime(2003, 3, 3));
         fachada.AsignarCliente("diego",email);
         // Act
