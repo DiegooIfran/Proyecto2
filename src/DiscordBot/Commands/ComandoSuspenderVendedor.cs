@@ -25,14 +25,13 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         public async Task SuspenderVendedor(string email)
         {
             
-            var lista = Singleton<Gestor<Administrador>>.Instance.VerTotal();
+            foreach (var admina in Singleton<Gestor<Administrador>>.Instance.VerTotal())
+            {
+                Console.WriteLine($"[{admina.ObtenerNick()}] len={admina.ObtenerNick().Length}");
+                foreach (var c in admina.ObtenerNick())
+                    Console.WriteLine($" - '{c}' -> {(int)c}");
+            }
 
-            string debug = "Admins en sistema:\n";
-            foreach (var a in lista)
-                debug += "- " + a.ObtenerNick() + a.ObtenerNick().Length + "\n";
-
-            await ReplyAsync(debug);
-            await ReplyAsync(Context.User.Username + Context.User.Username.Length());
             
             Usuario admin = null;
 
