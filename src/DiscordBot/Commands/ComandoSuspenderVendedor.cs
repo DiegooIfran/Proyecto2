@@ -25,6 +25,15 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
 
         public async Task SuspenderVendedor(string email)
         {
+            
+            var lista = Singleton<Gestor<Administrador>>.Instance.VerTotal();
+
+            string debug = "Admins en sistema:\n";
+            foreach (var a in lista)
+                debug += "- " + a.ObtenerNick() + "\n";
+
+            await ReplyAsync(debug);
+            
             Usuario admin = null;
 
             try

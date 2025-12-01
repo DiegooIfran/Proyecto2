@@ -23,4 +23,5 @@ public class GestorAdministrador: Gestor<Administrador>
         Administrador nuevoAdministrador = new Administrador(nombre, apellido, telefono, email, nickname);
         Singleton<Gestor<Administrador>>.Instance.Agregar(nuevoAdministrador); //Lama al Singleton GestorAdministrador para agregar el nuevo administrador a la lista
     }
+    
 }
