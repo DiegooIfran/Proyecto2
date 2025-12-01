@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Discord.Commands;
 using Library;
+using Discord.WebSocket;
 
 namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
 {
@@ -32,7 +33,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
                 debug += "- " + a.ObtenerNick() + a.ObtenerNick().Length + "\n";
 
             await ReplyAsync(debug);
-            await ReplyAsync(Context.User.Username + Context.User.Username.Length());
+            await ReplyAsync(Context.User.Username + Context.User.Username.Length);
             
             Usuario admin = null;
 

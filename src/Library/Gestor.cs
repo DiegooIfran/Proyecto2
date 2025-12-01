@@ -19,6 +19,10 @@ public class Gestor<T> : ISingleton where T : IPersona
     /// </summary>
     public void Agregar(T usuario)
     {
+        if (this.YaRegistrado(usuario.ObtenerEmail()))
+        {
+            throw new AggregateException("La persona ya está registrada.");
+        }
         _total.Add(usuario);
     }
 
