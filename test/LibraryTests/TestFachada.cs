@@ -268,16 +268,52 @@ public class TestFachada
     }
     
     [Test]
-    public void RealizarCampana()
+    public void RealizarCotizacion()
     {
         // Act
         fachada.CrearVendedor("Vende", "dor", "09154321", "email@gmail.com", ".luty");
-        fachada.CrearEtiqueta("hola", "prueba");
         fachada.AgregarCliente("Diego", "Ifran", "091111111", "prueba1@gmail.com", "M", new DateTime(2003, 3, 3));
-        fachada.AgregarEtiqueta("prueba1@gmail.com", "hola");
-        
+        fachada.AsignarCliente(".luty", "prueba1@gmail.com");
+        fachada.RealizarCotizacion(".luty","prueba1@gmail.com",DateTime.Now, "tema", "notas", 123);
         
         // Assert
-        Assert.That(fachada.BuscarPorEmail("prueba1@gmail.com").ObtenerEtiquetas().Count, Is.EqualTo(0));
+        Assert.That(fachada.BuscarPorEmail("prueba1@gmail.com").ObtenerInteracciones().Count, Is.EqualTo(1));
+    }
+    
+    [Test]
+    public void RealizarVenta()
+    {
+        // Act
+        fachada.CrearVendedor("Vende", "dor", "09154321", "email@gmail.com", ".luty");
+        fachada.AgregarCliente("Diego", "Ifran", "091111111", "prueba1@gmail.com", "M", new DateTime(2003, 3, 3));
+        fachada.AsignarCliente(".luty", "prueba1@gmail.com");
+        fachada.RealizarCotizacion(".luty","prueba1@gmail.com",DateTime.Now, "tema", "notas", 123);
+        fachada.RealizarVenta("prueba1@gmail.com", "tema");
+        // Assert
+        Assert.That(fachada.BuscarPorEmail("prueba1@gmail.com").ObtenerInteracciones()[1], Is.InstanceOf<Venta>());
+    }
+    
+    [Test]
+    public void SuspenderUsuario()
+    {
+        // Act
+        fachada.CrearVendedor("Vende", "dor", "09154321", "email2@gmail.com", ".luty");
+        fachada.SuspenderUsuario("email2@gmail.com");
+        
+        // Assert
+        Assert.That(fachada.BuscarVendedorNick(".luty").Activo, Is.EqualTo(false));
+    }
+    
+    [Test]
+    public void HabilitarUsuario()
+    {
+        // Act
+        fachada.CrearVendedor("Vende", "dor", "09154321", "email2@gmail.com", ".luty");
+        fachada.SuspenderUsuario("email2@gmail.com");
+        Assert.That(fachada.BuscarVendedorNick(".luty").Activo, Is.EqualTo(false));
+        fachada.HabilitarUsuario("email2@gmail.com");
+        // Assert
+        Assert.That(fachada.BuscarVendedorNick(".luty").Activo, Is.EqualTo(true));
+
     }
 }
