@@ -88,5 +88,15 @@ public class GestorVendedor:Gestor<Vendedor>
 
         throw new InvalidOperationException("No se encontró ningún usuario con ese nombre.");
     }
-
+    /*public override void Agregar(Vendedor usuario)
+    {
+        foreach (Vendedor registrado in _total)
+        {
+            if (registrado.ObtenerEmail()== usuario.ObtenerEmail() || (registrado.ObtenerNick()== usuario.ObtenerNick()))
+            {
+                throw new AggregateException("El administrador ya está registrada.");
+            }
+        }
+        _total.Add(usuario);
+    }*/
 }

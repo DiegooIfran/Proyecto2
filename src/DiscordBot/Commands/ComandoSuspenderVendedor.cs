@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Discord.Commands;
 using Library;
+using Discord.WebSocket;
 
 namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
 {
@@ -32,6 +33,12 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
                     Console.WriteLine($" - '{c}' -> {(int)c}");
             }
 
+            string debug = "Admins en sistema:\n";
+            foreach (var a in lista)
+                debug += "- " + a.ObtenerNick() + a.ObtenerNick().Length + "\n";
+
+            await ReplyAsync(debug);
+            await ReplyAsync(Context.User.Username + Context.User.Username.Length());
             
             Usuario admin = null;
 
