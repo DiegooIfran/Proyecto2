@@ -65,14 +65,14 @@ public class Fachada : ISingleton
     }
     
     //Buscar por vendedor por nick
-    public Usuario BuscarVendedorNick(string nick)
+    public Vendedor BuscarVendedorNick(string nick)
     {
             return gv.BuscarPorNick(nick);
     }
     
     
     //Buscar por nick administrador
-    public Usuario BuscarAdministradorNick(string nick)
+    public Administrador BuscarAdministradorNick(string nick)
     {
         return ga.BuscarPorNick(nick);
     }
