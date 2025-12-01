@@ -66,17 +66,24 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
 
             public async Task HabilitarVendedor(string email)
             {
+                Usuario admin = null;
                 try
                 {
-                    var admin = _fachada.BuscarAdministradorNick(Context.User.Username);
-
-                    _fachada.HabilitarUsuario(email);
-
-                    await ReplyAsync($"El vendedor {email} fue habilitado.");
+                    admin = _fachada.BuscarAdministradorNick(Context.User.Username);
                 }
                 catch (InvalidOperationException)
                 {
                     await ReplyAsync("No existe un administrador con ese nick.");
+                    return;
+                }
+                try
+                {
+                    _fachada.HabilitarUsuario(email);
+                    await ReplyAsync($"El vendedor {email} fue habilitado.");
+                }
+                catch (InvalidOperationException)
+                {
+                    await ReplyAsync("No existe un vendedor con ese email.");
                 }
 
             }
