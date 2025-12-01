@@ -77,7 +77,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         /// </summary>
         [Command("borrarEtiqueta")]
         [Summary("Borra una etiqueta a un cliente. Uso: !borrarEtiqueta correoCliente nombreEtiqueta")]
-        public async Task ExecuteAsync(string correoCliente, [Remainder] string nombreEtiqueta)
+        public async Task ExecuteAsync(string correoCliente, string nombreEtiqueta)
         {
             try
             {

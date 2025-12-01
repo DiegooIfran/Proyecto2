@@ -52,7 +52,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         /// </summary>
         [Command("verTotalCliente")]
         [Summary(
-            "Muestra todos los clientes de un vendedor. Uso !verPanel nick")]
+            "Muestra todos los clientes de un vendedor. Uso !verTotalCliente nick")]
         // ReSharper disable once UnusedMember.Global
 
         public async Task ExecuteAsync(string nick)
