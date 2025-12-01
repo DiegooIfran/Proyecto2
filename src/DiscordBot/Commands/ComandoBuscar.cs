@@ -20,7 +20,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         /// </summary>
         [Command("buscarClientePorEmail")]
         [Summary(
-            "Busca un cliente por Email.")]
+            "Busca un cliente por Email. Usa buscarClientePorEmail email")]
             
         public async Task ExecuteAsync(string email)
         {
