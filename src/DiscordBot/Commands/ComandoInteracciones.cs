@@ -37,7 +37,11 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
                     return;
                 }
                 
-                var texto = string.Join("\n", interacciones.Select(i => i.ObtenerTema()));
+                var texto = "";
+                foreach (var inter in interacciones)
+                {
+                    texto += $"{inter.ObtenerTema()}\n";
+                }
                 await ReplyAsync(texto);
             }
             
