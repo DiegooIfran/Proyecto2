@@ -29,7 +29,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             try
             {
                 var user = Context.User as SocketGuildUser;
-                string displayName = user?.DisplayName;
+                string displayName = user?.DisplayName.Trim();
                 _fachada.RegistrarLlamada(displayName, correo, fecha, tema, nota, enviada);
 
                 await ReplyAsync($"La interaccion {tema} fue creada con exito.");
