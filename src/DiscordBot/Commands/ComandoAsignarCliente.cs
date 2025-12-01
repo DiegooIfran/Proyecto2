@@ -28,10 +28,17 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         {
             try
             {
-                var admin = _fachada.BuscarAdministradorNick(Context.User.Username);
+                Usuario admin = _fachada.BuscarAdministradorNick(Context.User.Username);
                 // Esto ya que lo debe hacer el administrador
+            }
+            catch (InvalidOperationException)
+            {
+                await ReplyAsync("No existe un administrador con ese nick.");
+                return;
+            }
+            try
+            {
                 _fachada.AsignarCliente(nick , email);
-
                 await ReplyAsync($"El cliente {_fachada.BuscarPorEmail(email).ObtenerNombre()} {_fachada.BuscarPorEmail(email).ObtenerApellido()} fue asignado al vendedor {_fachada.BuscarVendedorNick(nick)}");
             }
             catch (InvalidOperationException)
