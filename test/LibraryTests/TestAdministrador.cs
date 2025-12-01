@@ -19,7 +19,7 @@ public class TestAdministrador
     public void CrearVendedores() // Que un admin cree un vendedor y lo almacene
     {
         fachada.CrearAdministrador("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com", "lauta");
-        fachada.CrearVendedor("Federico", "Garcia", "231231", "fedegarcia@gmail.com", "lauta");
+        fachada.CrearVendedor("Federico", "Garcia", "231231", "fedegarcia@gmail.com", "luty");
         Assert.AreEqual(1, gv.VerTotal().Count);
         Assert.AreEqual("Federico", gv.VerTotal()[0].ObtenerNombre());
     }
@@ -28,7 +28,7 @@ public class TestAdministrador
     public void SuspenderVendedores() // Suspendo a un vendedor
     {
         fachada.CrearAdministrador("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com", "lauta");
-        fachada.CrearVendedor("Federico", "Garcia", "231231", "fedegarcia@gmail.com", "lauta");
+        fachada.CrearVendedor("Federico", "Garcia", "231231", "fedegarcia@gmail.com", "luty");
         fachada.SuspenderUsuario("fedegarcia@gmail.com");
         Assert.That(gv.VerTotal()[0].Activo, Is.EqualTo(false));
     }
@@ -38,7 +38,7 @@ public class TestAdministrador
     {
         
         fachada.CrearAdministrador("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com", "lauta");
-        fachada.CrearVendedor("Federico", "Garcia", "231231", "fedegarcia@gmail.com", "lauta");
+        fachada.CrearVendedor("Federico", "Garcia", "231231", "fedegarcia@gmail.com", "luty");
         fachada.EliminarVendedor("fedegarcia@gmail.com");
         Assert.AreEqual(0, gv.VerTotal().Count);
     }

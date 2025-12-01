@@ -3,6 +3,7 @@ namespace Library.Tests;
 
 public class TestVendedor
 {
+    
     [SetUp]
     public void Setup()
     {
