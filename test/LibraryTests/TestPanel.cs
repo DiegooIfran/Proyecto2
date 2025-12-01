@@ -5,8 +5,8 @@ public class TestPanel
     private Cliente CrearClienteConInteracciones()
         {
             Cliente cliente = new Cliente("Pablo", "Martinez", "098333222", "pablomm@email.com", "Masculino", new DateTime(2000, 6, 22));
-            cliente.AgregarInteraccion(new Reunion( DateTime.Today,"Kickoff", "Presentación inicial"));
-            cliente.AgregarInteraccion(new Correo( DateTime(09,11,2025), "Oferta","Revisar presupuesto", false));
+            cliente.AgregarInteraccion(new Reunion( new DateTime(2025,10,12),"Kickoff", "Presentación inicial"));
+            cliente.AgregarInteraccion(new Correo( new DateTime(2025,4,4), "Oferta","Revisar presupuesto", false));
             return cliente;
         }
 
@@ -24,7 +24,7 @@ public class TestPanel
             
             string panel = Panel.MostrarPanel(vendedor);
             Console.WriteLine(panel);
-            Assert.That(panel, Is.EqualTo("**Panel del vendedor Juan Silva**\n**Clientes totales:** 1\n\n**Interacciones recientes:**\n Reunion: Kickoff 10/11/2025\n Correo: Oferta 09/11/2025\n\nPróximas reuniones:\n"));
+            Assert.That(panel, Is.EqualTo("**Panel del vendedor Juan Silva**\n**Clientes totales:** 1\n\n**Interacciones recientes:**\n Reunion: Kickoff 12/10/2025\n Correo: Oferta 4/4/2025\n\n**Próximas reuniones:**\n"));
         
         }
 
@@ -35,6 +35,6 @@ public class TestPanel
             
             string panel = Panel.MostrarPanel(vendedor);
             Console.WriteLine(panel);
-            Assert.That(panel, Is.EqualTo("**Panel del vendedor Ana Rodriguez**\n**Clientes totales:** 0\nNo hay interacciones registradas\n\n**Próximas reuniones:**\nNo hay reuniones próximas."));
+            Assert.That(panel, Is.EqualTo("**Panel del vendedor Ana Rodriguez**\n**Clientes totales:** 0\nNo hay interacciones registradas.\n\n**Próximas reuniones:**\nNo hay reuniones próximas."));
         }
     }
