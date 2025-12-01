@@ -39,7 +39,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             try
             {
                 _fachada.AsignarCliente(nick , email);
-                await ReplyAsync($"El cliente {_fachada.BuscarPorEmail(email).ObtenerNombre()} {_fachada.BuscarPorEmail(email).ObtenerApellido()} fue asignado al vendedor {_fachada.BuscarVendedorNick(nick)}");
+                await ReplyAsync($"El cliente **{_fachada.BuscarPorEmail(email).ObtenerNombre()} {_fachada.BuscarPorEmail(email).ObtenerApellido()}** fue asignado al vendedor **{_fachada.BuscarVendedorNick(nick)}**");
             }
             catch (InvalidOperationException)
             {

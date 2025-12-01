@@ -26,7 +26,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         {
             try
             {
-                await ReplyAsync($"El cliente con el email {email} es {_fachada.BuscarPorEmail(email)}.");
+                await ReplyAsync($"El cliente con el email **{email}** es **{_fachada.BuscarPorEmail(email)}**.");
             }
             catch (Exception ex)
             {
@@ -54,7 +54,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         {
             try
             {
-                await ReplyAsync($"El cliente con el teléfono {telefono} es {_fachada.BuscarPorTelefono(telefono)}.");
+                await ReplyAsync($"El cliente con el teléfono **{telefono}** es **{_fachada.BuscarPorTelefono(telefono)}**.");
             }
             catch (Exception ex)
             {
@@ -83,10 +83,10 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             List<Cliente> clientes = _fachada.BuscarPorNombre(name);
             try
             {
-                await ReplyAsync($"Los clientes con el nombre {name} son: ");
+                await ReplyAsync($"Los clientes con el nombre **{name}** son: ");
                 foreach (Cliente cliente in clientes)
                 {
-                    await ReplyAsync($"{cliente}");
+                    await ReplyAsync($"**{cliente}**");
                 }
             }
             catch (Exception ex)
@@ -116,10 +116,10 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             List<Cliente> clientes = _fachada.BuscarPorApellido(apellido);
             try
             {
-                await ReplyAsync($"Los clientes con el apellido {apellido} son: ");
+                await ReplyAsync($"Los clientes con el apellido **{apellido}** son: ");
                 foreach (Cliente cliente in clientes)
                 {
-                    await ReplyAsync($"{cliente}");
+                    await ReplyAsync($"**{cliente}**");
                 }
             }
             catch (Exception ex)
