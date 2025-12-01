@@ -212,6 +212,6 @@ public class Fachada : ISingleton
     //Crear un Administrador
     public void CrearAdministrador(string nombre, string apellido, string telefono, string email, string nick)
     {
-        new Administrador(nombre,  apellido, telefono, email, nick);
+         ga.CrearAdministrador(nombre, apellido, telefono, email, nick);
     }
 }

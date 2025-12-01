@@ -18,4 +18,9 @@ public class GestorAdministrador: Gestor<Administrador>
         throw new InvalidOperationException("No se encontró ningún usuario con ese nombre.");
     }
 
+    public void CrearAdministrador(string nombre, string apellido, string telefono, string email, string nickname) 
+    {
+        Administrador nuevoAdministrador = new Administrador(nombre, apellido, telefono, email, nickname);
+        Singleton<Gestor<Administrador>>.Instance.Agregar(nuevoAdministrador); //Lama al Singleton GestorAdministrador para agregar el nuevo administrador a la lista
+    }
 }
