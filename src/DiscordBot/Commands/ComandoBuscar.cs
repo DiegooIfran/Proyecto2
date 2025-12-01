@@ -116,7 +116,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             List<Cliente> clientes = _fachada.BuscarPorApellido(apellido);
             try
             {
-                await ReplyAsync($"Los clientes con el nombre {apellido} son: ");
+                await ReplyAsync($"Los clientes con el apellido {apellido} son: ");
                 foreach (Cliente cliente in clientes)
                 {
                     await ReplyAsync($"{cliente}");
