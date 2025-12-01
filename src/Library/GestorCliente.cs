@@ -91,7 +91,7 @@ public class GestorCliente : Gestor<Cliente>
         List<Cliente> resultado = new List<Cliente>();
         foreach (Cliente cliente in this.VerTotal())
         {
-            if (apellido == cliente.ObtenerNombre())
+            if (apellido == cliente.ObtenerApellido())
             {
                 resultado.Add(cliente);
             }
