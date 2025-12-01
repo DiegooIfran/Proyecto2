@@ -29,8 +29,8 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             {
                 var vendedor = _fachada.BuscarVendedorNick(nick);
                 
-
                 await ReplyAsync(_fachada.VerTotalClientes(vendedor as Vendedor).ToString());
+                
             }
             catch (Exception ex)
             {
@@ -39,8 +39,4 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         }
         
     }
-    
-    
-    
-    
 }    
