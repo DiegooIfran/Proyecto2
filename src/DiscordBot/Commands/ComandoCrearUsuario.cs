@@ -69,19 +69,6 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
                 await ReplyAsync($"Error: {ex.Message}");
             }
         }
-        
-        [Command("debugnick")]
-        public async Task DebugNick()
-        {
-            var u = Context.User as SocketGuildUser;
-
-            await ReplyAsync(
-                $"Username: {u?.Username}\n" +
-                $"Nickname: {u?.Nickname}\n" +
-                $"GlobalName: {u?.GlobalName}\n" +
-                $"DisplayName: {u?.DisplayName}\n"
-            );
-        }
     }
     
     
