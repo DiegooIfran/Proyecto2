@@ -25,19 +25,61 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
 
         public async Task SuspenderVendedor(string email)
         {
+            Usuario admin = null;
+
             try
             {
-                var admin = _fachada.BuscarAdministradorNick(Context.User.Username);
-
-                _fachada.SuspenderUsuario(email);
-
-                await ReplyAsync($"El vendedor {email} fue suspendido.");
+                admin = _fachada.BuscarAdministradorNick(Context.User.Username);
             }
             catch (InvalidOperationException)
             {
                 await ReplyAsync("No existe un administrador con ese nick.");
+                return;
+            }
+            try
+            {
+                _fachada.SuspenderUsuario(email);
+                await ReplyAsync($"El vendedor {email} fue suspendido.");
+            }
+            catch (InvalidOperationException)
+            {
+                await ReplyAsync("No existe un vendedor con ese email.");
+            }
+        }
+
+        public class ComandoHabilitarVendedor : ModuleBase<SocketCommandContext>
+        {
+            private readonly Fachada _fachada;
+
+            // Inyectás la fachada por constructor (recomendado en Discord.NET con DI)
+            public ComandoHabilitarVendedor()
+            {
+                this._fachada = Singleton<Fachada>.Instance;
             }
 
+            /// <summary>
+            /// Implementa el comando 'habilitarVendedor'.
+            /// </summary>
+            [Command("habilitarVendedor")]
+            [Summary(
+                "Habilito a un vendedor. Uso !habilitarVendedor email")]
+
+            public async Task HabilitarVendedor(string email)
+            {
+                try
+                {
+                    var admin = _fachada.BuscarAdministradorNick(Context.User.Username);
+
+                    _fachada.HabilitarUsuario(email);
+
+                    await ReplyAsync($"El vendedor {email} fue habilitado.");
+                }
+                catch (InvalidOperationException)
+                {
+                    await ReplyAsync("No existe un administrador con ese nick.");
+                }
+
+            }
         }
     }
 }

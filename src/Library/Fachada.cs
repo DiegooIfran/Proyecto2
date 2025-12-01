@@ -186,6 +186,11 @@ public class Fachada : ISingleton
         gv.SuspenderVendedor(email);
     }
     
+    public void HabilitarUsuario(string email)
+    {
+        gv.HabilitarVendedor(email);
+    }
+    
     //Eliminar un usuario
     public void EliminarVendedor(string email)
     {

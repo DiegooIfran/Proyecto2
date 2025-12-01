@@ -59,6 +59,22 @@ public class GestorVendedor:Gestor<Vendedor>
             throw new ArgumentException("Vendedor no encontrado");
         }
     }
+    public void HabilitarVendedor(string email) 
+    {
+        bool existe = false;
+        foreach (var vendedor in Singleton<Gestor<Vendedor>>.Instance.VerTotal()) //Recorre los la lista de vendedores
+        {
+            if (vendedor.ObtenerEmail()== email) //Cuando el email del vendedor coincide con la string que se pasó se cambia el estado del vendedor
+            { 
+                vendedor.Activo = true;
+                existe = true;
+            }
+        }
+        if (!existe)
+        {
+            throw new ArgumentException("Vendedor no encontrado");
+        }
+    }
     
     public Vendedor BuscarPorNick(string nick)
     {

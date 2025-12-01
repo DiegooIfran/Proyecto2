@@ -14,7 +14,7 @@ public class GestorAdministrador: Gestor<Administrador>
                 return administrador;
             }
         }
-
+        
         throw new InvalidOperationException("No se encontró ningún usuario con ese nombre.");
     }
 
