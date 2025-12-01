@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.Loader;
 using System.Threading.Tasks;
 using Discord.Commands;
 using Library;
@@ -33,6 +34,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
                 debug += "- " + a.ObtenerNick() + "\n";
 
             await ReplyAsync(debug);
+            await ReplyAsync(Context.User.Username);
             
             Usuario admin = null;
 
