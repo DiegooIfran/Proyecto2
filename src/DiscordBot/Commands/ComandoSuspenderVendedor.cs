@@ -31,10 +31,10 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
 
             string debug = "Admins en sistema:\n";
             foreach (var a in lista)
-                debug += "- " + a.ObtenerNick() + "\n";
+                debug += "- " + a.ObtenerNick() + a.ObtenerNick().Length + "\n";
 
             await ReplyAsync(debug);
-            await ReplyAsync(Context.User.Username);
+            await ReplyAsync(Context.User.Username + Context.User.Username.Length());
             
             Usuario admin = null;
 
