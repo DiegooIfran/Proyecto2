@@ -18,7 +18,7 @@ public class Venta : Interaccion
     public Venta(DateTime fecha, string tema, string notas, int precio)
         : base(fecha, tema, notas)
     {
-        if (precio == null) //Valida que el cliente no sea nulo
+        if (precio.ToString() == null) //Valida que el cliente no sea nulo
         {
             throw new ArgumentNullException(nameof(precio));
         }

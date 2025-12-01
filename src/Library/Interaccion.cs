@@ -19,7 +19,7 @@ public abstract class Interaccion
     /// <exception cref="ArgumentNullException"></exception>
     protected Interaccion(DateTime fecha, string tema, string notas)
     {
-        if (fecha == null)
+        if (fecha.ToString() == null)
             throw new ArgumentNullException(nameof(fecha));
         if (tema == null)
             throw new ArgumentNullException(nameof(tema));
