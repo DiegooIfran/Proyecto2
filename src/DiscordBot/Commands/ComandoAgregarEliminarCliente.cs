@@ -30,7 +30,13 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
                 {
                     _fachada.AgregarCliente( name, apellido, telefono, email, genero, fechaNacimiento);
 
-                    await ReplyAsync($"El nuevo cliente fue registrado con éxito.");
+                    await ReplyAsync($"Cliente creado:\n" +
+                                     $"- **Nombre:** {name}\n" +
+                                     $"- **Apellido:** {apellido}\n" +
+                                     $"- **Teléfono:** {telefono}\n" +
+                                     $"- **Email:** {email}\n" +
+                                     $"- **Genero:** {genero}\n" +
+                                     $"- **Fecha de nacimiento:** {fechaNacimiento}");
                 }
                 catch (Exception ex)
                 {
@@ -61,7 +67,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
                 {
                     _fachada.EliminarCliente(email);
 
-                    await ReplyAsync($"El cliente con email {email} fue eliminado con éxito.");
+                    await ReplyAsync($"El cliente con email **{email}** fue eliminado con éxito.");
                 }
                 catch (Exception ex)
                 {
