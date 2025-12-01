@@ -90,9 +90,9 @@ public class Fachada : ISingleton
     }
     
     //Ver todos los clientes
-    public void VerTotalClientes(Vendedor vendedor)
+    public List<string> VerTotalClientes(Vendedor vendedor)
     {
-        vendedor.VerClientes();
+        return vendedor.VerClientes();
     }
 
     //Registrar llamada con un cliente
