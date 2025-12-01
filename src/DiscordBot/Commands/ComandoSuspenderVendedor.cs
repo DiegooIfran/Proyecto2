@@ -2,7 +2,6 @@ using System;
 using System.Threading.Tasks;
 using Discord.Commands;
 using Library;
-using Discord.WebSocket;
 
 namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
 {
@@ -10,7 +9,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
     {
         private readonly Fachada _fachada;
 
-        // Inyectás la fachada por constructor (recomendado en Discord.NET con DI)
+        // Inyectas la fachada por constructor (recomendado en Discord.NET con DI)
         public ComandoSuspenderVendedor()
         {
             this._fachada = Singleton<Fachada>.Instance;
@@ -25,6 +24,16 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
 
         public async Task SuspenderVendedor(string email)
         {
+            
+            var lista = Singleton<Gestor<Administrador>>.Instance.VerTotal();
+
+            string debug = "Admins en sistema:\n";
+            foreach (var a in lista)
+                debug += "- " + a.ObtenerNick() + a.ObtenerNick().Length + "\n";
+
+            await ReplyAsync(debug);
+            await ReplyAsync(Context.User.Username + Context.User.Username.Length());
+            
             Usuario admin = null;
 
             try
@@ -66,10 +75,9 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
 
             public async Task HabilitarVendedor(string email)
             {
-                Usuario admin = null;
                 try
                 {
-                    admin = _fachada.BuscarAdministradorNick(Context.User.Username);
+                    Usuario admin = _fachada.BuscarAdministradorNick(Context.User.Username);
                 }
                 catch (InvalidOperationException)
                 {

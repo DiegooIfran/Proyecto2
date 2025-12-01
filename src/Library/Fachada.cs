@@ -214,4 +214,9 @@ public class Fachada : ISingleton
     {
          ga.CrearAdministrador(nombre, apellido, telefono, email, nick);
     }
+
+    public void VerAdministradores()
+    {
+        ga.VerTotal();
+    }
 }
