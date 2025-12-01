@@ -13,14 +13,14 @@ public static class Panel
     /// Una cadena de texto con el nombre del vendedor, el total de clientes,
     /// las cinco interacciones más recientes y las reuniones próximas.
     /// </returns>
-    public static string ImprimirPanel(Vendedor vendedor)
+    public static string MostrarPanel(Vendedor vendedor)
     {
         // Encabezado con el nombre del vendedor
-        string panel = $"Panel del vendedor: {vendedor.ObtenerNombre()}\n";
+        string panel = $"**Panel del vendedor {vendedor.ObtenerNombre()} {vendedor.ObtenerApellido()}**\n";
         
         // Total de clientes asociados
         var clientes = vendedor.ObtenerClientes();
-        panel+=$"Clientes totales: {clientes.Count}\n";
+        panel+=$"**Clientes totales:** {clientes.Count}\n";
         
         // Reúne todas las interacciones de todos los clientes
         List<Interaccion> todasLasInteracciones = new();
@@ -35,14 +35,14 @@ public static class Panel
         // Interacciones recientes
         if (todasLasInteracciones.Count == 0)
         {
-            panel+=$"No hay interacciones registradas\n";
+            panel+=$"No hay interacciones registradas.\n";
         }
         else
         {
             // Ordena por fecha (más recientes primero)
             todasLasInteracciones.Sort((a, b) => b.ObtenerFecha().CompareTo(a.ObtenerFecha()));
 
-            panel+=$"\nInteracciones recientes:\n";
+            panel+=$"\n**Interacciones recientes:**\n";
             int mostradas = 0;
             foreach (var interaccion in todasLasInteracciones)
             {
@@ -54,7 +54,7 @@ public static class Panel
         
 
         // Reuniones próximas
-        panel+=$"\nPróximas reuniones:\n";
+        panel+=$"\n**Próximas reuniones:**\n";
 
         bool hayReuniones = false;
 

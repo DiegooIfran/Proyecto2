@@ -56,11 +56,9 @@ public class Vendedor : Usuario, IPersona
         }
     }
     
-    public List<string> VerClientes()
+    public List<Cliente> VerClientes()
     {
-        return Clientes
-            .Select(c => $"{c.ObtenerNombre()} {c.ObtenerApellido()}")
-            .ToList();
+        return this.Clientes;
     }
 
 
@@ -160,10 +158,10 @@ public class Vendedor : Usuario, IPersona
     }
 
     /// <summary>
-    /// Muestra el panel visual del vendedor con sus datos y clientes asociados
+    /// Define como se convierte en string
     /// </summary>
-    public string VerPanel() 
+    public override string ToString()
     {
-        return Panel.ImprimirPanel(this);
+        return $"{this.ObtenerNombre()} {this.ObtenerApellido()} de nick: {this.ObtenerNick()}- Contacto: correo {this.ObtenerEmail()}, teléfono {this.ObtenerTelefono()}";
     }
 }

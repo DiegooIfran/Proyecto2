@@ -25,14 +25,6 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
 
         public async Task SuspenderVendedor(string email)
         {
-            
-            foreach (var admina in Singleton<Gestor<Administrador>>.Instance.VerTotal())
-            {
-                Console.WriteLine($"[{admina.ObtenerNick()}] len={admina.ObtenerNick().Length}");
-                foreach (var c in admina.ObtenerNick())
-                    Console.WriteLine($" - '{c}' -> {(int)c}");
-            }
-
             try
             {
                 Usuario admin = _fachada.BuscarAdministradorNick(Context.User.Username);

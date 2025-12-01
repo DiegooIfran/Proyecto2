@@ -90,7 +90,7 @@ public class Fachada : ISingleton
     }
     
     //Ver todos los clientes
-    public List<string> VerTotalClientes(Vendedor vendedor)
+    public List<Cliente> VerTotalClientes(Vendedor vendedor)
     {
         return vendedor.VerClientes();
     }
@@ -204,10 +204,10 @@ public class Fachada : ISingleton
         gc.AsignarCliente(vendedor, gc.BuscarPorEmail(correo));
     }
     
-    public void VerPanel(string nick)
+    public string VerPanel(string nick)
     {
         Vendedor vendedor = gv.BuscarPorNick(nick);
-        vendedor.VerPanel();
+        return Panel.MostrarPanel(vendedor);
     }
     //Crear un Administrador
     public void CrearAdministrador(string nombre, string apellido, string telefono, string email, string nick)
