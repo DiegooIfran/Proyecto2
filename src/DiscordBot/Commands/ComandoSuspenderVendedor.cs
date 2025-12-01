@@ -1,9 +1,7 @@
 using System;
-using System.Runtime.Loader;
 using System.Threading.Tasks;
 using Discord.Commands;
 using Library;
-using Discord.WebSocket;
 
 namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
 {
@@ -11,7 +9,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
     {
         private readonly Fachada _fachada;
 
-        // Inyectás la fachada por constructor (recomendado en Discord.NET con DI)
+        // Inyectas la fachada por constructor (recomendado en Discord.NET con DI)
         public ComandoSuspenderVendedor()
         {
             this._fachada = Singleton<Fachada>.Instance;
