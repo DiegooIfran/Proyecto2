@@ -21,7 +21,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         /// </summary>
         [Command("cotizacion")]
         [Summary(
-            "Registra una nueva cotización. Uso !asignarCliente nick email fecha tema notas precio")]
+            "Registra una nueva cotización. Uso !cotizacion nick correo fecha tema notas precio")]
         // Pide el nick del vendedor y el email del cliente a asignar y los datos de la cotización
 
         public async Task RealizarCotizacion(string nick, string correo, DateTime fecha, string tema, string notas, int precio)
