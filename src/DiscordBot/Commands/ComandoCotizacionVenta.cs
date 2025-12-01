@@ -29,7 +29,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             try
             {
                 _fachada.RealizarCotizacion(Context.User.Username, correo, fecha, tema, notas, precio);
-                await ReplyAsync($"La cotización realizada con el cliente {_fachada.BuscarPorEmail(correo).ObtenerNombre()} por el vendedor {_fachada.BuscarVendedorNick(Context.User.Username).ObtenerNombre()} {_fachada.BuscarVendedorNick(Context.User.Username).ObtenerApellido()} fue registrada con éxito.");
+                await ReplyAsync($"La cotización realizada con el cliente **{_fachada.BuscarPorEmail(correo).ObtenerNombre()}** por el vendedor **{_fachada.BuscarVendedorNick(Context.User.Username).ObtenerNombre()} {_fachada.BuscarVendedorNick(Context.User.Username).ObtenerApellido()}** fue registrada con éxito.");
             }
             catch (Exception ex)
             {
@@ -62,7 +62,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             {
                 _fachada.RealizarVenta(correo, tema);
 
-                await ReplyAsync($"La venta realizada con el cliente {_fachada.BuscarPorEmail(correo).ObtenerNombre()} fue registrada con éxito.");
+                await ReplyAsync($"La venta realizada con el cliente **{_fachada.BuscarPorEmail(correo).ObtenerNombre()}** fue registrada con éxito.");
             }
             catch (Exception ex)
             {

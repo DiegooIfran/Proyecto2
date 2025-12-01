@@ -37,7 +37,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             try
             {
                 _fachada.SuspenderUsuario(email);
-                await ReplyAsync($"El vendedor {email} fue suspendido.");
+                await ReplyAsync($"El vendedor **{email}** fue suspendido.");
             }
             catch (InvalidOperationException)
             {
@@ -76,7 +76,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
                 try
                 {
                     _fachada.HabilitarUsuario(email);
-                    await ReplyAsync($"El vendedor {email} fue habilitado.");
+                    await ReplyAsync($"El vendedor **{email}** fue habilitado.");
                 }
                 catch (InvalidOperationException)
                 {

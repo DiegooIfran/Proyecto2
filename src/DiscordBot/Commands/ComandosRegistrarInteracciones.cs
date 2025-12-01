@@ -30,7 +30,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             {
                 _fachada.RegistrarLlamada(Context.User.Username, correo, fecha, tema, nota, enviada);
 
-                await ReplyAsync($"La interaccion {tema} fue creada con exito.");
+                await ReplyAsync($"La interaccion **{tema}** fue creada con exito.");
             }
             catch (InvalidOperationException)
             {
@@ -53,7 +53,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             {
                 _fachada.RegistrarMensaje(Context.User.Username, correo, fecha, tema, nota, enviada);
 
-                await ReplyAsync($"La interaccion {tema} fue creada con exito.");
+                await ReplyAsync($"La interaccion **{tema}** fue creada con exito.");
             }
             catch (InvalidOperationException)
             {
@@ -76,7 +76,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             {
                 _fachada.RegistrarCorreo(Context.User.Username, correo, fecha, tema, nota, enviada);
 
-                await ReplyAsync($"La interaccion {tema} fue creada con exito.");
+                await ReplyAsync($"La interaccion **{tema}** fue creada con exito.");
             }
             catch (InvalidOperationException)
             {
@@ -98,7 +98,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             {
                 _fachada.RegistrarReunion(Context.User.Username, correo, fecha, tema, nota);
 
-                await ReplyAsync($"La interaccion {tema} fue creada con exito.");
+                await ReplyAsync($"La interaccion **{tema}** fue creada con exito.");
             }
             catch (InvalidOperationException)
             {
