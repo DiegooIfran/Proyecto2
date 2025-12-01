@@ -3,8 +3,6 @@ namespace Library.Tests;
 
 public class TestVendedor
 {
-    Fachada fachada = Singleton<Fachada>.Instance;
-
     [SetUp]
     public void Setup()
     {
@@ -28,14 +26,17 @@ public class TestVendedor
     [Test]
     public void Campana()
     {
+        GestorEtiquetas<Etiqueta> ge = new GestorEtiquetas<Etiqueta>();
         Vendedor vendedor = new Vendedor("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com", ".luty");
         Cliente mayor = new Cliente("Juan", "Perez", "0923", "juan@gmail.com","hombre", DateTime.Today);
         Cliente otro = new Cliente("Carlos", "Diaz", "09232", "carlos@gmail.com","hombre", DateTime.Today.AddDays(2));
         vendedor.AgregarCliente(mayor);
         vendedor.AgregarCliente(otro);
-        fachada.CrearEtiqueta("Mayor", "Sos mayor");
-        fachada.AgregarEtiqueta("juan@gmail.com", "Mayor");
-        fachada.RealizarCampana(".luty","Mayor", "Sos mayor de edad!");
+        ge.CrearEtiqueta("Mayor", "Sos mayor");
+        ge.AgregarEtiqueta(mayor, ge.RetornarEtiqueta("Mayor"));
+        //Etiqueta etiqueta = new Etiqueta("Mayor", "Sos mayor");
+        //etiqueta.AgregarEtiqueta(mayor);
+        vendedor.Campana(ge.RetornarEtiqueta("Mayor"), "Sos mayor de edad!");
 
         Assert.That(mayor.ObtenerInteracciones().Count, Is.EqualTo(1));
         Assert.That(otro.ObtenerInteracciones().Count, Is.EqualTo(0));
