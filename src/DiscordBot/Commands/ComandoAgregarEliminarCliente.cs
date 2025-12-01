@@ -21,7 +21,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             /// </summary>
             [Command("agregarCliente")]
             [Summary(
-                "Agrega un cliente a la lista de clientes.")]
+                "Agrega un cliente a la lista de clientes. Usa !agregarCliente nombre apellido telefono email genero fechaNacimiento")]
             
             public async Task ExecuteAsync(string name, string apellido, string telefono, string email, string genero,
                 DateTime fechaNacimiento)
