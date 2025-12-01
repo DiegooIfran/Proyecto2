@@ -28,7 +28,9 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         {
             try
             {
-                _fachada.RegistrarLlamada(Context.User.Username, correo, fecha, tema, nota, enviada);
+                var user = Context.User as SocketGuildUser;
+                string displayName = user?.DisplayName;
+                _fachada.RegistrarLlamada(displayName, correo, fecha, tema, nota, enviada);
 
                 await ReplyAsync($"La interaccion {tema} fue creada con exito.");
             }
