@@ -19,11 +19,12 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         /// Implementa el comando 'RealizarCampana'.
         /// </summary>
         [Command("campana")]
-        [Summary("Realiza una campaña publicitaria. Uso: !campana nick etiqueta anuncio")]
-        public async Task ExecuteAsync(string nick, string nombreEtiqueta, [Remainder] string anuncio)
+        [Summary("Realiza una campaña publicitaria. Uso: !campana etiqueta anuncio")]
+        public async Task ExecuteAsync(string nombreEtiqueta, [Remainder] string anuncio)
         {
             try
             {
+                var nick = Context.User.Username;
                 _fachada.RealizarCampana(nick, nombreEtiqueta, anuncio);
 
                 await ReplyAsync(
