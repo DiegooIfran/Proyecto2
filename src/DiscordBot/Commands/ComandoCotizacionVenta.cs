@@ -22,14 +22,14 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         [Command("cotizacion")]
         [Summary(
             "Registra una nueva cotización. Uso !cotizacion correo fecha tema notas precio")]
-        // Toma el nick del vendedor(el que mando el mensaje) y el email del cliente a asignar y los datos de la cotización
+        // Toma el nick del vendedor(el que mando el mensaje) y el email del cliente a asignar y los datos de la cotización, debe tener el cliente asignado
 
         public async Task RealizarCotizacion(string correo, DateTime fecha, string tema, string notas, int precio)
         {
             try
             {
                 _fachada.RealizarCotizacion(Context.User.Username, correo, fecha, tema, notas, precio);
-                await ReplyAsync($"La cotización realizada con el cliente {_fachada.BuscarPorEmail(correo).ObtenerNombre()} por el vendedor {_fachada.BuscarVendedorNick(Context.User.Username)} fue registrada con éxito.");
+                await ReplyAsync($"La cotización realizada con el cliente {_fachada.BuscarPorEmail(correo).ObtenerNombre()} por el vendedor {_fachada.BuscarVendedorNick(Context.User.Username).ObtenerNombre()} {_fachada.BuscarVendedorNick(Context.User.Username).ObtenerApellido()} fue registrada con éxito.");
             }
             catch (Exception ex)
             {
