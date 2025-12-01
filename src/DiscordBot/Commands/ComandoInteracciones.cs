@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Discord.Commands;
 using Library;
@@ -36,7 +37,8 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
                     return;
                 }
                 
-                await ReplyAsync(string.Join("\n", interacciones));
+                var texto = string.Join("\n", interacciones.Select(i => i.ObtenerTema()));
+                await ReplyAsync(texto);
             }
             
             catch (Exception ex)
