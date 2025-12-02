@@ -97,9 +97,9 @@ public class TestGestorCliente
         List<Cliente> listaClientes = gestor.VerTotal();
         Cliente cliente1 = listaClientes[0];
         Cliente cliente2 = listaClientes[1];
-        Assert.That(gestor.BuscarPorNombre("Martinez")[0].ObtenerEmail(), Is.EqualTo(cliente1.ObtenerEmail()));
+        Assert.That(gestor.BuscarPorNombre("Juan")[0].ObtenerEmail(), Is.EqualTo(cliente1.ObtenerEmail()));
 
-        Assert.That(gestor.BuscarPorNombre("Romero")[0].ObtenerEmail(), Is.EqualTo(cliente1.ObtenerEmail()));
+        Assert.That(gestor.BuscarPorNombre("Ana")[0].ObtenerEmail(), Is.EqualTo(cliente2.ObtenerEmail()));
     }
 
     [Test]
