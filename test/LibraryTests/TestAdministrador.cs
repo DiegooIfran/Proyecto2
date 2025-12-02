@@ -27,7 +27,6 @@ public class TestAdministrador
     [Test]
     public void SuspenderVendedores() // Suspendo a un vendedor
     {
-        fachada.CrearAdministrador("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com", "lauta");
         fachada.CrearVendedor("Federico", "Garcia", "231231", "fedegarcia@gmail.com", "luty");
         fachada.SuspenderUsuario("fedegarcia@gmail.com");
         Assert.That(gv.VerTotal()[0].Activo, Is.EqualTo(false));
@@ -36,8 +35,6 @@ public class TestAdministrador
     [Test]
     public void EliminarVendedores() // Elimino a un vendedor
     {
-        
-        fachada.CrearAdministrador("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com", "lauta");
         fachada.CrearVendedor("Federico", "Garcia", "231231", "fedegarcia@gmail.com", "luty");
         fachada.EliminarVendedor("fedegarcia@gmail.com");
         Assert.AreEqual(0, gv.VerTotal().Count);
