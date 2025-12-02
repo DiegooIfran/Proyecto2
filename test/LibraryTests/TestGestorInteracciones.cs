@@ -10,7 +10,9 @@ public class TestGestorInteracciones
     public void Setup()
     {
         Singleton<GestorAdministrador>.Instance.VerTotal().Clear();
+        Singleton<GestorCliente>.Instance.VerTotal().Clear();
         Singleton<GestorVendedor>.Instance.VerTotal().Clear();
+        Singleton<GestorEtiquetas<Etiqueta>>.Instance.VerEtiquetas().Clear();
         //var field = typeof(GestorInteracciones).GetField("_todasInteracciones",
         //    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
         //field.SetValue(null, new List<Interaccion>());
