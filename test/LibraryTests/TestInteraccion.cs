@@ -1,14 +1,20 @@
+using System.Runtime.InteropServices;
+
 namespace Library.Tests;
 
 public class TestInteraccion
-{
+{ 
+    private Fachada _fachada = Singleton<Fachada>.Instance;
+
     [SetUp]
     public void Setup()
     {
+        Singleton<GestorCliente>.Instance.VerTotal().Clear();
+        Singleton<GestorVendedor>.Instance.VerTotal().Clear();
     }
 
     [Test]
-    public void TestConstructorCorreo() //Chequea que funcione el constructor de la interaccion correo
+    public void TestConstructorCorreo() 
     {
         var fechaPrueba = new DateTime(2025, 10, 20, 10, 30, 0);
         const string temaPrueba = "Consulta de Producto X";
@@ -23,7 +29,7 @@ public class TestInteraccion
     }
 
     [Test]
-    public void TestConstructorLlamadas() //Chequea que funcione el constructor de la interaccion llamada
+    public void TestConstructorLlamadas()
     {
         var fechaPrueba = new DateTime(2025, 10, 20, 10, 30, 0);
         const string temaPrueba = "Consulta de Producto X";
@@ -38,7 +44,7 @@ public class TestInteraccion
     }
     
     [Test]
-    public void TestConstructorMensaje() //Chequea que funcione el constructor de la interaccion mensaje
+    public void TestConstructorMensaje() 
     {
         var fechaPrueba = new DateTime(2025, 10, 20, 10, 30, 0);
         const string temaPrueba = "Consulta de Producto X";
@@ -53,7 +59,7 @@ public class TestInteraccion
     }
     
     [Test]
-    public void TestConstructorReunion() //Chequea que funcione el constructor de la interaccion reunion
+    public void TestConstructorReunion()
     {
         var fechaPrueba = new DateTime(2025, 10, 20, 10, 30, 0);
         const string temaPrueba = "Consulta de Producto X";
@@ -63,4 +69,57 @@ public class TestInteraccion
         Assert.That(reunion.ObtenerTema(), Is.EqualTo(temaPrueba));
         Assert.That(reunion.ObtenerNota(), Is.EqualTo(notasPrueba));
     }
+    
+    [Test]
+    public void VerCorreo_ClienteSinCorreos_MuestraMensajeDeVacio()
+    {
+        _fachada.AgregarCliente("Ana", "Lopez", "099111222", "ana@gmail.com", "mujer", DateTime.Now);
+        _fachada.CrearVendedor("Lautaro", "Ramirez", "0923313", "lautaro@gmail.com", ".luty");
+        string resultado = BuscadorInteracciones.VerCorreo(_fachada.BuscarPorEmail("ana@gmail.com"));
+
+        Assert.That(resultado, Does.Contain("No hay correos registrados"));
+    }
+
+    [Test]
+    public void VerCorreo_ClienteConUnCorreo_MuestraCorreo()
+    {
+        _fachada.AgregarCliente("Pedro", "Gomez", "094555666", "pepe@gmail.com", "hombre", DateTime.Now);
+        _fachada.CrearVendedor("Lautaro", "Ramirez", "0923313", "lautaro@gmail.com", ".luty");
+        _fachada.RegistrarCorreo(".luty","pepe@gmail.com", DateTime.Today, "Consulta", "Nota ejemplo", false);
+
+        string resultado = BuscadorInteracciones.VerCorreo(_fachada.BuscarPorEmail("pepe@gmail.com"));
+
+        Assert.That(resultado, Does.Contain("Tema: Consulta"));
+        Assert.That(resultado, Does.Contain(DateTime.Today.ToShortDateString()));
+        Assert.That(resultado, Does.Contain("Nota ejemplo"));
+    }
+    
+    [Test]
+    public void VerMensaje_ClienteConUNMENSAJE_MuestraMensaje()
+    {
+        _fachada.AgregarCliente("Pedro", "Gomez", "094555666", "pepe@gmail.com", "hombre", DateTime.Now);
+        _fachada.CrearVendedor("Lautaro", "Ramirez", "0923313", "lautaro@gmail.com", ".luty");
+        _fachada.RegistrarMensaje(".luty","pepe@gmail.com", DateTime.Today, "Consulta", "Nota ejemplo", false);
+
+        string resultado = BuscadorInteracciones.VerMensaje(_fachada.BuscarPorEmail("pepe@gmail.com"));
+
+        Assert.That(resultado, Does.Contain("Tema: Consulta"));
+        Assert.That(resultado, Does.Contain(DateTime.Today.ToShortDateString()));
+        Assert.That(resultado, Does.Contain("Nota ejemplo"));
+    }
+    
+    [Test]
+    public void VerLlamada_ClienteConUnaLlamada_MuestraLlamadas()
+    {
+        _fachada.AgregarCliente("Pedro", "Gomez", "094555666", "pepe@gmail.com", "hombre", DateTime.Now);
+        _fachada.CrearVendedor("Lautaro", "Ramirez", "0923313", "lautaro@gmail.com", ".luty");
+        _fachada.RegistrarLlamada(".luty","pepe@gmail.com", DateTime.Today, "Consulta", "Nota ejemplo", false);
+
+        string resultado = BuscadorInteracciones.VerLlamadas(_fachada.BuscarPorEmail("pepe@gmail.com"));
+
+        Assert.That(resultado, Does.Contain("Tema: Consulta"));
+        Assert.That(resultado, Does.Contain(DateTime.Today.ToShortDateString()));
+        Assert.That(resultado, Does.Contain("Nota ejemplo"));
+    }
+
 }
