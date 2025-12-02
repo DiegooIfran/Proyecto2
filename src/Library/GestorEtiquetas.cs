@@ -34,6 +34,7 @@ public class GestorEtiquetas<T> : ISingleton where T : Etiqueta
             throw new ArgumentNullException(nameof(cliente));
         }
         cliente.ObtenerEtiquetas().Add(etiqueta);
+        this._etiquetas.Add(etiqueta);
     }
 
     /// <summary>
