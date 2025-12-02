@@ -25,7 +25,7 @@ public class GestorVendedor : Gestor<Vendedor>, ISingleton
         {
             if (Singleton<GestorVendedor>.Instance.VerTotal()[i].ObtenerEmail()== email)//Cuando el email del vendedor coincide con la string que se pasó se elimina el vendedor
             {
-                vendedorAEliminar = Singleton<Gestor<Vendedor>>.Instance.VerTotal()[i]; // Guardo al vendedor cuando llebgue a el
+                vendedorAEliminar = Singleton<GestorVendedor>.Instance.VerTotal()[i]; // Guardo al vendedor cuando llebgue a el
                 existe = true;
                 break;
             }

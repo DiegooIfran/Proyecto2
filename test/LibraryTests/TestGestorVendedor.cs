@@ -27,11 +27,11 @@ public class TestGestorVendedor
     [Test]
     public void TestEliminarVendedor()
     {
-        // Justificación: comprueba que el método EliminarVendedor funciona
-        gv.CrearVendedor("Federico", "Garcia", "231231", "fedegarcia@gmail.com", "luty"); 
-        gv.EliminarVendedor("fedegarcia@gmail.com");
-
-        Assert.That(gv.VerTotal().Count.Equals(0));
+           
+            gv.CrearVendedor("Federico", "Garcia", "2312", "fedegarcia@gmail.com", "luty");
+            gv.EliminarVendedor("fedegarcia@gmail.com");
+            
+            Assert.That(gv.VerTotal(), Is.Empty);
     }
     
     [Test]
