@@ -13,10 +13,10 @@ public class TestGestorInteracciones
         Singleton<GestorCliente>.Instance.VerTotal().Clear();
         Singleton<GestorVendedor>.Instance.VerTotal().Clear();
         Singleton<GestorEtiquetas<Etiqueta>>.Instance.VerEtiquetas().Clear();
-        //var field = typeof(GestorInteracciones).GetField("_todasInteracciones",
-        //    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
-        //field.SetValue(null, new List<Interaccion>());
-        //Idem que en Testeos de fachada, la lista persiste entre los testeos por ende buscamos reiniciarlos para poder testear cada funcion especificamente
+        var field = typeof(GestorInteracciones).GetField("_todasInteracciones",
+            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
+        field.SetValue(null, new List<Interaccion>());
+        //Codigo provisto por chatgpt, la lista persiste entre los testeos por ende buscamos reiniciarlos para poder testear cada funcion especificamente
     }
     
     [Test]
