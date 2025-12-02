@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['suspendervendedor_0',['SuspenderVendedor',['../classLibrary_1_1Administrador.html#abc536a21e0ebaadc8f40fd54968b29b5',1,'Library::Administrador']]]
+  ['ponerfecha_0',['PonerFecha',['../classLibrary_1_1Interaccion.html#a44050c90e2e38ef1f7b000f0de1b1800',1,'Library::Interaccion']]]
 ];

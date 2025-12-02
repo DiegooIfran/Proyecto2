@@ -1,4 +1,32 @@
 var searchData=
 [
-  ['etiqueta_0',['Etiqueta',['../classLibrary_1_1Etiqueta.html',1,'Library']]]
+  ['cliente_0',['Cliente',['../classLibrary_1_1Cliente.html',1,'Library']]],
+  ['clientetests_1',['ClienteTests',['../classLibrary_1_1Tests_1_1ClienteTests.html',1,'Library::Tests']]],
+  ['comandoagregarcliente_2',['ComandoAgregarCliente',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1Ucu_1_1Poo_1_1DiscordDemo_1_1Discord49c1b0a3c73c8889857599071e513d03.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands::Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['comandoasignarcliente_3',['ComandoAsignarCliente',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoAsignarCliente.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['comandobuscarclienteporapellido_4',['ComandoBuscarClientePorApellido',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoBuscarClientePorApellido.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['comandobuscarclienteporemail_5',['ComandoBuscarClientePorEmail',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoBuscarClientePorEmail.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['comandobuscarclientepornombre_6',['ComandoBuscarClientePorNombre',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoBuscarClientePorNombre.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['comandobuscarclienteportelefono_7',['ComandoBuscarClientePorTelefono',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoBuscarClientePorTelefono.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['comandocotizacion_8',['ComandoCotizacion',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoCotizacion.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['comandocrearvendedor_9',['ComandoCrearVendedor',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoCrearVendedor.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['comandoeliminarcliente_10',['ComandoEliminarCliente',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1Ucu_1_1Poo_1_1DiscordDemo_1_1Discord1d43c01653d068dcabe89d854b51dee0.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands::Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['comandohabilitarvendedor_11',['ComandoHabilitarVendedor',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoSuspenderVendedor_1_1ComandoHabilitarVendedor.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands::ComandoSuspenderVendedor']]],
+  ['comandointeracciones_12',['ComandoInteracciones',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoInteracciones.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['comandopanel_13',['ComandoPanel',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoPanel.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['comandorealizarcampana_14',['ComandoRealizarCampana',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoRealizarCampana.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['comandosagregaretiqueta_15',['ComandosAgregarEtiqueta',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosAgregarEtiqueta.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['comandosborraretiqueta_16',['ComandosBorrarEtiqueta',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosBorrarEtiqueta.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['comandoscrearetiqueta_17',['ComandosCrearEtiqueta',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosCrearEtiqueta.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['comandosmodificarapellido_18',['ComandosModificarApellido',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosModificarApellido.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['comandosmodificaremail_19',['ComandosModificarEmail',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosModificarEmail.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['comandosmodificarnombre_20',['ComandosModificarNombre',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosModificarNombre.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['comandosmodificartelefono_21',['ComandosModificarTelefono',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosModificarTelefono.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['comandosregistrarinteracciones_22',['ComandosRegistrarInteracciones',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosRegistrarInteracciones.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['comandosuspendervendedor_23',['ComandoSuspenderVendedor',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoSuspenderVendedor.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['comandoventa_24',['ComandoVenta',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoVenta.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['comandovertotalclientes_25',['ComandoVerTotalClientes',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoVerTotalClientes.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['correo_26',['Correo',['../classLibrary_1_1Correo.html',1,'Library']]],
+  ['cotizacion_27',['Cotizacion',['../classLibrary_1_1Cotizacion.html',1,'Library']]],
+  ['cotizaciontests_28',['CotizacionTests',['../classLibrary_1_1Tests_1_1CotizacionTests.html',1,'Library::Tests']]]
 ];

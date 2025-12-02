@@ -8,6 +8,7 @@ var dir_6c8e1213d96547949c4ad1dee757a549 =
     [ "TestGestor.cs", "TestGestor_8cs_source.html", null ],
     [ "TestGestorCliente.cs", "TestGestorCliente_8cs_source.html", null ],
     [ "TestGestorInteracciones.cs", "TestGestorInteracciones_8cs_source.html", null ],
+    [ "TestGestorVendedor.cs", "TestGestorVendedor_8cs_source.html", null ],
     [ "TestInteraccion.cs", "TestInteraccion_8cs_source.html", null ],
     [ "TestPanel.cs", "TestPanel_8cs_source.html", null ],
     [ "TestsCliente.cs", "TestsCliente_8cs_source.html", null ],

@@ -19,9 +19,7 @@ digraph "Library.Tests.TestFachada"
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">CrearEtiquetaYAgregarlaACliente<BR ALIGN="LEFT"/>_DeberiaAsociarseCorrectamente()<BR ALIGN="LEFT"/></TD></TR>
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">RegistrarReunion_Deberia<BR ALIGN="LEFT"/>AgregarUnaInteraccionDeTipoReunion()<BR ALIGN="LEFT"/></TD></TR>
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">RegistrarLlamada_Deberia<BR ALIGN="LEFT"/>AgregarUnaInteraccionDeTipoLlamada()<BR ALIGN="LEFT"/></TD></TR>
-<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">RegistrarCorreo_DeberiaAgregar<BR ALIGN="LEFT"/>UnaInteraccionDeTipoCorreo()<BR ALIGN="LEFT"/></TD></TR>
-<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">RegistrarMensaje_Deberia<BR ALIGN="LEFT"/>AgregarUnaInteraccionDeTipoMensaje()<BR ALIGN="LEFT"/></TD></TR>
-<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">Singleton_DeberiaDevolver<BR ALIGN="LEFT"/>LaMismaInstancia()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0"></TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">and 12 more...</TD></TR>
 </TABLE>>
 ,height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
 }

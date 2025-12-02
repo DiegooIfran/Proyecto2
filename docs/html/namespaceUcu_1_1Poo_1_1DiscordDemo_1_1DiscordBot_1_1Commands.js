@@ -1,0 +1,27 @@
+var namespaceUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands =
+[
+    [ "Ucu", "namespaceUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1Ucu.html", "namespaceUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1Ucu" ],
+    [ "ComandoAsignarCliente", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoAsignarCliente.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoAsignarCliente" ],
+    [ "ComandoBuscarClientePorEmail", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoBuscarClientePorEmail.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoBuscarClientePorEmail" ],
+    [ "ComandoBuscarClientePorTelefono", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoBuscarClientePorTelefono.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoBuscarClientePorTelefono" ],
+    [ "ComandoBuscarClientePorNombre", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoBuscarClientePorNombre.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoBuscarClientePorNombre" ],
+    [ "ComandoBuscarClientePorApellido", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoBuscarClientePorApellido.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoBuscarClientePorApellido" ],
+    [ "ComandoCotizacion", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoCotizacion.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoCotizacion" ],
+    [ "ComandoVenta", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoVenta.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoVenta" ],
+    [ "ComandoCrearVendedor", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoCrearVendedor.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoCrearVendedor" ],
+    [ "ComandoInteracciones", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoInteracciones.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoInteracciones" ],
+    [ "ComandoPanel", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoPanel.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoPanel" ],
+    [ "ComandoVerTotalClientes", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoVerTotalClientes.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoVerTotalClientes" ],
+    [ "ComandoRealizarCampana", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoRealizarCampana.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoRealizarCampana" ],
+    [ "ComandosCrearEtiqueta", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosCrearEtiqueta.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosCrearEtiqueta" ],
+    [ "ComandosAgregarEtiqueta", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosAgregarEtiqueta.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosAgregarEtiqueta" ],
+    [ "ComandosBorrarEtiqueta", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosBorrarEtiqueta.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosBorrarEtiqueta" ],
+    [ "ComandosModificarNombre", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosModificarNombre.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosModificarNombre" ],
+    [ "ComandosModificarApellido", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosModificarApellido.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosModificarApellido" ],
+    [ "ComandosModificarTelefono", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosModificarTelefono.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosModificarTelefono" ],
+    [ "ComandosModificarEmail", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosModificarEmail.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosModificarEmail" ],
+    [ "ComandosRegistrarInteracciones", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosRegistrarInteracciones.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandosRegistrarInteracciones" ],
+    [ "ComandoSuspenderVendedor", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoSuspenderVendedor.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoSuspenderVendedor" ],
+    [ "PingCommand", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1PingCommand.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1PingCommand" ],
+    [ "UserInfoCommand", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1UserInfoCommand.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1UserInfoCommand" ]
+];

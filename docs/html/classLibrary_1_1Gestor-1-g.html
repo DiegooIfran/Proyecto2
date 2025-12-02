@@ -92,7 +92,7 @@ $(function(){initNavTree('classLibrary_1_1Gestor-1-g.html','','classLibrary_1_1G
 </div><!--header-->
 <div class="contents">
 
-<p>Clase genérica que gestiona colecciones de objetos que implementan la interfaz <a class="el" href="interfaceLibrary_1_1IGestionable.html" title="Define el contrato que deben implementar las clases que pueden ser gestionadas por un Gestor&lt;T&gt;.">IGestionable</a>. Puede utilizarse para administrar distintos tipos de usuarios, como administradores o vendedores.  
+<p>Clase genérica que gestiona colecciones de objetos que implementan la interfaz IGestionable. Puede utilizarse para administrar distintos tipos de usuarios, como administradores o vendedores. DIP, depende de clases genericas Creator: es el encargado de agregar objetos a sus listas ya que los contiene.  
  <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Library.Gestor&lt; T &gt;:</div>
@@ -117,23 +117,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6ec744aa09d267c2012eeaaa7ba2b4a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica si un elemento con el email especificado ya se encuentra registrado.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Clase genérica que gestiona colecciones de objetos que implementan la interfaz <a class="el" href="interfaceLibrary_1_1IGestionable.html" title="Define el contrato que deben implementar las clases que pueden ser gestionadas por un Gestor&lt;T&gt;.">IGestionable</a>. Puede utilizarse para administrar distintos tipos de usuarios, como administradores o vendedores. </p>
+<div class="textblock"><p>Clase genérica que gestiona colecciones de objetos que implementan la interfaz IGestionable. Puede utilizarse para administrar distintos tipos de usuarios, como administradores o vendedores. DIP, depende de clases genericas Creator: es el encargado de agregar objetos a sus listas ya que los contiene. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>Tipo de objeto gestionado. Debe implementar <a class="el" href="interfaceLibrary_1_1IGestionable.html" title="Define el contrato que deben implementar las clases que pueden ser gestionadas por un Gestor&lt;T&gt;.">IGestionable</a>.</td></tr>
+    <tr><td class="paramname">T</td><td>Tipo de objeto gestionado. Debe implementar IGestionable.</td></tr>
   </table>
   </dd>
 </dl>
 <div class="typeconstraint">
 <dl><dt><b>Type Constraints</b></dt><dd>
 <table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em><a class="el" href="interfaceLibrary_1_1IGestionable.html">IGestionable</a></em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em><a class="el" href="interfaceLibrary_1_1IPersona.html">IPersona</a></em></td><td>&#160;</td></tr>
 </table>
 </dd>
 </dl>
 </div>
 
-<p class="definition">Definition at line <a class="el" href="Gestor_8cs_source.html#l00008">8</a> of file <a class="el" href="Gestor_8cs_source.html">Gestor.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Gestor_8cs_source.html#l00010">10</a> of file <a class="el" href="Gestor_8cs_source.html">Gestor.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="abb7615e37a5682104fd1d95e6ec2e00b" name="abb7615e37a5682104fd1d95e6ec2e00b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abb7615e37a5682104fd1d95e6ec2e00b">&#9670;&#160;</a></span>Agregar()</h2>
@@ -152,7 +152,17 @@ Public Member Functions</h2></td></tr>
 
 <p>Agrega un nuevo elemento a la lista gestionada. </p>
 
-<p class="definition">Definition at line <a class="el" href="Gestor_8cs_source.html#l00018">18</a> of file <a class="el" href="Gestor_8cs_source.html">Gestor.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Gestor_8cs_source.html#l00020">20</a> of file <a class="el" href="Gestor_8cs_source.html">Gestor.cs</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 2 --></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 3 --></div>
+</div>
 
 </div>
 </div>
@@ -173,7 +183,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Elimina un elemento específico de la lista gestionada. </p>
 
-<p class="definition">Definition at line <a class="el" href="Gestor_8cs_source.html#l00034">34</a> of file <a class="el" href="Gestor_8cs_source.html">Gestor.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Gestor_8cs_source.html#l00040">40</a> of file <a class="el" href="Gestor_8cs_source.html">Gestor.cs</a>.</p>
 
 </div>
 </div>
@@ -194,7 +204,12 @@ Public Member Functions</h2></td></tr>
 
 <p>Devuelve la lista completa de elementos gestionados. </p>
 
-<p class="definition">Definition at line <a class="el" href="Gestor_8cs_source.html#l00026">26</a> of file <a class="el" href="Gestor_8cs_source.html">Gestor.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Gestor_8cs_source.html#l00032">32</a> of file <a class="el" href="Gestor_8cs_source.html">Gestor.cs</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 4 --></div>
+</div>
 
 </div>
 </div>
@@ -222,7 +237,12 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> si el email ya está registrado; de lo contrario, <code>false</code>.</dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Gestor_8cs_source.html#l00044">44</a> of file <a class="el" href="Gestor_8cs_source.html">Gestor.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Gestor_8cs_source.html#l00050">50</a> of file <a class="el" href="Gestor_8cs_source.html">Gestor.cs</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 5 --></div>
+</div>
 
 </div>
 </div>

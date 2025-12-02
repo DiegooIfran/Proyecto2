@@ -92,22 +92,23 @@ $(function(){initNavTree('classLibrary_1_1Etiqueta.html','','classLibrary_1_1Eti
 </div><!--header-->
 <div class="contents">
 
-<p>Representa una etiqueta que puede asociarse a un cliente.  
+<p>Representa una etiqueta que puede asociarse a un cliente Aplica el principio SRP: su responsabilidad es contener la informacion de la etiqueta.  
  <a href="#details">More...</a></p>
+<div class="dynheader">
+Inheritance diagram for Library.Etiqueta:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+</div>
 <div class="dynheader">
 Collaboration diagram for Library.Etiqueta:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 0 --></div>
+<div class="center"><!-- SVG 1 --></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aaeb93eff48ecc7300bcc811fa77b31e1" id="r_aaeb93eff48ecc7300bcc811fa77b31e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaeb93eff48ecc7300bcc811fa77b31e1">Etiqueta</a> (string nombre, string descripcion)</td></tr>
 <tr class="memdesc:aaeb93eff48ecc7300bcc811fa77b31e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea una nueva etiqueta con su nombre y descripción.  <br /></td></tr>
-<tr class="memitem:adf4fc1ae385a88c167afaf5e07ccd6e2" id="r_adf4fc1ae385a88c167afaf5e07ccd6e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf4fc1ae385a88c167afaf5e07ccd6e2">AgregarEtiqueta</a> (<a class="el" href="classLibrary_1_1Cliente.html">Cliente</a> cliente)</td></tr>
-<tr class="memdesc:adf4fc1ae385a88c167afaf5e07ccd6e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asocia una etiqueta a un cliente.  <br /></td></tr>
-<tr class="memitem:aec7e214d40eab72605067f7dccfd691b" id="r_aec7e214d40eab72605067f7dccfd691b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec7e214d40eab72605067f7dccfd691b">BorrarEtiqueta</a> (<a class="el" href="classLibrary_1_1Cliente.html">Cliente</a> cliente, <a class="el" href="#aaeb93eff48ecc7300bcc811fa77b31e1">Etiqueta</a> etiqueta)</td></tr>
-<tr class="memdesc:aec7e214d40eab72605067f7dccfd691b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina una etiqueta de un cliente si ya la tiene.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
@@ -115,9 +116,9 @@ Properties</h2></td></tr>
 <tr class="memitem:ab50928233e5cd7b46ef3f31c7efeef2a" id="r_ab50928233e5cd7b46ef3f31c7efeef2a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab50928233e5cd7b46ef3f31c7efeef2a">Descripcion</a><code> [get]</code></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Representa una etiqueta que puede asociarse a un cliente. </p>
+<div class="textblock"><p>Representa una etiqueta que puede asociarse a un cliente Aplica el principio SRP: su responsabilidad es contener la informacion de la etiqueta. </p>
 
-<p class="definition">Definition at line <a class="el" href="Etiqueta_8cs_source.html#l00007">7</a> of file <a class="el" href="Etiqueta_8cs_source.html">Etiqueta.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Etiqueta_8cs_source.html#l00008">8</a> of file <a class="el" href="Etiqueta_8cs_source.html">Etiqueta.cs</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aaeb93eff48ecc7300bcc811fa77b31e1" name="aaeb93eff48ecc7300bcc811fa77b31e1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaeb93eff48ecc7300bcc811fa77b31e1">&#9670;&#160;</a></span>Etiqueta()</h2>
@@ -153,89 +154,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Etiqueta_8cs_source.html#l00018">18</a> of file <a class="el" href="Etiqueta_8cs_source.html">Etiqueta.cs</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 1 --></div>
-</div>
-
-</div>
-</div>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="adf4fc1ae385a88c167afaf5e07ccd6e2" name="adf4fc1ae385a88c167afaf5e07ccd6e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf4fc1ae385a88c167afaf5e07ccd6e2">&#9670;&#160;</a></span>AgregarEtiqueta()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Library.Etiqueta.AgregarEtiqueta </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classLibrary_1_1Cliente.html">Cliente</a></td>          <td class="paramname"><span class="paramname"><em>cliente</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Asocia una etiqueta a un cliente. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cliente</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">ArgumentNullException</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Etiqueta_8cs_source.html#l00037">37</a> of file <a class="el" href="Etiqueta_8cs_source.html">Etiqueta.cs</a>.</p>
-
-</div>
-</div>
-<a id="aec7e214d40eab72605067f7dccfd691b" name="aec7e214d40eab72605067f7dccfd691b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec7e214d40eab72605067f7dccfd691b">&#9670;&#160;</a></span>BorrarEtiqueta()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Library.Etiqueta.BorrarEtiqueta </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classLibrary_1_1Cliente.html">Cliente</a></td>          <td class="paramname"><span class="paramname"><em>cliente</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#aaeb93eff48ecc7300bcc811fa77b31e1">Etiqueta</a></td>          <td class="paramname"><span class="paramname"><em>etiqueta</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Elimina una etiqueta de un cliente si ya la tiene. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cliente</td><td></td></tr>
-    <tr><td class="paramname">etiqueta</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">ArgumentNullException</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Etiqueta_8cs_source.html#l00052">52</a> of file <a class="el" href="Etiqueta_8cs_source.html">Etiqueta.cs</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 2 --></div>
-</div>
+<p class="definition">Definition at line <a class="el" href="Etiqueta_8cs_source.html#l00019">19</a> of file <a class="el" href="Etiqueta_8cs_source.html">Etiqueta.cs</a>.</p>
 
 </div>
 </div>
@@ -260,7 +179,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Etiqueta_8cs_source.html#l00010">10</a> of file <a class="el" href="Etiqueta_8cs_source.html">Etiqueta.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Etiqueta_8cs_source.html#l00011">11</a> of file <a class="el" href="Etiqueta_8cs_source.html">Etiqueta.cs</a>.</p>
 
 </div>
 </div>
@@ -284,7 +203,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Etiqueta_8cs_source.html#l00009">9</a> of file <a class="el" href="Etiqueta_8cs_source.html">Etiqueta.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Etiqueta_8cs_source.html#l00010">10</a> of file <a class="el" href="Etiqueta_8cs_source.html">Etiqueta.cs</a>.</p>
 
 </div>
 </div>

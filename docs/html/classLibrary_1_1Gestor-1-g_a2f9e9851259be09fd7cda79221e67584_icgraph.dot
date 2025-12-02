@@ -1,0 +1,12 @@
+digraph "Library.Gestor-1-g.VerTotal"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="Library.Gestor-1-g.VerTotal",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Devuelve la lista completa de elementos gestionados."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Library.GestorAdministrador.\lBuscarPorNick",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1GestorAdministrador.html#a4977eca656e2212f366ae94308ef0c01",tooltip="SRP: La responsabilidad de esta clase es únicamente gestionar administradores."];
+}

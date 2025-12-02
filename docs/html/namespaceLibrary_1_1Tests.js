@@ -7,6 +7,7 @@ var namespaceLibrary_1_1Tests =
     [ "TestGestor", "classLibrary_1_1Tests_1_1TestGestor.html", null ],
     [ "TestGestorCliente", "classLibrary_1_1Tests_1_1TestGestorCliente.html", null ],
     [ "TestGestorInteracciones", "classLibrary_1_1Tests_1_1TestGestorInteracciones.html", null ],
+    [ "TestGestorVendedor", "classLibrary_1_1Tests_1_1TestGestorVendedor.html", null ],
     [ "TestInteraccion", "classLibrary_1_1Tests_1_1TestInteraccion.html", null ],
     [ "TestPanel", "classLibrary_1_1Tests_1_1TestPanel.html", null ],
     [ "ClienteTests", "classLibrary_1_1Tests_1_1ClienteTests.html", null ],

@@ -1,0 +1,5 @@
+var classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoSuspenderVendedor =
+[
+    [ "ComandoHabilitarVendedor", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoSuspenderVendedor_1_1ComandoHabilitarVendedor.html", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoSuspenderVendedor_1_1ComandoHabilitarVendedor" ],
+    [ "SuspenderVendedor", "classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoSuspenderVendedor.html#a17e70158567f59ac6b1732c8590db5b8", null ]
+];

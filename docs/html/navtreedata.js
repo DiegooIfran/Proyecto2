@@ -46,7 +46,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"Administrador_8cs_source.html"
+"Administrador_8cs_source.html",
+"classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoPanel.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

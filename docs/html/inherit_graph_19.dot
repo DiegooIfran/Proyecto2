@@ -6,5 +6,7 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="Program.Program",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classProgram_1_1Program.html",tooltip=" "];
+  Node0 [id="Node000000",label="Ucu.Poo.DiscordDemo.Discord\lBot.Services.IBot",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$interfaceUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Services_1_1IBot.html",tooltip="La interfaz del Bot de Discord para usar con inyección de dependencias."];
+  Node0 -> Node1 [id="edge53_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="Ucu.Poo.DiscordDemo.Discord\lBot.Services.Bot",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Services_1_1Bot.html",tooltip="Esta clase implementa el bot de Discord."];
 }

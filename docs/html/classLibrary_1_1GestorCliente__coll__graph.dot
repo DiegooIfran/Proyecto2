@@ -33,4 +33,13 @@ digraph "Library.GestorCliente"
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">YaRegistrado()<BR ALIGN="LEFT"/></TD></TR>
 </TABLE>>
 ,height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classLibrary_1_1Gestor-1-g.html",tooltip="Clase genérica que gestiona colecciones de objetos que implementan la interfaz IGestionable...."];
+  Node3 -> Node2 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" ",arrowtail="onormal"];
+  Node3 [id="Node000003",shape=plain,label=<<TABLE CELLBORDER="0" BORDER="1"><TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">Library.ISingleton</TD></TR>
+<HR/>
+<TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">&nbsp;</TD></TR>
+<HR/>
+<TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">&nbsp;</TD></TR>
+</TABLE>>
+,height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$interfaceLibrary_1_1ISingleton.html",tooltip="Define el contrato que deben implementar las clases que pueden ser gestionadas por un Gestor<T>."];
+  Node3 -> Node1 [id="edge3_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" ",arrowtail="onormal"];
 }

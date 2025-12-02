@@ -1,9 +1,18 @@
 var searchData=
 [
-  ['valiosos_20para_20sortear_20los_20desafíos_20que_20encontraron_0',['Qué recursos (páginas web, libros, foros, etc) encontraron que les fueron valiosos para sortear los desafíos que encontraron',['../C:/Users/yaned/Repositorios/Proyecto2/README.md#autotoc_md4',1,'']]],
-  ['vendedor_1',['Vendedor',['../classLibrary_1_1Vendedor.html',1,'Library.Vendedor'],['../classLibrary_1_1Vendedor.html#a839658f7c7701a6ba814ed29b6494ac1',1,'Library.Vendedor.Vendedor()']]],
-  ['venta_2',['Venta',['../classLibrary_1_1Venta.html',1,'Library.Venta'],['../classLibrary_1_1Venta.html#ac09400664d4673a8701f2a1cc75b3f50',1,'Library.Venta.Venta()']]],
-  ['ventatests_3',['VentaTests',['../classLibrary_1_1Tests_1_1VentaTests.html',1,'Library::Tests']]],
-  ['verpanel_4',['VerPanel',['../classLibrary_1_1Vendedor.html#a2c0861661f9b65982e0e64f201d6cbf0',1,'Library::Vendedor']]],
-  ['vertotal_5',['VerTotal',['../classLibrary_1_1Gestor-1-g.html#a2f9e9851259be09fd7cda79221e67584',1,'Library::Gestor-1-g']]]
+  ['ucu_0',['Ucu',['../namespaceUcu.html',1,'']]],
+  ['ucu_3a_3apoo_1',['Poo',['../namespaceUcu_1_1Poo.html',1,'Ucu']]],
+  ['ucu_3a_3apoo_3a_3adiscorddemo_2',['DiscordDemo',['../namespaceUcu_1_1Poo_1_1DiscordDemo.html',1,'Ucu::Poo']]],
+  ['ucu_3a_3apoo_3a_3adiscorddemo_3a_3adiscordbot_3',['DiscordBot',['../namespaceUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot.html',1,'Ucu::Poo::DiscordDemo']]],
+  ['ucu_3a_3apoo_3a_3adiscorddemo_3a_3adiscordbot_3a_3acommands_4',['Commands',['../namespaceUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands.html',1,'Ucu::Poo::DiscordDemo::DiscordBot']]],
+  ['ucu_3a_3apoo_3a_3adiscorddemo_3a_3adiscordbot_3a_3acommands_3a_3aucu_5',['Ucu',['../namespaceUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1Ucu.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['ucu_3a_3apoo_3a_3adiscorddemo_3a_3adiscordbot_3a_3acommands_3a_3aucu_3a_3apoo_6',['Poo',['../namespaceUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1Ucu_1_1Poo.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands::Ucu']]],
+  ['ucu_3a_3apoo_3a_3adiscorddemo_3a_3adiscordbot_3a_3acommands_3a_3aucu_3a_3apoo_3a_3adiscorddemo_7',['DiscordDemo',['../namespaceUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1Ucu_1_1Poo_1_1DiscordDemo.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands::Ucu::Poo']]],
+  ['ucu_3a_3apoo_3a_3adiscorddemo_3a_3adiscordbot_3a_3acommands_3a_3aucu_3a_3apoo_3a_3adiscorddemo_3a_3adiscordbot_8',['DiscordBot',['../namespaceUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1Ucu_1_1Poo_1_1DiscordDemo_1_1DiscordBot.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands::Ucu::Poo::DiscordDemo']]],
+  ['ucu_3a_3apoo_3a_3adiscorddemo_3a_3adiscordbot_3a_3acommands_3a_3aucu_3a_3apoo_3a_3adiscorddemo_3a_3adiscordbot_3a_3acommands_9',['Commands',['../namespaceUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1Ucu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands::Ucu::Poo::DiscordDemo::DiscordBot']]],
+  ['ucu_3a_3apoo_3a_3adiscorddemo_3a_3adiscordbot_3a_3aservices_10',['Services',['../namespaceUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Services.html',1,'Ucu::Poo::DiscordDemo::DiscordBot']]],
+  ['ultimainteraccion_11',['UltimaInteraccion',['../classLibrary_1_1Cliente.html#ad078add11c2beaf21af24f1cc4d2ab46',1,'Library::Cliente']]],
+  ['ultimasinteracciones_12',['UltimasInteracciones',['../classLibrary_1_1GestorInteracciones.html#a8ad04a78ba91a50c9865461a5d0bfa8e',1,'Library::GestorInteracciones']]],
+  ['userinfocommand_13',['UserInfoCommand',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1UserInfoCommand.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['usuario_14',['Usuario',['../classLibrary_1_1Usuario.html',1,'Library.Usuario'],['../classLibrary_1_1Usuario.html#ae29b312927a937b069a8c9e558dfebb6',1,'Library.Usuario.Usuario()']]]
 ];

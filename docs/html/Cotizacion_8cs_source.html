@@ -107,12 +107,12 @@ $(function(){initNavTree('Cotizacion_8cs_source.html','',''); });
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        {</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentNullException(nameof(cliente));</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">if</span> (precio == <span class="keyword">null</span>) <span class="comment">//Valida que el cliente no sea nulo</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">if</span> (precio.ToString() == <span class="keyword">null</span>) <span class="comment">//Valida que el cliente no sea nulo</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentNullException(nameof(precio));</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            throw new ArgumentNullException(nameof(precio));</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        }</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">if</span> (precio &lt; 0) <span class="comment">//Valida que el precio no sea negativo</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        if (precio &lt; 0) <span class="comment">//Valida que el precio no sea negativo</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        {</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;El precio no puede ser negativo.&quot;</span>);</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        }</div>

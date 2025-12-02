@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['ultimainteraccion_0',['UltimaInteraccion',['../classLibrary_1_1Cliente.html#ad078add11c2beaf21af24f1cc4d2ab46',1,'Library::Cliente']]],
-  ['usuario_1',['Usuario',['../classLibrary_1_1Usuario.html#af7555832e326c566bd1326b2f5a46639',1,'Library::Usuario']]]
+  ['suspendervendedor_0',['SuspenderVendedor',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1ComandoSuspenderVendedor.html#a17e70158567f59ac6b1732c8590db5b8',1,'Ucu.Poo.DiscordDemo.DiscordBot.Commands.ComandoSuspenderVendedor.SuspenderVendedor()'],['../classLibrary_1_1GestorVendedor.html#ae6224df5163152bf6376cf6f641f4b9f',1,'Library.GestorVendedor.SuspenderVendedor()']]]
 ];

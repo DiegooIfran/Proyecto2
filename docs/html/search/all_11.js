@@ -1,5 +1,16 @@
 var searchData=
 [
-  ['ultimainteraccion_0',['UltimaInteraccion',['../classLibrary_1_1Cliente.html#ad078add11c2beaf21af24f1cc4d2ab46',1,'Library::Cliente']]],
-  ['usuario_1',['Usuario',['../classLibrary_1_1Usuario.html',1,'Library.Usuario'],['../classLibrary_1_1Usuario.html#af7555832e326c566bd1326b2f5a46639',1,'Library.Usuario.Usuario()']]]
+  ['testadministrador_0',['TestAdministrador',['../classLibrary_1_1Tests_1_1TestAdministrador.html',1,'Library::Tests']]],
+  ['testfachada_1',['TestFachada',['../classLibrary_1_1Tests_1_1TestFachada.html',1,'Library::Tests']]],
+  ['testgestor_2',['TestGestor',['../classLibrary_1_1Tests_1_1TestGestor.html',1,'Library::Tests']]],
+  ['testgestorcliente_3',['TestGestorCliente',['../classLibrary_1_1Tests_1_1TestGestorCliente.html',1,'Library::Tests']]],
+  ['testgestorinteracciones_4',['TestGestorInteracciones',['../classLibrary_1_1Tests_1_1TestGestorInteracciones.html',1,'Library::Tests']]],
+  ['testgestorvendedor_5',['TestGestorVendedor',['../classLibrary_1_1Tests_1_1TestGestorVendedor.html',1,'Library::Tests']]],
+  ['testinteraccion_6',['TestInteraccion',['../classLibrary_1_1Tests_1_1TestInteraccion.html',1,'Library::Tests']]],
+  ['testpanel_7',['TestPanel',['../classLibrary_1_1Tests_1_1TestPanel.html',1,'Library::Tests']]],
+  ['testsetiquta_8',['TestsEtiquta',['../classLibrary_1_1Tests_1_1TestsEtiquta.html',1,'Library::Tests']]],
+  ['testusuario_9',['TestUsuario',['../classLibrary_1_1Tests_1_1TestUsuario.html',1,'Library::Tests']]],
+  ['testvendedor_10',['TestVendedor',['../classLibrary_1_1Tests_1_1TestVendedor.html',1,'Library::Tests']]],
+  ['tostring_11',['ToString',['../classLibrary_1_1Vendedor.html#a5aa64aae617259d4755f2304b7a94dad',1,'Library::Vendedor']]],
+  ['totalventas_12',['TotalVentas',['../classLibrary_1_1Vendedor.html#a6af5d6e68f49a54e54200a33e078f584',1,'Library::Vendedor']]]
 ];

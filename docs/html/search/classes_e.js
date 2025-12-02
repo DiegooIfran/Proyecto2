@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['vendedor_0',['Vendedor',['../classLibrary_1_1Vendedor.html',1,'Library']]],
-  ['venta_1',['Venta',['../classLibrary_1_1Venta.html',1,'Library']]],
-  ['ventatests_2',['VentaTests',['../classLibrary_1_1Tests_1_1VentaTests.html',1,'Library::Tests']]]
+  ['userinfocommand_0',['UserInfoCommand',['../classUcu_1_1Poo_1_1DiscordDemo_1_1DiscordBot_1_1Commands_1_1UserInfoCommand.html',1,'Ucu::Poo::DiscordDemo::DiscordBot::Commands']]],
+  ['usuario_1',['Usuario',['../classLibrary_1_1Usuario.html',1,'Library']]]
 ];
