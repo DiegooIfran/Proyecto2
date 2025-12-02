@@ -2,8 +2,8 @@ namespace Library.Tests;
 
 public class TestGestorInteracciones
 {
-    private Fachada fachada;
-
+    Fachada fachada = Singleton<Fachada>.Instance;
+    
     [SetUp]
     public void Setup()
     {
