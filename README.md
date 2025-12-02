@@ -5,16 +5,15 @@ Link de Trello: https://trello.com/invite/b/68f26d0031466266e029301d/ATTIfe55b1f
 
 ### Qué desafíos de la entrega fueron los más difíciles
 
-En esta entrega, el mayor desafío que tuvimos fue la implementación de la fachada. Nos costó entender en qué consistía y cómo llevarla a cabo. Sin embargo, creemos que pudimos darle forma y resolverla correctamente. Otro desafío surgió al introducir algunos cambios que implicaron modificar partes del código en varias clases. De todas formas, dichos cambios fueron necesarios para pulir el funcionamiento del programa, cumplir con los principios y llegar a una mejor solución para cumplir con las historias de usuario.
-Por último, aunque no fue una tarea difícil, sí nos llevó más tiempo del que esperábamos trabajar con los comentarios y comprender el funcionamiento de Doxygen.
+En esta entrega, el mayor desafío al que no enfrentamos fue organizar el tiempo. La semana previa a la entrega final del proyecto tuvimos varios parciales, y eso hizo que coordinarnos fuera bastante más difícil de lo normal. Había momentos en los que era complicado coincidir para avanzar, y el tiempo que teníamos para dedicarle era menos de lo que nos hubiera gustado. Como consecuencia se nos acumuló el trabajo y tuvimos que terminar la entrega sobre la hora límite.
+Además de eso, algunos cambios que surgieron a mitad de camino nos obligaron a revisar el código en varias clases para evitar inconsistencias. Esos ajustes tomaron más tiempo del esperado. 
+De todas formas, logramos cumplir con la fecha de entrega y estamos satisfechos con el resultado.
 
 ### Qué cosas aprendieron enfrentándose al proyecto que no aprendieron en clase como parte de la currícula
 
-Durante la preparación de esta entrega tuvimos que poner en práctica habilidades para negociar y llegar a acuerdos ante distintas ideas. Con frecuencia nos encontrábamos con varias opciones a la hora de implementar una clase, lo que implicaba tomar decisiones de manera constante. Estas decisiones de diseño, si bien por separado no parecen tener gran impacto, en conjunto son fundamentales para que las clases se relacionen correctamente entre sí y no generen errores innecesarios. Por eso, consideramos importante tomarlas en conjunto.
-Otra habilidad importante que aplicamos fue la descomposición de problemas grandes en partes más pequeñas, para poder abordarlos de manera más eficiente.
-En cuanto a herramientas y conocimientos más técnicos, aprendimos a utilizar el método IsMatch de la clase Regex, que nos facilitó el manejo de excepciones cuando los atributos pasados como string no cumplían con las características necesarias, como por ejemplo el uso de números en los nombres o apellidos de los usuarios.
+Algo que aprendimos trabajando en este proyecto fue mejor la comunicación dentro del equipo. Muchas veces teníamos ideas diferentes sobre cómo encarar una parte del código, y evaluar y comparar las distintas ideas nos ayudó a entender que no siempre hay una única forma correcta de resolver algo. Tuvimos que aprender a escuchar, explicar nuestras decisiones y, sobre todo, ceder cuando la propuesta de otro tenía más sentido.
 
 ### Qué recursos (páginas web, libros, foros, etc) encontraron que les fueron valiosos para sortear los desafíos que encontraron
 
-Una herramienta que nos resultó más útil de lo que esperábamos fue Trello. A diferencia del semestre pasado, en este proyecto encontramos su uso esencial para organizarnos, dividir tareas y, sobre todo, hacer un seguimiento a los avances del proyecto.
-Otros recursos que consultamos fueron la documentación disponible en la web de la asignatura y las páginas oficiales de .NET. Además, para resolver algunas dudas puntuales, recurrimos a herramientas de inteligencia artificial, principalmente ChatGPT.
+A lo largo del proyecto nos apoyamos bastante en la documentación oficial de .NET y en el material de la web de la asignatura, que nos sirvieron para aclarar dudas técnicas sin perder tiempo dando vueltas. 
+Además, cuando necesitábamos explicaciones más directas o ejemplos concretos, usamos herramientas de inteligencia artificial como ChatGPT, que nos ayudaron a entender errores o comprobar si estábamos encarando una solución de forma razonable.
