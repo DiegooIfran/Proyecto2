@@ -23,6 +23,8 @@ public class TestGestorInteracciones
         fachada.CrearVendedor("diego", "ape", "123131", "sdfaf@sadf.com", "carlos");
         fachada.AgregarCliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990,10,20));
         fachada.RegistrarMensaje("carlos","jmartin@gmail.com", DateTime.Now, "Tema mensaje", "Notas", true);
+        Cliente cliente = fachada.BuscarPorEmail("jmartin@gmail.com");
+        List<Interaccion> interaccionesCliente = cliente.ObtenerInteracciones();
         Assert.That(interaccionesCliente.Count, Is.EqualTo(1));
         Assert.That(interaccionesCliente[0], Is.TypeOf<Mensaje>());
     }
@@ -30,8 +32,10 @@ public class TestGestorInteracciones
     [Test]
     public void NuevaLlamada() //Chequea que funcione la funcion NuevaLlamada
     {
-        Cliente cliente = new Cliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990,10,20));
-        fachada.RegistrarLlamada("carlos","jmartin@gmail.com", DateTime.Now, "Tema mensaje", "Notas", true);
+        fachada.CrearVendedor("diego", "ape", "123131", "sdfaf@sadf.com", "carlos");
+        fachada.AgregarCliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990,10,20));
+        fachada.RegistrarLlamada("carlos","jmartin@gmail.com", DateTime.Now, "Tema llamada", "Notas", true);
+        Cliente cliente = fachada.BuscarPorEmail("jmartin@gmail.com");
         List<Interaccion> interaccionesCliente = cliente.ObtenerInteracciones();
         Assert.That(interaccionesCliente.Count, Is.EqualTo(1));
         Assert.That(interaccionesCliente[0], Is.TypeOf<Llamada>());
@@ -40,8 +44,10 @@ public class TestGestorInteracciones
     [Test]
     public void NuevoCorreo() //Chequea que funcione la funcion NuevoCorreo
     {
-        Cliente cliente = new Cliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990,10,20));
-        fachada.RegistrarCorreo("carlos","jmartin@gmail.com", DateTime.Now, "Tema mensaje", "Notas", true);
+        fachada.CrearVendedor("diego", "ape", "123131", "sdfaf@sadf.com", "carlos");
+        fachada.AgregarCliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990,10,20));
+        fachada.RegistrarCorreo("carlos","jmartin@gmail.com", DateTime.Now, "Tema correo", "Notas", true);
+        Cliente cliente = fachada.BuscarPorEmail("jmartin@gmail.com");
         List<Interaccion> interaccionesCliente = cliente.ObtenerInteracciones();
         Assert.That(interaccionesCliente.Count, Is.EqualTo(1));
         Assert.That(interaccionesCliente[0], Is.TypeOf<Correo>());
@@ -50,8 +56,10 @@ public class TestGestorInteracciones
     [Test]
     public void NuevaReunion() //Chequea que funcione la funcion NuevaReunion
     {
-        Cliente cliente = new Cliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990,10,20));
-        fachada.RegistrarReunion("carlos","jmartin@gmail.com", DateTime.Now, "Tema mensaje", "Notas");
+        fachada.CrearVendedor("diego", "ape", "123131", "sdfaf@sadf.com", "carlos");
+        fachada.AgregarCliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990,10,20));
+        fachada.RegistrarReunion("carlos","jmartin@gmail.com", DateTime.Now, "Tema reunion", "Notas");
+        Cliente cliente = fachada.BuscarPorEmail("jmartin@gmail.com");
         List<Interaccion> interaccionesCliente = cliente.ObtenerInteracciones();
         Assert.That(interaccionesCliente.Count, Is.EqualTo(1));
         Assert.That(interaccionesCliente[0], Is.TypeOf<Reunion>());
@@ -60,7 +68,8 @@ public class TestGestorInteracciones
     [Test]
     public void UltimasInteracciones() //Chequea que funcione la funcion UltimasInteracciones
     {
-        Cliente cliente = new Cliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990,10,20));
+        fachada.CrearVendedor("diego", "ape", "123131", "sdfaf@sadf.com", "carlos");
+        fachada.AgregarCliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990,10,20));
         for (int i = 0; i < 7; i++)
         {
             fachada.RegistrarMensaje("carlos","jmartin@gmail.com", DateTime.Now, "Tema mensaje", "Notas", true);
