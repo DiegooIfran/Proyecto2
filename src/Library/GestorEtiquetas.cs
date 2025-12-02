@@ -76,6 +76,7 @@ public class GestorEtiquetas<T> : ISingleton where T : Etiqueta
         if (cliente.ObtenerEtiquetas().Contains(etiqueta))
         {
             cliente.ObtenerEtiquetas().Remove(etiqueta);
+            this._etiquetas.Remove(etiqueta);
         }
     }
 }

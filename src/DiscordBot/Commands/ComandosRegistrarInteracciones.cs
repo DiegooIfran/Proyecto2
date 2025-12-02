@@ -26,17 +26,24 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         
         public async Task RegistrarLLamada(string correo, DateTime fecha, string tema, string nota, bool enviada)
         {
-            try
+            if(_fachada.BuscarVendedorNick(Context.User.Username).Activo != false)
             {
-                _fachada.RegistrarLlamada(Context.User.Username, correo, fecha, tema, nota, enviada);
+                try
+                {
+                    _fachada.RegistrarLlamada(Context.User.Username, correo, fecha, tema, nota, enviada);
 
-                await ReplyAsync($"La interaccion **{tema}** fue creada con exito.");
+                    await ReplyAsync($"La interaccion **{tema}** fue creada con exito.");
+                }
+                catch (InvalidOperationException)
+                {
+                    await ReplyAsync("Un dato fue invalido");
+                }
             }
-            catch (InvalidOperationException)
+            else
             {
-                await ReplyAsync("Un dato fue invalido");
-            }
+                await ReplyAsync("El vendedor esta suspendido");
 
+            }
         }
         
         /// <summary>
