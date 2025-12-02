@@ -3,22 +3,26 @@ namespace Library.Tests;
 public class TestGestorInteracciones
 {
     Fachada fachada = Singleton<Fachada>.Instance;
+    private GestorVendedor gv = Singleton<GestorVendedor>.Instance;
+    private GestorAdministrador ga = Singleton<GestorAdministrador>.Instance;
     
     [SetUp]
     public void Setup()
     {
-        var field = typeof(GestorInteracciones).GetField("_todasInteracciones",
-            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
-        field.SetValue(null, new List<Interaccion>());
+        Singleton<GestorAdministrador>.Instance.VerTotal().Clear();
+        Singleton<GestorVendedor>.Instance.VerTotal().Clear();
+        //var field = typeof(GestorInteracciones).GetField("_todasInteracciones",
+        //    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
+        //field.SetValue(null, new List<Interaccion>());
         //Idem que en Testeos de fachada, la lista persiste entre los testeos por ende buscamos reiniciarlos para poder testear cada funcion especificamente
     }
     
     [Test]
     public void NuevoMensaje() //Chequea que funcione la funcion NuevoMensaje
     {
-        Cliente cliente = new Cliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990,10,20));
+        fachada.CrearVendedor("diego", "ape", "123131", "sdfaf@sadf.com", "carlos");
+        fachada.AgregarCliente("Juan", "Martinez", "091827989", "jmartin@gmail.com", "hombre", new DateTime(1990,10,20));
         fachada.RegistrarMensaje("carlos","jmartin@gmail.com", DateTime.Now, "Tema mensaje", "Notas", true);
-        List<Interaccion> interaccionesCliente = cliente.ObtenerInteracciones();
         Assert.That(interaccionesCliente.Count, Is.EqualTo(1));
         Assert.That(interaccionesCliente[0], Is.TypeOf<Mensaje>());
     }
