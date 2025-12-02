@@ -23,7 +23,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot
 
             //  You can assign your bot token to a string, and pass that in to connect.
             //  This is, however, insecure, particularly if you plan to have your code hosted in a public repository.
-            var token = "MTQzODEyODIwODc4MzQ3NDc0OA.GHT2A8.qDNa5Y2JJIMjeP9sz6jUA8vi8ZxDkgWtq-8Uds";
+            var token = "";
 
             // Some alternative options would be to keep your token in an Environment Variable or a standalone file.
             // var token = Environment.GetEnvironmentVariable("NameOfYourEnvironmentVariable");
