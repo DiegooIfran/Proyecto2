@@ -4,6 +4,9 @@ namespace Library.Tests;
 
 public class TestAdministrador
 {
+    public AdministradorDePrueba(string nombre, string apellido, string telefono, string email, string nickname, Dictionary<Vendedor, int> ventasMap)
+        : base(nombre, apellido, telefono, email, nickname)
+    
     Fachada fachada = Singleton<Fachada>.Instance;
     private GestorVendedor gv = Singleton<GestorVendedor>.Instance;
     private GestorAdministrador ga = Singleton<GestorAdministrador>.Instance;
@@ -38,5 +41,16 @@ public class TestAdministrador
         fachada.CrearVendedor("Federico", "Garcia", "231231", "fedegarcia@gmail.com", "luty");
         fachada.EliminarVendedor("fedegarcia@gmail.com");
         Assert.AreEqual(0, gv.VerTotal().Count);
+    }
+    
+    [Fact]
+    public void ObtenerVendedorConMasVentas_SiNoHayVendedores_RetornaNull()
+    {
+        var mapa = new Dictionary<Vendedor, int>();
+        var admin = new AdministradorDePrueba("Empty", "Admin", "000", "e@e.com", "empty", mapa);
+
+        var ganador = admin.ObtenerVendedorConMasVentas();
+
+        Assert.Null(ganador);
     }
 }

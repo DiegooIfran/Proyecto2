@@ -29,7 +29,8 @@ public class Gestor<T> : ISingleton where T : IPersona
     /// <summary>
     /// Devuelve la lista completa de elementos gestionados
     /// </summary>
-    public List<T> VerTotal()
+    /// <param name="vendedores"></param>
+    public List<T> VerTotal(List<Vendedor>? vendedores)
     {
         return _total;
     }

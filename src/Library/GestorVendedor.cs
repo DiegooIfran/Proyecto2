@@ -1,6 +1,8 @@
+using System.Collections;
+
 namespace Library;
 
-public class GestorVendedor : Gestor<Vendedor>, ISingleton
+public class GestorVendedor : Gestor<Vendedor>, ISingleton, IEnumerable
 {
     /// <summary>
     /// Crea nuevos vendedores
@@ -13,6 +15,7 @@ public class GestorVendedor : Gestor<Vendedor>, ISingleton
         Vendedor nuevoVendedor = new Vendedor(nombre, apellido, telefono, email, nickname);
         this.Agregar(nuevoVendedor); //Lama al Singleton GestorVendedores para agregar el nuevo vendedor a la lista
     }
+    
 
     /// <summary>
     /// Elimina un vendedor
@@ -88,15 +91,9 @@ public class GestorVendedor : Gestor<Vendedor>, ISingleton
 
         throw new InvalidOperationException("No se encontró ningún usuario con ese nombre.");
     }
-    /*public override void Agregar(Vendedor usuario)
+
+    public IEnumerator GetEnumerator()
     {
-        foreach (Vendedor registrado in _total)
-        {
-            if (registrado.ObtenerEmail()== usuario.ObtenerEmail() || (registrado.ObtenerNick()== usuario.ObtenerNick()))
-            {
-                throw new AggregateException("El administrador ya está registrada.");
-            }
-        }
-        _total.Add(usuario);
-    }*/
+        throw new NotImplementedException();
+    }
 }

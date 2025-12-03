@@ -94,6 +94,8 @@ public class Fachada : ISingleton
     {
         return vendedor.VerClientes();
     }
+    
+    
 
     //Registrar llamada con un cliente
     public void RegistrarLlamada(string nick, string correo, DateTime fecha, string tema, string nota, bool enviada)

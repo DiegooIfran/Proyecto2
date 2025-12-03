@@ -49,7 +49,7 @@ public class Vendedor : Usuario, IPersona
         {
             throw new ArgumentNullException(nameof(cliente));
         }
-
+        
         if (!Clientes.Contains(cliente))
         {
             this.Clientes.Add(cliente);
@@ -60,8 +60,7 @@ public class Vendedor : Usuario, IPersona
     {
         return this.Clientes;
     }
-
-
+    
     /// <summary>
     /// Envía un mensaje de cumpleaños a los clientes cuya fecha de nacimiento coincide con la fecha actual
     /// </summary>
@@ -90,7 +89,7 @@ public class Vendedor : Usuario, IPersona
                     anuncio, true);
             }
         }
-    } //Arreglar esto
+    } 
 
     /// <summary>
     /// Crea una nueva cotización para un cliente específico, siempre que el cliente pertenezca al vendedor.
