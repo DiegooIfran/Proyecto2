@@ -219,4 +219,14 @@ public class Fachada : ISingleton
     {
         ga.VerTotal();
     }
+    //Obtiene el vendedor con más ventas
+    public Vendedor VendedorConMasVentas()
+    {
+        return gv.VendedorMasVentas();
+    }
+    //Calcula el bono del vendedor con más ventas
+    public int CalcularBono()
+    {
+        return gv.CalcularBono();
+    }
 }

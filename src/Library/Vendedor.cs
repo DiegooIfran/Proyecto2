@@ -176,7 +176,7 @@ public class Vendedor : Usuario, IPersona
             {
                 if (interaccion is Venta venta) //Recorre todas las interaciones 
                 {
-                    resultado = +1;
+                    resultado += 1;
                 }
             }
         } 

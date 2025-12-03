@@ -88,15 +88,33 @@ public class GestorVendedor : Gestor<Vendedor>, ISingleton
 
         throw new InvalidOperationException("No se encontró ningún usuario con ese nombre.");
     }
-    /*public override void Agregar(Vendedor usuario)
+    /// <summary>
+    /// Devuelve el vendedor con mayor cantidad de ventas
+    /// </summary>
+    public Vendedor VendedorMasVentas() 
     {
-        foreach (Vendedor registrado in _total)
+        //El gestor es la experta en los vendedores que existen
+        int maxNumeroVentas = 0;
+        Vendedor resultado = null;
+        foreach (var vendedor in Singleton<GestorVendedor>.Instance.VerTotal()) //Recorre los la lista de vendedores
         {
-            if (registrado.ObtenerEmail()== usuario.ObtenerEmail() || (registrado.ObtenerNick()== usuario.ObtenerNick()))
+            if (vendedor.ObtenerNumeroVentas()>maxNumeroVentas)//Si el numero de ventas del vendedor es mayor lo remplaza por el anterior
             {
-                throw new AggregateException("El administrador ya está registrada.");
+                resultado = vendedor;
+                maxNumeroVentas = vendedor.ObtenerNumeroVentas();
             }
         }
-        _total.Add(usuario);
-    }*/
+        return resultado;
+    }
+    /// <summary>
+    /// Calcula el bono
+    /// </summary>
+     public int CalcularBono() 
+    {
+        //El gestor es la experta en el vendedor con más ventas
+        int bono = 0;
+        Vendedor vendedor = Singleton<GestorVendedor>.Instance.VendedorMasVentas();
+        bono = vendedor.ObtenerNumeroVentas() * 100;
+        return bono;
+    }
 }
