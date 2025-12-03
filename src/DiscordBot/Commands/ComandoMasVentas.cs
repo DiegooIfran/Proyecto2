@@ -39,7 +39,7 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
             {
                 Vendedor masventas = _fachada.VendedorConMasVentas();
                 await ReplyAsync(
-                    $"**{masventas.ObtenerNombre()} {masventas.ObtenerApellido()}** es el vendedor con más ventas.\nLe corresponde un bono de **${_fachada.CalcularBono()}**.");
+                    $"**{masventas.ObtenerNombre()} {masventas.ObtenerApellido()}** es el vendedor con más ventas.\nLe corresponde un bono de **${_fachada.CalcularBonoMasVentas()}**.");
             }
             catch (InvalidOperationException)
             {

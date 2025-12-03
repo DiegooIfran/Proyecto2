@@ -232,7 +232,7 @@ public class Fachada : ISingleton
         return gv.VendedorMasVentas();
     }
     //Calcula el bono del vendedor con más ventas
-    public int CalcularBono()
+    public int CalcularBonoMasVentas()
     {
         Vendedor masVentas= gv.VendedorMasVentas();
         return masVentas.CalcularBono();
