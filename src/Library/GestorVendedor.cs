@@ -128,5 +128,5 @@ public class GestorVendedor : Gestor<Vendedor>, ISingleton
     // Estoy aplicando el patron Demeter, Dont talk to strangers ya que las clases no se comunican con clases internas de otras si no que cada una implementa su funcion.
     // Siguiendo con la logica el mayorVendedor sera el que mas dinero haya hecho y, en caso de empate, sera el que haya logrado mas cantidad de ventas
     // Agrego el metodo a esta clase ya que contiene a todos los vendedores, pudiendo asi saber cual es el que vendio mas (Experta)
-    
+    // A su vez, al haber cumplido con el principio OCP pude agregar las nuevas funciones sin necesidad de modificar lo ya hecho
 } 
