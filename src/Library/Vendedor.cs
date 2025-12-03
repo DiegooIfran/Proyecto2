@@ -164,4 +164,22 @@ public class Vendedor : Usuario, IPersona
     {
         return $"{this.ObtenerNombre()} {this.ObtenerApellido()} de nick: {this.ObtenerNick()}- Contacto: correo {this.ObtenerEmail()}, teléfono {this.ObtenerTelefono()}";
     }
+    /// <summary>
+    /// Devuelve el número de ventas del vendedor
+    /// </summary>
+    public int ObtenerNumeroVentas()
+    {
+        int resultado = 0;
+        foreach (Cliente cliente in Clientes)
+        {
+            foreach (Interaccion interaccion in cliente.ObtenerInteracciones()) //LLama al método ObtenerInteracciones para no tener que interactuar directamente con el atributo de los clientes (Principio Demeter)
+            {
+                if (interaccion is Venta venta) //Recorre todas las interaciones 
+                {
+                    resultado = +1;
+                }
+            }
+        } 
+        return resultado;
+    }
 }
