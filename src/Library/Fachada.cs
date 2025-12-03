@@ -220,7 +220,7 @@ public class Fachada : ISingleton
         ga.VerTotal();
     }
     
-    //Obtiene la cantidad de ventas de un vendedor específico
+    //Obtiene la cantidad de ventas de un vendedor, con esto se pueden ver las ventas de cada vendedor si se conoce el nick
     public int CantidadVentasDelVendedor(string nick)
     {
         Vendedor vendedor = gv.BuscarPorNick(nick);

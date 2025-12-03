@@ -96,7 +96,7 @@ public class GestorVendedor : Gestor<Vendedor>, ISingleton
         //El gestor es la experta en los vendedores que existen
         int maxNumeroVentas = 0;
         Vendedor resultado = null;
-        foreach (var vendedor in Singleton<GestorVendedor>.Instance.VerTotal()) //Recorre los la lista de vendedores
+        foreach (Vendedor vendedor in Singleton<GestorVendedor>.Instance.VerTotal()) //Recorre los la lista de vendedores
         {
             if (vendedor.ObtenerNumeroVentas()>maxNumeroVentas)//Si el número de ventas del vendedor es mayor lo remplaza por el anterior, si es menor o igual queda el primero en aparecer el na lista
             {
