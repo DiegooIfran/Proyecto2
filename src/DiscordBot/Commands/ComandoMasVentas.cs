@@ -48,5 +48,48 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
 
         }
     }
+    public class ComandoVentasDelVendedor : ModuleBase<SocketCommandContext>
+    {
+        private readonly Fachada _fachada;
+
+        // Inyectás la fachada por constructor (recomendado en Discord.NET con DI)
+        public ComandoVentasDelVendedor()
+        {
+            this._fachada = Singleton<Fachada>.Instance;
+        }
+
+        /// <summary>
+        /// Implementa el comando "vendedorConMasVentas'.
+        /// </summary>
+        [Command("ventasDelVendedor")]
+        [Summary(
+            "Muestra la cantidad del ventas de un vendedor. Uso !ventasDelVendedor nick")]
+
+        public async Task ExecuteAsync(string nick)
+        {
+            try
+            {
+                Usuario admin = _fachada.BuscarAdministradorNick(Context.User.Username);
+                // Esto ya que lo debe hacer el administrador
+            }
+            catch (InvalidOperationException)
+            {
+                await ReplyAsync("No existe un administrador con ese nick.");
+                return;
+            }
+
+            try
+            {
+                Vendedor vendedor = _fachada.BuscarVendedorNick(nick);
+                await ReplyAsync(
+                    $"**El vendedor {vendedor.ObtenerNombre()} {vendedor.ObtenerApellido()}** realizó **{_fachada.CantidadVentasDelVendedor(nick)}** ventas.");
+            }
+            catch (InvalidOperationException)
+            {
+                await ReplyAsync("No existe un administrador con ese nick.");
+            }
+
+        }
+    }
 }
     

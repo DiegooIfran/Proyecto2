@@ -219,6 +219,13 @@ public class Fachada : ISingleton
     {
         ga.VerTotal();
     }
+    
+    //Obtiene la cantidad de ventas de un vendedor específico
+    public int CantidadVentasDelVendedor(string nick)
+    {
+        Vendedor vendedor = gv.BuscarPorNick(nick);
+        return vendedor.ObtenerNumeroVentas();
+    }
     //Obtiene el vendedor con más ventas
     public Vendedor VendedorConMasVentas()
     {
@@ -227,6 +234,7 @@ public class Fachada : ISingleton
     //Calcula el bono del vendedor con más ventas
     public int CalcularBono()
     {
-        return gv.CalcularBono();
+        Vendedor masVentas= gv.VendedorMasVentas();
+        return masVentas.CalcularBono();
     }
 }

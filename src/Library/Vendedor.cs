@@ -182,4 +182,14 @@ public class Vendedor : Usuario, IPersona
         } 
         return resultado;
     }
+    /// <summary>
+    /// Calcula el bono
+    /// </summary>
+    public int CalcularBono() 
+    {
+        //El vendedor conoce su cantidad de ventas, es el experto
+        //La responsabilidad de calcular el bono es de otra clase, así si el día de maña se decide cambiar la forma de calcularlo no es necesario modificar la clase vendedor
+        int bono = CalculadoraBono.calcularBono(this.ObtenerNumeroVentas());
+        return bono;
+    }
 }

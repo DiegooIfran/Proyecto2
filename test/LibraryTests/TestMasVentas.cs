@@ -38,6 +38,31 @@ public class TestMasVentas
         
         Assert.That(vendedor.ObtenerNumeroVentas(),Is.EqualTo(3));
     }
+    
+    [Test]
+    public void CalcularBonoVendedor() //Verifica si se calcula correctamente la cantidad de ventas de un vendedor
+    {
+        Vendedor vendedor = new Vendedor("Lautaro", "Ramirez", "092773311", "lautaro.ramirez@gmail.com", ".luty");
+        Cliente cliente = new Cliente("Juan", "Perez", "0923", "juan@gmail.com","hombre", DateTime.Today);
+        vendedor.AgregarCliente(cliente);
+        
+        Venta venta0 = new Venta(new DateTime(2022,12,4), "Comida", "200g de muzzarela", 200);
+        Venta venta1 = new Venta(new DateTime(2025,12,4), "Bebida", "CocaCola 3L", 150);
+        Venta venta2 = new Venta(new DateTime(2025,8,30), "Galletitas", "Porteñitas", 55);
+        Venta venta3 = new Venta(new DateTime(2025,8,30), "Galletitas", "Porteñitas", 55);
+        
+        cliente.AgregarInteraccion(venta3);
+        cliente.AgregarInteraccion(venta2);
+        cliente.AgregarInteraccion(venta1);
+        cliente.AgregarInteraccion(venta0);
+        
+        Mensaje msg = new Mensaje(DateTime.Now, "msg", "nota", true);
+        Correo correo = new Correo(DateTime.Now, "correo", "nota", true);
+        cliente.AgregarInteraccion(msg);
+        cliente.AgregarInteraccion(correo);
+        
+        Assert.That(vendedor.CalcularBono(),Is.EqualTo(400));
+    }
    
     [Test]
     public void VendedorMasVentas() //Verifica si devuelve correctamente el vendedor con mayor cantidad de ventas
@@ -100,7 +125,8 @@ public class TestMasVentas
         
         cliente1.AgregarInteraccion(venta3);
         cliente1.AgregarInteraccion(venta4);
-        
-        Assert.That(gv.CalcularBono(),Is.EqualTo(300));
+
+        Vendedor masVentas = gv.VendedorMasVentas();
+        Assert.That(masVentas.CalcularBono(),Is.EqualTo(300));
     }
 }

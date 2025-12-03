@@ -106,15 +106,5 @@ public class GestorVendedor : Gestor<Vendedor>, ISingleton
         }
         return resultado;
     }
-    /// <summary>
-    /// Calcula el bono
-    /// </summary>
-     public int CalcularBono() 
-    {
-        //El gestor es la experta en el vendedor con más ventas
-        int bono = 0;
-        Vendedor vendedor = Singleton<GestorVendedor>.Instance.VendedorMasVentas();
-        bono = vendedor.ObtenerNumeroVentas() * 100;
-        return bono;
-    }
+    
 }
