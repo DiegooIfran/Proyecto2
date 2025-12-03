@@ -99,4 +99,22 @@ public class GestorVendedor : Gestor<Vendedor>, ISingleton
         }
         _total.Add(usuario);
     }*/
+    
+    /// <summary>
+    /// Devuelve al vendedor con más ventas
+    /// </summary>
+    //OCP: Agregué una función sin modificar el resto
+    public Vendedor VendedorConMaxVentas()
+    {
+        Vendedor maxVentas = this.VerTotal()[0]; //Inicializo con un vendedor
+        for (int i = 1; i < Singleton<GestorVendedor>.Instance.VerTotal().Count; i++) //Recorre la lista de vendedores
+        {
+            if (Singleton<GestorVendedor>.Instance.VerTotal()[i].ObtenerCantidadDeVentas() > maxVentas.ObtenerCantidadDeVentas()) //Ingreso si encuentro un vendedor con más ventas
+            {
+                maxVentas = Singleton<GestorVendedor>.Instance.VerTotal()[i]; //Cambio al vendedor con más ventas
+            }
+        }
+
+        return maxVentas;
+    }
 }

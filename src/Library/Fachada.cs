@@ -219,4 +219,13 @@ public class Fachada : ISingleton
     {
         ga.VerTotal();
     }
+    
+    /// <summary>
+    /// Devuelve al vendedor con más ventas
+    /// </summary>
+    //SRP: Delego responsabilidad a gv
+    public Vendedor VendedorConMaxVentas()
+    {
+        return gv.VendedorConMaxVentas();
+    }
 }

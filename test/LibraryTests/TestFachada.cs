@@ -316,4 +316,43 @@ public class TestFachada
         Assert.That(fachada.BuscarVendedorNick(".luty").Activo, Is.EqualTo(true));
 
     }
+
+    [Test]
+    public void DevolverVendedorConMaxVentas() //Testeo del método "VendedorConMaxVentas()"
+    {
+        //Creación de vendedores para el test
+        fachada.CrearVendedor("Vende", "Dor", "09154321", "email1@gmail.com", "vende");
+        fachada.CrearVendedor("Ven", "Diez", "09154123", "email2@gmail.com", "vendiez");
+        fachada.CrearVendedor("Vend", "Ia", "09154132", "email3@gmail.com", "vendia");
+        
+        //Creación y asignación de ventas a "Vende Dor"
+        fachada.AgregarCliente("Di", "If", "091111123", "prueba1@gmail.com", "H", new DateTime(2003, 3, 3));
+        fachada.AsignarCliente("vende", "prueba1@gmail.com");
+        fachada.RealizarCotizacion("vende", "prueba1@gmail.com", DateTime.Today, "a1", "hola", 100);
+        fachada.RealizarVenta("prueba1@gmail.com", "a1");
+        
+        //Creación y asignación de ventas a "Ven Diez"
+        fachada.AgregarCliente("Eg", "Ra", "091111321", "prueba2@gmail.com", "H", new DateTime(2003, 3, 3));
+        fachada.AsignarCliente("vendiez", "prueba2@gmail.com");
+        fachada.RealizarCotizacion("vendiez", "prueba2@gmail.com", DateTime.Today, "b1", "hola", 100);
+        fachada.RealizarCotizacion("vendiez", "prueba2@gmail.com", DateTime.Today, "b2", "hola", 100);
+        fachada.RealizarVenta("prueba2@gmail.com", "b1");
+        fachada.RealizarVenta("prueba2@gmail.com", "b2");
+        
+        //Creación y asignación de ventas a "Vend Ia"
+        fachada.AgregarCliente("O", "N", "091111132", "prueba3@gmail.com", "H", new DateTime(2003, 3, 3));
+        fachada.AsignarCliente("vendia", "prueba3@gmail.com");
+        fachada.RealizarCotizacion("vendia", "prueba3@gmail.com", DateTime.Today, "c1", "hola", 100);
+        fachada.RealizarCotizacion("vendia", "prueba3@gmail.com", DateTime.Today, "c2", "hola", 100);
+        fachada.RealizarCotizacion("vendia", "prueba3@gmail.com", DateTime.Today, "c3", "hola", 100);
+        fachada.RealizarVenta("prueba3@gmail.com", "c1");
+        fachada.RealizarVenta("prueba3@gmail.com", "c2");
+        fachada.RealizarVenta("prueba3@gmail.com", "c3");
+
+        //Creo una variable para testear el método "VendedorConMaxVentas"
+        Vendedor maxVentas = fachada.VendedorConMaxVentas();
+        
+        //Sé que el vendedor que más ventas hizo fue "Vend Ia", por lo que si maxVentas es igual a "Vend Ia", el método cumple su función.
+        Assert.That(maxVentas, Is.EqualTo(fachada.BuscarVendedorNick("vendia")));
+    }
 }

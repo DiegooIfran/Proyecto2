@@ -164,4 +164,25 @@ public class Vendedor : Usuario, IPersona
     {
         return $"{this.ObtenerNombre()} {this.ObtenerApellido()} de nick: {this.ObtenerNick()}- Contacto: correo {this.ObtenerEmail()}, teléfono {this.ObtenerTelefono()}";
     }
+    
+    /// <summary>
+    /// Devuelve un entero con la cantidad de ventas del cliente
+    /// </summary>
+    //OCP: Agregué una función sin modificar el resto
+    public int ObtenerCantidadDeVentas()
+    {
+        int cantidad = 0;
+        foreach (Cliente cliente in Clientes) //Recorro los clientes del vendedor
+        {
+            foreach (Interaccion interaccion in cliente.ObtenerInteracciones()) //Obtengo las interacciones
+            {
+                if (interaccion is Venta venta) //Si es una venta, aumenta la cantidad
+                {
+                    cantidad += 1;
+                }
+            }
+        }
+        
+        return cantidad;
+    }
 }
