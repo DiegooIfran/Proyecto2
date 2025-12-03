@@ -164,4 +164,26 @@ public class Vendedor : Usuario, IPersona
     {
         return $"{this.ObtenerNombre()} {this.ObtenerApellido()} de nick: {this.ObtenerNick()}- Contacto: correo {this.ObtenerEmail()}, teléfono {this.ObtenerTelefono()}";
     }
+
+    public double TotalVentas() // El vendedor verifica sus ventas totales
+    {
+        double totalVentas = 0;
+        foreach (Cliente cliente in Clientes)
+        {
+            totalVentas += cliente.Gastos();
+        }
+
+        return totalVentas;
+    }
+
+    public int NumeroVentas()
+    {
+        int numero = 0;
+        foreach (Cliente cliente in this.Clientes)
+        {
+            numero += cliente.VentasCerradas();
+        }
+
+        return numero;
+    }
 }

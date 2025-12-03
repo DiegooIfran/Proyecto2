@@ -180,5 +180,31 @@ public class Cliente : ISingleton, IPersona
 
         return ultimaInteraccion;
     }
+
+    public double Gastos() // Agrego un metodo que verifica cuanto gasto el cliente, lo agrego aca debido a que es el experto
+    {
+        double gasto = 0;
+        foreach (var interaccion in _interacciones)
+        {
+            if (interaccion is Venta venta)
+            {
+                gasto += venta.Precio;
+            }
+        }
+        return gasto;
+    }
+
+    public int VentasCerradas() // Cuento el total de ventas
+    {
+        int ventas = 0;
+        foreach (var interaccion in _interacciones)
+        {
+            if (interaccion is Venta venta)
+            {
+                ventas += 1;
+            }
+        }
+        return ventas;
+    }
 }
 

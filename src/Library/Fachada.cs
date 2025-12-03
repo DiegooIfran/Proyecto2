@@ -158,15 +158,19 @@ public class Fachada : ISingleton
     //Realizar venta de una cotizacion previa (tema especifica un producto)
     public void RealizarVenta(string correo, string tema)
     {
-        foreach (Cotizacion cotizacion in gc.BuscarPorEmail(correo).ObtenerInteracciones())
+        foreach (Interaccion interaccion in gc.BuscarPorEmail(correo).ObtenerInteracciones())
         {
-            if (cotizacion.ObtenerTema() == tema)
+            if (interaccion is Cotizacion cotizacion)
             {
-                cotizacion.CerrarVenta();
-                break;
+                if (cotizacion.ObtenerTema() == tema)
+                {
+                    cotizacion.CerrarVenta();
+                    break;
+                }
             }
         }
     }
+    
     
     //Ver interacciones con los clientes
     public void VerInteraccionesCliente(string correo)
@@ -218,5 +222,10 @@ public class Fachada : ISingleton
     public void VerAdministradores()
     {
         ga.VerTotal();
+    }
+
+    public Vendedor MejorVendedor()
+    {
+        return gv.MayorVendedor();
     }
 }

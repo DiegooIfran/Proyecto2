@@ -76,4 +76,54 @@ namespace Ucu.Poo.DiscordDemo.DiscordBot.Commands
         }
         
     }
+    public class ComandoMayorVendedor : ModuleBase<SocketCommandContext>
+    {
+        // Decido agregarlo aca ya que cumple una funcion similar a la de un panel.
+        
+        private readonly Fachada _fachada;
+
+        // Inyectás la fachada por constructor (recomendado en Discord.NET con DI)
+        public ComandoMayorVendedor()
+        {
+            this._fachada = Singleton<Fachada>.Instance;
+        }
+
+        /// <summary>
+        /// Implementa el comando "mayorVendedor'.
+        /// </summary>
+        [Command("mayorVendedor")]
+        [Summary(
+            "Veo el vendedor con mas ventas. Uso !mayorVendedor")]
+        // Lo debera hacer un administrador
+
+        public async Task MayorVendedor()
+        {
+            try
+            {
+                Usuario admin = _fachada.BuscarAdministradorNick(Context.User.Username);
+                // Esto ya que lo debe hacer el administrador
+            }
+            catch (InvalidOperationException)
+            {
+                await ReplyAsync("No eres un administrador.");
+                return;
+            }
+            try
+            {
+                Vendedor vendedor = _fachada.MejorVendedor();
+                await ReplyAsync(
+                    $"- **El vendedor:** {vendedor.ObtenerNombre()} {vendedor.ObtenerApellido()} ha sido el que mas ventas logro.\n" +
+                    $"- **Genero un total de:** ${vendedor.TotalVentas()}.\n" +
+                    $"- **Cerro:** {vendedor.NumeroVentas()} ventas\n" +
+                    $"- **Logro obtener un bonus de:** ${vendedor.NumeroVentas() * 100}");
+            }
+            catch (InvalidOperationException)
+            {
+                await ReplyAsync("No hay vendedores");
+                // En caso de no encontrar un mejor vendedor significa que no hay vendedores, por ende dará error.
+            }
+
+        }
+    }
+    
 }    

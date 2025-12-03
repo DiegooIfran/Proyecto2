@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 namespace Library;
 
 public class GestorVendedor : Gestor<Vendedor>, ISingleton
@@ -99,4 +101,32 @@ public class GestorVendedor : Gestor<Vendedor>, ISingleton
         }
         _total.Add(usuario);
     }*/
-}
+
+    public Vendedor MayorVendedor()
+    {
+        if (VerTotal().Count != 0)
+        {
+            Vendedor mayorVendedor = this.VerTotal()[0];
+            for (int i = 1; i < this.VerTotal().Count; i++) // Recorro todos los vendedores del singleton los cuales seran todos los del sistema
+            {
+                if (this.VerTotal()[i].TotalVentas() > mayorVendedor.TotalVentas())
+                {
+                    mayorVendedor = this.VerTotal()[i]; // Me voy quedando con el vendedor que mas haya vendido
+                }
+                else if ((this.VerTotal()[i].TotalVentas() == mayorVendedor.TotalVentas()) && (this.VerTotal()[i].NumeroVentas() > mayorVendedor.NumeroVentas()))
+                {
+                    mayorVendedor = this.VerTotal()[i];
+                }
+            }
+            return mayorVendedor;
+        }
+        else
+        {
+            throw new InvalidOperationException("No hay vendedores registrados");
+        }
+    } 
+    // Estoy aplicando el patron Demeter, Dont talk to strangers ya que las clases no se comunican con clases internas de otras si no que cada una implementa su funcion.
+    // Siguiendo con la logica el mayorVendedor sera el que mas dinero haya hecho y, en caso de empate, sera el que haya logrado mas cantidad de ventas
+    // Agrego el metodo a esta clase ya que contiene a todos los vendedores, pudiendo asi saber cual es el que vendio mas (Experta)
+    
+} 
